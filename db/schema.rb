@@ -10,9 +10,59 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_29_130159) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_29_131835) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.text "photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "games", force: :cascade do |t|
+    t.bigint "movie_id", null: false
+    t.bigint "multiplayer_session_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["movie_id"], name: "index_games_on_movie_id"
+    t.index ["multiplayer_session_id"], name: "index_games_on_multiplayer_session_id"
+  end
+
+  create_table "inputs", force: :cascade do |t|
+    t.bigint "player_game_id", null: false
+    t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["player_game_id"], name: "index_inputs_on_player_game_id"
+  end
+
+  create_table "movies", force: :cascade do |t|
+    t.bigint "category_id", null: false
+    t.string "title"
+    t.text "synopsis"
+    t.text "poster"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_movies_on_category_id"
+  end
+
+  create_table "multiplayer_sessions", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "player_games", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "game_id", null: false
+    t.integer "final_score"
+    t.boolean "title_found"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_player_games_on_game_id"
+    t.index ["user_id"], name: "index_player_games_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -26,4 +76,25 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_29_130159) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "words", force: :cascade do |t|
+    t.bigint "player_game_id", null: false
+    t.bigint "game_id", null: false
+    t.string "content"
+    t.float "OPT_score_proximity"
+    t.float "OPT_close_word"
+    t.boolean "found"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_words_on_game_id"
+    t.index ["player_game_id"], name: "index_words_on_player_game_id"
+  end
+
+  add_foreign_key "games", "movies"
+  add_foreign_key "games", "multiplayer_sessions"
+  add_foreign_key "inputs", "player_games"
+  add_foreign_key "movies", "categories"
+  add_foreign_key "player_games", "games"
+  add_foreign_key "player_games", "users"
+  add_foreign_key "words", "games"
+  add_foreign_key "words", "player_games"
 end
