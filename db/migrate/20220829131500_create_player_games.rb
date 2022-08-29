@@ -5,7 +5,7 @@ class CreatePlayerGames < ActiveRecord::Migration[7.0]
       t.references :game, null: false, foreign_key: true
       t.integer :final_score
       t.boolean :title_found
-
+      t.jsonb :words
       t.timestamps
     end
   end

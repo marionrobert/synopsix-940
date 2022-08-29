@@ -4,9 +4,8 @@ class PlayerGamesController < ApplicationController
 
   def create
 
-    
-    # récupérer synopsis en string
-    # transformer la string en array de mots
-    # créer une
+
+
+
   end
 end
