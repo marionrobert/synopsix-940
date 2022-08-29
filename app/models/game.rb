@@ -1,4 +1,5 @@
 class Game < ApplicationRecord
   belongs_to :movie
-  belongs_to :multiplayer_session
+  has_many :player_games
+  has_many :words
 end
