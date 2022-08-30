@@ -4,4 +4,8 @@ class PagesController < ApplicationController
   def home
     @player_game = PlayerGame.new
   end
+
+  def dashboard
+    @player_game = PlayerGame.new
+  end
 end
