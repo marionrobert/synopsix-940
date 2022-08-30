@@ -158,11 +158,13 @@ Movie.destroy_all
 Category.destroy_all
 
 
+
 #CATEGORIES CREATION
 Category.create(name: "All")
 Category.create(name: "Blockbuster")
 Category.create(name: "Action")
 Category.create(name: "Drama")
+
 
 p "📁 Categories created"
 
@@ -179,6 +181,7 @@ User.create!(username: "Aurelien", email: "aur@gmail.com", password: "123456", d
 
 
 
+
 #MOVIES CREATION
 #Reading from JSON file
 #TODO Replace category
@@ -190,3 +193,4 @@ data_hash.each_value do |movie|
 
   p "🎥 Movie #{movie["title"]} created"
 end
+
