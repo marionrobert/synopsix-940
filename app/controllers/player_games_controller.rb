@@ -1,12 +1,16 @@
 class PlayerGamesController < ApplicationController
-  def new
-  end
+
 
   def create
 
-    
-    # récupérer synopsis en string
-    # transformer la string en array de mots
-    # créer une
+    game = Game.create(movie: Movie.where(category: params[:player_game][:category]).sample)
+
+    player_game = PlayerGame.create(user: current_user, game: game, title_found: false)
+
+    redirect_to player_game_path(player_game)
+
+  end
+
+  def show
   end
 end

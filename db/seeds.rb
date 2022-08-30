@@ -147,4 +147,6 @@ Movie.create!(synopsis: plot, poster: poster_url, title: movie_title, category: 
 # WE BUILD THE DB WITH THE SEED
 end
 
+
 end
+
