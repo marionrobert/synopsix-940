@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  resources :player_games, only: %i[ create show ]
 
   resources :movies, only: %i[ new create destroy]
 end
