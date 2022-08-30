@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get 'games/create'
   get 'games/show'
 
+  # get "games/:userid/dashboard", to: "pages#dashboard"
+  get "dashboard", to: "pages#dashboard"
 
   devise_for :users
   root to: "pages#home"
