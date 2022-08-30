@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'inputs/create'
   get 'player_games/new'
   get 'player_games/create'
 
@@ -13,7 +14,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  resources :player_games, only: %i[ create show ]
+  resources :player_games, only: %i[ create show ] do
+    resources :inputs, only: %i[ create ]
+  end
 
   resources :movies, only: %i[ new create destroy]
+
 end

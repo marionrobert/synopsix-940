@@ -12,5 +12,17 @@ class PlayerGamesController < ApplicationController
   end
 
   def show
+    @title = PlayerGame.find(params[:id]).game.movie.title
+    @synopsis = PlayerGame.find(params[:id]).game.movie.synopsis
+    @player_game = PlayerGame.find(params[:id])
+    @input = Input.new
+    @inputs = @player_game.inputs
+
+
   end
+
+  def checkwords
+    
+  end
+
 end

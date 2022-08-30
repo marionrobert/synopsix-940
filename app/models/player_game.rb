@@ -1,5 +1,6 @@
 class PlayerGame < ApplicationRecord
   attr_accessor :category
+  has_many :inputs
   belongs_to :user
   belongs_to :game
   after_create :build_words
