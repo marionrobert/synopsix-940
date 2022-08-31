@@ -1,8 +1,8 @@
   <div class="mt-5">
     <p>Last five tries:</p>
     <ul>
-      <% player_game.inputs.each_with_index do |input, index| %>
-        <li><%= index + 1 %> - <%= input.content %></li>
+      <% player_game.last_five_inputs.each_with_index do |input, index| %>
+        <li><%= player_game.inputs.count - index %> - <%= input.content %></li>
       <% end %>
     </ul>
   </div>
