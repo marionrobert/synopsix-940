@@ -4,7 +4,7 @@
 
 <div class='d-flex justify-content-around py-5' data-controller="categories">
   <% Category.all.each.with_index do |category, index| %>
-    <div class="card d-flex align-items-center justify-content-center" data-action="click->categories#select" data-number="<%=index+1%>" data-categories-target="card">
+    <div class="card d-flex align-items-center justify-content-center" data-action="click->categories#select" data-number="<%= category.id %>" data-categories-target="card">
       <%= category.name %>
     </div>
   <%end%>
