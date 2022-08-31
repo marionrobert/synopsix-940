@@ -1,38 +1,25 @@
- <div class="container">
+ <div class="container" data-controller="game-input">
 
   <div class="mt-5">
-    <%= simple_form_for [ @player_game, @input] do |f| %>
-      <%= f.error_notification %>
-      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+    <%= simple_form_for([ @player_game, @input],
+      data: {
+        game_input_target: "form",
+        action: "submit->game-input#send"
+      }) do |f| %>
+        <%= f.error_notification %>
+        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-      <div class="form-inputs">
-        <%= f.input :content, :label => " Guess a word" %>
-      </div>
+        <div class="form-inputs">
+          <%= f.input :content, :label => " Guess a word" %>
+        </div>
 
-      <div class="form-actions">
-        <%= f.button :submit, "Play" %>
-      </div>
+        <div class="form-actions">
+          <%= f.button :submit, "Play" %>
+        </div>
     <% end %>
   </div>
 
-
-  <div class="mt-5">
-    <p>Last five tries:</p>
-    <ul>
-    <% @inputs.each_with_index do |input, index| %>
-      <li><%= index + 1 %> - <%= input.content %></li>
-    <% end %>
-    </ul>
+  <div data-game-input-target="gameContent">
+    <%= render "game_content", player_game: @player_game %>
   </div>
-
-  <div class="mt-5">
-    <h2><%= @hidden_title  %></h2>
-    <p><%= @hidden_synopsis  %></p>
-  </div>
-
-  <div>
-  <h2><%= @title %></h2>
-  </div>
-
-
- </div>
+</div>

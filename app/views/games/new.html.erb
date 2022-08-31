@@ -1,2 +1,25 @@
-<h1>Games#new</h1>
-<p>Find me in app/views/games/new.html.erb</p>
+<div class="container">
+  <h1 class="d-flex align-items-center justify-content-center">Choose your category</h1>
+
+  <div class='d-flex justify-content-around py-5' data-controller="categories">
+    <% Category.all.each.with_index do |category, index| %>
+      <div class="card d-flex align-items-center justify-content-center" data-action="click->categories#select" data-number="<%= category.id %>" data-categories-target="card">
+        <%= category.name %>
+      </div>
+    <%end%>
+  </div>
+
+  <%= simple_form_for [@player_game], html: {class: "d-flex align-items-center justify-content-center"} do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+    <div class="d-none">
+      <%= f.input :category,
+                as: :radio_buttons,
+                input_html: {class: 'category-selector'},
+                collection: Category.all %>
+    </div>
+
+    <%= f.submit "Start the game", class: "btn" %>
+  <% end %>
+</div>

@@ -3,6 +3,7 @@
 @import "avatar";
 @import "form_legend_clear";
 @import "navbar";
+@import "_select_category"
 @import "footer";
 
 body {
@@ -66,3 +67,6 @@ body {
   opacity: 0.7;
   font-weight: 700;
 }
+
+
+
