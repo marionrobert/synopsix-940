@@ -1,15 +1,16 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-
- <%= simple_form_for [@player_game] do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-  <div class="form-inputs">
-    <%= f.input :category, collection: Category.all %>
-   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
+<div class="d-flex justify-content-center maindiv">
+  <div class="text-center gamemodesolo">
+    <p class="mb-5">Word discover</p>
+      <%=link_to "Solo", new_game_path, class: "btnplay mt-3"%>
   </div>
-<% end %>
+
+  <div class="text-center gamemodemulti">
+    <p class="mb-5">Against time</p>
+    <div class="d-block">
+      <%=link_to "Solo", new_game_path, class: "btnplay"%>
+      <br><br>
+      <%=link_to "Multijoueur", new_game_path, class: "btnplay mt-3"%>
+    </div>
+  </div>
+</div>
+<%= render "shared/footer" %>

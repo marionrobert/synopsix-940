@@ -1,12 +1,40 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+.navbar {
+  position: relative;
+  background-color: #0E1116;
+  border-bottom: 2px solid #FFFFFF;
+  top: 0px;
+  color: #FFFFFF;
+  height: 80px;
+  width: 100%;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.fontnavbar {
+  // padding-top: 32px;
+  font-family: Inter;
+  line-height: 17px;
+  text-align: center;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.clap {
+  font-family: Inter;
+  font-style: bold;
+  font-weight: 500;
+  font-size: 24px;
+  margin-left: 30px;
+  height: 60;
+  width: auto;
+}
+
+#loginbtn #signupbtn{
+  font-weight: bold;
+  font-size: 18px;
+  top:25px;
+}
+
+#loginbtn {
+  right: 150px;
+}
+
+#signupbtn {
+  right: 50px;
 }
