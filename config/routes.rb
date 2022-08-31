@@ -3,9 +3,7 @@ Rails.application.routes.draw do
   get 'player_games/new'
   get 'player_games/create'
 
-  get 'games/new'
-  get 'games/create'
-  get 'games/show'
+
 
   # get "games/:userid/dashboard", to: "pages#dashboard"
   get "dashboard", to: "pages#dashboard"
@@ -16,6 +14,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  resources :games
+
   resources :player_games, only: %i[ create show ] do
     resources :inputs, only: %i[ create ]
   end

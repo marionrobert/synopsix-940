@@ -1,61 +1,17 @@
-
-<div class="container">
-<h1 class="d-flex align-items-center justify-content-center">Choose your category</h1>
-
-<div class='d-flex justify-content-around py-5' data-controller="categories">
-  <% Category.all.each.with_index do |category, index| %>
-    <div class="card d-flex align-items-center justify-content-center" data-action="click->categories#select" data-number="<%= category.id %>" data-categories-target="card">
-      <%= category.name %>
-    </div>
-  <%end%>
-</div>
-
-    <%= simple_form_for [@player_game], html: {class: "d-flex align-items-center justify-content-center"} do |f| %>
-      <%= f.error_notification %>
-      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-      <div class="d-none">
-        <%= f.input :category,
-                  as: :radio_buttons,
-                  input_html: {class: 'category-selector'},
-                  collection: Category.all %>
-      </div>
-
-      <%= f.submit "Start the game", class: "btn" %>
-    <% end %>
-</div>
-
-
-
-<%#
-<div class="container"> %>
-  <%# <div class="selected-category-card">
-    <h2>Selected</h2>
+<div class="d-flex justify-content-center maindiv">
+  <div class="text-center gamemodesolo">
+    <p class="mb-5">Word discover</p>
+      <%=link_to "Solo", new_game_path, class: "btnplay mt-3"%>
   </div>
 
-  <div class="unselected-category-card">
-    <h2>Unselected</h2>
-  </div>
- </div> %>
-
-
-
-<%#
-<label>
-  <input type="radio" name="demo" class="card-input-element d-none" id="demo1">
-    <div class="card card-body bg-light d-flex flex-row justify-content-between align-items-center">
-      Category 1
+  <div class="text-center gamemodemulti">
+    <p class="mb-5">Against time</p>
+    <div class="d-block">
+      <%=link_to "Solo", new_game_path, class: "btnplay"%>
+      <br><br>
+      <%=link_to "Multijoueur", new_game_path, class: "btnplay mt-3"%>
     </div>
- </label>
-  <label class="mt-3">
-    <input type="radio" name="demo" class="card-input-element d-none" value="demo2">
-      <div class="card card-body bg-light d-flex flex-row justify-content-between align-items-center">
-      Category 2
-     </div>
-  </label>
-   <label class="mt-3">
-    <input type="radio" name="demo" class="card-input-element d-none" value="demo3">
-      <div class="card card-body bg-light d-flex flex-row justify-content-between align-items-center">
-      Category 3
-     </div>
-  </label> %>
+  </div>
+</div>
+<%= render "shared/footer" %>
+

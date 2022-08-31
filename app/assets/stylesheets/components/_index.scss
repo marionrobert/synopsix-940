@@ -3,4 +3,67 @@
 @import "avatar";
 @import "form_legend_clear";
 @import "navbar";
-@import "_select_category"
+@import "_select_category";
+@import "footer";
+
+body {
+  color: #FFFFFF;
+  min-height: 100vh;
+  background-image: radial-gradient(rgba(92, 90, 90, 0.5), rgba(0, 0, 0, 1)), url(redseats.png);
+  background-size: cover;
+  // background: radial-gradient(circle at 10% 20%, rgba(0, 0, 0, 0.5) 0%, rgba(64, 64, 64, 0.5) 90.2%);
+}
+
+.btnsyno {
+  border: 1.5px solid rgba(0,0,0,0);
+  border-radius: 4px;
+  padding: 5px 20px;
+  background-color: rgba(0,0,0,0);
+  color: #DB222A;
+}
+
+.btnsyno:hover {
+  border: 1.5px solid #A31621;
+  color: #A31621;
+}
+
+.maindiv {
+  justify-content: center;
+  margin-top: 10%;
+  width: 100vw;
+  height: 200px;
+  vertical-align: middle;
+  // border: 2px solid rgb(26, 255, 0);
+}
+
+.gamemodesolo, .gamemodemulti {
+  // border: 2px solid #DB222A;
+  width: 30%;
+  height: 100%;
+  justify-content: center;
+}
+
+.gamemodesolo {
+  border-right: 2px solid #FFFFFF;
+}
+
+
+
+
+.btnplay {
+  text-decoration: none;
+  border: 2px solid #DB222A;
+  opacity: 0.9;
+  border-radius: 4px;
+  padding: 5px 20px;
+  background-color: rgba(0,0,0,0);
+  color: #DB222A;
+  font-weight:700;
+}
+
+.btnplay:hover {
+  border: 2px solid #A31621;
+  color: #A31621;
+  opacity: 0.7;
+  font-weight: 700;
+}

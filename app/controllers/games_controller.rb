@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
   def new
-
+    @player_game = PlayerGame.new
   end
 
   def create
@@ -9,6 +9,10 @@ class GamesController < ApplicationController
 
   def show
   end
+
+  # TIMER GAME
+  #Method to reveal a random word
+
 
 
 end
