@@ -4,6 +4,10 @@ class PlayerGame < ApplicationRecord
   belongs_to :user
   belongs_to :game
   after_create :build_words, :build_words_title, :hidden_synopsis, :hidden_title
+  enum type: {
+    word_input: 0,
+    timer: 1,
+  }
 
   delegate :movie, to: :game # == game.movie
 
