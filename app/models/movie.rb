@@ -3,5 +3,4 @@ class Movie < ApplicationRecord
   require 'uri'
   require 'net/http'
   require 'openssl'
-
 end
