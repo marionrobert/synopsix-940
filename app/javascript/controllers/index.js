@@ -4,8 +4,13 @@
 
 import { application } from "./application"
 
+
+import GameInputController from "./game_input_controller"
+application.register("game-input", GameInputController)
+
 import CategoriesController from "./categories_controller"
 application.register("categories", CategoriesController)
+
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)

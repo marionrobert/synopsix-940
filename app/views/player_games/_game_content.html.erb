@@ -1,0 +1,14 @@
+  <div class="mt-5">
+    <p>Last five tries:</p>
+    <ul>
+      <% player_game.inputs.each_with_index do |input, index| %>
+        <li><%= index + 1 %> - <%= input.content %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="mt-5">
+    <h2><%= player_game.hidden_title  %></h2>
+    <p><%= player_game.hidden_synopsis  %></p>
+  </div>
+ </div>

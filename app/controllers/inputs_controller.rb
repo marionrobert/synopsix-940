@@ -6,11 +6,26 @@ class InputsController < ApplicationController
     checkinput
     checktitle
 
-    if @input.save
-      redirect_to player_game_path(PlayerGame.find(params[:player_game_id]))
-    else
-      redirect_to player_game_path(PlayerGame.find(params[:player_game_id]))
+    @input.save
+
+    #managing ajax rendering on the page
+    respond_to do |format|
+      # if no input in form
+      format.html do
+        redirect_to player_game_path(@player_game)
+      end
+      #if json input (game_input_controller.js)
+      format.json do
+        render json: {game_content: render_to_string(partial: "player_games/game_content", locals: { player_game: @player_game }, formats: [:html])}
+      end
     end
+
+    #TODO : Manage errors on input
+    # if @input.save
+    #   redirect_to player_game_path(PlayerGame.find(params[:player_game_id]))
+    # else
+    #   redirect_to player_game_path(PlayerGame.find(params[:player_game_id]))
+    # end
   end
 
   def checkinput
