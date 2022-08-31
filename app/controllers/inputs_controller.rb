@@ -5,6 +5,15 @@ class InputsController < ApplicationController
     @input.player_game = @player_game
 
     @input.save
+
+
+
+    #Timer Game -------------
+
+      #check if title dowcase == input downcase
+
+
+    # Word input game -------------
     checkinput
     checkwin?
 
@@ -53,6 +62,8 @@ class InputsController < ApplicationController
       @player_game.save
     end
   end
+
+
 
   private
 
