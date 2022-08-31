@@ -16,4 +16,6 @@ class PlayerGamesController < ApplicationController
     @title = @player_game.game.movie.title
   end
 
+
+
 end

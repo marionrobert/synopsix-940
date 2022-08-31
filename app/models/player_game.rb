@@ -4,10 +4,7 @@ class PlayerGame < ApplicationRecord
   belongs_to :user
   belongs_to :game
   after_create :build_words, :build_words_title, :hidden_synopsis, :hidden_title
-  enum type: {
-    word_input: 0,
-    timer: 1,
-  }
+
 
   delegate :movie, to: :game # == game.movie
 
@@ -71,6 +68,24 @@ class PlayerGame < ApplicationRecord
 
   # >>>> Version 2 : traiter le titre comme un ensemble de mots
   def hidden_title
+    #TODO Call hiddentitle_timer if TIMER game
+    hidden_title_input
+
+  end
+
+  def hidden_title_timer
+    displayed_title = self.game.movie.title.split(/\b/)
+
+    # display le film caché sauf si le title_found = true
+    displayed_title.map! do |element|
+      next "<span>#{element}</span>" unless element.downcase.first =~ /([a-z]|\d)/
+
+      "<span style='background-color: black'>#{element.chars.map { '&nbsp' }.join}</span>".html_safe
+    end
+    displayed_title.join.html_safe
+  end
+
+  def hidden_title_input
     displayed_title = self.game.movie.title.split(/\b/)
 
     # display le film caché sauf si le title_found = true

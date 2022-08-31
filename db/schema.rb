@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_31_132230) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_31_142425) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -53,6 +53,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_31_132230) do
     t.bigint "movie_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "gametype", default: 0
     t.index ["movie_id"], name: "index_games_on_movie_id"
   end
 
@@ -83,7 +84,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_31_132230) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.jsonb "words_title"
-    t.integer "type"
     t.index ["game_id"], name: "index_player_games_on_game_id"
     t.index ["user_id"], name: "index_player_games_on_user_id"
   end
