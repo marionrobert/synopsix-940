@@ -1,16 +1,27 @@
 .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  background-color: bisque;
-  width: 200px;
+  height: 200px;
+  width: 250px;
   border-radius: 8px;
+  background-image: url(bg_category.png);
+  background-size: cover;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .card-active {
-  background-color: green !important;
+  background-image: url(bg_category_active.png);
 }
 
 
+.btn {
+  background-color:  #DB222A;
+  border-radius: 30px;
+  padding: 10px;
+  color: white
 
+}
 
 // .unselected-category-card {
 //   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);

@@ -1,18 +1,16 @@
-<h1>Welcome to Synopsix</h1>
-<h2>Choose a Category</h2>
 
-<div data-controller="categories">
+<div class="container">
+<h1 class="d-flex align-items-center justify-content-center">Choose your category</h1>
+
+<div class='d-flex justify-content-around py-5' data-controller="categories">
   <% Category.all.each.with_index do |category, index| %>
-    <div class="card" data-action="click->categories#select" data-number="<%=index+1%>"
-         data-categories-target="card">
-      <div>
-        <div id="box"></div>
-        <button id="btn"><%=category.name%></button>
-      </div>
+    <div class="card d-flex align-items-center justify-content-center" data-action="click->categories#select" data-number="<%=index+1%>" data-categories-target="card">
+      <%= category.name %>
     </div>
   <%end%>
+</div>
 
-    <%= simple_form_for [@player_game] do |f| %>
+    <%= simple_form_for [@player_game], html: {class: "d-flex align-items-center justify-content-center"} do |f| %>
       <%= f.error_notification %>
       <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
@@ -23,7 +21,7 @@
                   collection: Category.all %>
       </div>
 
-      <%= f.submit "Start the game", class: "btn btn-primary"%>
+      <%= f.submit "Start the game", class: "btn" %>
     <% end %>
 </div>
 
