@@ -1,13 +1,20 @@
-<div class="container">
-  <h1 class="d-flex align-items-center justify-content-center">Choose your category</h1>
+<div class="container py-5">
+  <h2 class="d-flex align-items-center justify-content-center py-5">Choose your category</h2>
 
-  <div class='d-flex justify-content-around py-5' data-controller="categories">
+  <div class='d-flex justify-content-around py-5 carousel leftscroll' data-controller="categories">
     <% Category.all.each.with_index do |category, index| %>
       <div class="card d-flex align-items-center justify-content-center" data-action="click->categories#select" data-number="<%= category.id %>" data-categories-target="card">
         <%= category.name %>
       </div>
     <%end%>
   </div>
+    <div class="scroll-button-left">
+      <p><</p>
+    </div>
+
+    <div class="scroll-button-right">
+      <p>></p>
+    </div>
 
   <%= simple_form_for [@player_game], html: {class: "d-flex align-items-center justify-content-center"} do |f| %>
     <%= f.error_notification %>
@@ -23,3 +30,5 @@
     <%= f.submit "Start the game", class: "btn" %>
   <% end %>
 </div>
+ <script src="carousel_left.js"></script>
+ <script src="carousel_right.js"></script>
