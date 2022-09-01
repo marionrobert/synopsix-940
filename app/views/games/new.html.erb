@@ -4,7 +4,7 @@
   <div class='d-flex py-5 carousel leftscroll' data-controller="categories">
     <% Category.all.each.with_index do |category, index| %>
       <div data-action="click->categories#darken" data-categories-target="gradient" class="linear-gradient card-wrapper">
-        <div class="card d-flex align-items-center justify-content-center" style="background-image: url(<%=cl_image_path category.photo.key %>);"
+        <div class="card d-flex align-items-center justify-content-center" style="background-image: url(<%= category.photo.attached? ? cl_image_path(category.photo.key) : image_path('categories/bg_category.png') %>);"
             data-action="click->categories#select" data-number="<%= category.id %>" data-categories-target="card">
           <%= category.name %>
         </div>
