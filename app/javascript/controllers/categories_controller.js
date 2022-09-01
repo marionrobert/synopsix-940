@@ -18,3 +18,4 @@ export default class extends Controller {
     card.classList.add("card-active");
   }
 }
+
