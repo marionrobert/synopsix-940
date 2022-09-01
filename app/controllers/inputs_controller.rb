@@ -7,31 +7,43 @@ class InputsController < ApplicationController
     @input.save
 
 
-
-    #Timer Game -------------
-
+    if @player_game.game.game_type == "timer"
+      #Timer Game -------------
+      p "HELLO 😊"
+      # binding.pry
       #check if title dowcase == input downcase
-
-
-    # Word input game -------------
-    checkinput
-    checkwin?
-
-    #managing ajax rendering on the page
-    respond_to do |format|
-      # if no input in form
-      format.html do
-        redirect_to player_game_path(@player_game)
+      if @input.content == @player_game.game.movie.title.downcase
+        @player_game.title_found = true
+        @player_game.save
       end
-      #if json input (game_input_controller.js)
-      format.json do
-        render json: {game_content: render_to_string(partial: "player_games/game_content", locals: { player_game: @player_game }, formats: [:html])}
+
+      respond_to do |format|
+        # if no input in form
+        format.html do
+          redirect_to player_game_path(@player_game)
+        end
+        #if json input (game_input_controller.js)
+        format.json do
+          render json: game_json
+        end
+      end
+    else
+      # Word input game -------------
+      checkinput
+      checkwin?
+
+      #managing ajax rendering on the page
+      respond_to do |format|
+        # if no input in form
+        format.html do
+          redirect_to player_game_path(@player_game)
+        end
+        #if json input (game_input_controller.js)
+        format.json do
+          render json: game_json
+        end
       end
     end
-
-
-
-
     #TODO : Manage errors on input
     # if @input.save
     #   redirect_to player_game_path(PlayerGame.find(params[:player_game_id]))
@@ -63,6 +75,16 @@ class InputsController < ApplicationController
     end
   end
 
+  def game_json
+    {
+      game_content: render_to_string(
+        partial: "player_games/game_content",
+        locals: { player_game: @player_game },
+        formats: [:html]
+      ),
+      win: @player_game.title_found
+    }
+  end
 
 
   private

@@ -1,4 +1,9 @@
- <div class="container" data-controller="game-input">
+ <div class="container"
+  data-controller="game-input"
+  data-game-input-gametype-value="<%= @player_game.game.game_type %>"
+  data-game-input-timerpath-value="<%= player_game_timers_path(@player_game) %>"
+  data-game-input-numwords-value="<%= @player_game.words.keys.count %>"
+ >
 
   <div class="mt-5">
     <%= simple_form_for([ @player_game, @input],
@@ -20,7 +25,8 @@
   </div>
 
   <div data-game-input-target="gameContent">
-    <%= render "game_content", player_game: @player_game %>
+
+      <%= render "game_content", player_game: @player_game %>
+
   </div>
 </div>
-
