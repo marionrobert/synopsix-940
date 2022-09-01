@@ -1,0 +1,14 @@
+
+<%= simple_form_for([ player_game, input],
+  data: {
+    game_input_target: "form",
+    action: "submit->game-input#send"
+  }) do |f| %>
+    <div class="form-inputs">
+      <%= f.input :content, label: " Guess a word", input_html: { data: { game_input_target: 'input'}} %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, "Play" %>
+    </div>
+<% end %>
