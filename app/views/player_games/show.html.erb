@@ -8,7 +8,9 @@
   <div class="mt-5">
     <%= render "form_input", player_game: @player_game, input: @input %>
   </div>
-
+  <% if @player_game.game.timer? %>
+    <div data-game-input-target="timer"></div>
+  <% end %>
   <div data-game-input-target="gameContent">
 
       <%= render "game_content", player_game: @player_game %>
