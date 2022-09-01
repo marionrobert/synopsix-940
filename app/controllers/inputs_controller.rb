@@ -4,35 +4,63 @@ class InputsController < ApplicationController
     @input = Input.new(input_params)
     @input.player_game = @player_game
 
-    #Timer Game -------------
+    @input.save
+
+
+    if @player_game.game.game_type == "timer"
+      #Timer Game -------------
+      p "HELLO 😊"
+      # binding.pry
+
       #check if title dowcase == input downcase
-
-    # Word input game -------------
-
-    respond_to do |format|
-      if @input.save
-        checkinput
-        checkwin?
-        format.html {redirect_to player_game_path(@player_game)}
+      if @input.content == @player_game.game.movie.title.downcase
+        @player_game.title_found = true
+        @player_game.save
+      end
+      respond_to do |format|
+        # if no input in form
+        format.html do
+          redirect_to player_game_path(@player_game)
+        end
         #if json input (game_input_controller.js)
         format.json do
-          render json: {
-            game_content: render_to_string(partial: "player_games/game_content", locals: { player_game: @player_game }, formats: [:html]),
-            form_input: render_to_string(partial: "player_games/form_input", locals: { player_game: @player_game, input: Input.new}, formats: [:html])
-          }
+          render json: game_json
         end
+      end
+    else
+      respond_to do |format|
+        if @input.save
+          checkinput
+          checkwin?
+          format.html {redirect_to player_game_path(@player_game)}
+          #if json input (game_input_controller.js)
+          format.json do
+            render json: {
+              game_content: render_to_string(partial: "player_games/game_content", locals: { player_game: @player_game }, formats: [:html]),
+              form_input: render_to_string(partial: "player_games/form_input", locals: { player_game: @player_game, input: Input.new}, formats: [:html])
+            }
+          end
 
-      else
-        format.html {redirect_to player_game_path(@player_game)}
-        # if json input (game_input_controller.js)
-        format.json do
-          render json: {
-            game_content: render_to_string(partial: "player_games/game_content", locals: { player_game: @player_game }, formats: [:html]),
-            form_input: render_to_string(partial: "player_games/form_input", locals: { player_game: @player_game, input: @input}, formats: [:html])
-          }
+        else
+          format.html {redirect_to player_game_path(@player_game)}
+          # if json input (game_input_controller.js)
+          format.json do
+            render json: {
+              game_content: render_to_string(partial: "player_games/game_content", locals: { player_game: @player_game }, formats: [:html]),
+              form_input: render_to_string(partial: "player_games/form_input", locals: { player_game: @player_game, input: @input}, formats: [:html])
+            }
+          end
         end
       end
     end
+    #TODO : Manage errors on input
+    # if @input.save
+    #   redirect_to player_game_path(PlayerGame.find(params[:player_game_id]))
+    # else
+    #   redirect_to player_game_path(PlayerGame.find(params[:player_game_id]))
+    # end
+
+
   end
 
   def checkinput
@@ -56,6 +84,20 @@ class InputsController < ApplicationController
       @player_game.save
     end
   end
+
+
+  def game_json
+    {
+      game_content: render_to_string(
+        partial: "player_games/game_content",
+        locals: { player_game: @player_game },
+        formats: [:html]
+      ),
+      win: @player_game.title_found
+    }
+  end
+
+
 
   private
 

@@ -53,7 +53,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_31_142425) do
     t.bigint "movie_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "gametype", default: 0
+    t.integer "game_type", default: 0
     t.index ["movie_id"], name: "index_games_on_movie_id"
   end
 
@@ -80,6 +80,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_31_142425) do
     t.bigint "game_id", null: false
     t.integer "final_score"
     t.boolean "title_found"
+    t.jsonb "words"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.jsonb "words_title"
