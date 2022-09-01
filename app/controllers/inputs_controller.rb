@@ -8,7 +8,6 @@ class InputsController < ApplicationController
       #check if title dowcase == input downcase
 
     # Word input game -------------
-
     respond_to do |format|
       if @input.save
         checkinput
@@ -38,6 +37,7 @@ class InputsController < ApplicationController
   def checkinput
     # si l'input est compris dans words ou dans words_title
     # alors je change le statut de word : found = true
+    update_score_proximity
     if @player_game.words.key?(@input.content)
       @player_game.words[@input.content]["found"] = true
       @player_game.save
@@ -49,12 +49,40 @@ class InputsController < ApplicationController
   end
 
   def checkwin?
-    # si l'input string est strictement égal au title OU si tous les words du
-    # title ont un statut found true, alors le titre est découvert jeu est gagné
     if @input.content == @player_game.game.movie.title.downcase || @player_game.words_title.all? { |key, value| value["found"] == true }
       @player_game.title_found = true
       @player_game.save
     end
+  end
+
+  def update_score_proximity
+    @player_game.words.each_key do |word|
+
+      new_score = JaroWinkler.distance(word, @input.content)
+      if new_score > @player_game.words[word]["score_proximity"] #current_score
+        if new_score >= 0.95
+          @player_game.words[word]["found"] = true
+        else
+          @player_game.words[word]["score_proximity"] = new_score
+          @player_game.words[word]["input_to_display"] = @input.content
+        end
+      end
+
+    end
+    @player_game.words_title.each_key do |word|
+      new_score = JaroWinkler.distance(word, @input.content)
+
+      if new_score > @player_game.words_title[word]["score_proximity"] #current_score
+        if new_score >= 0.95
+          @player_game.words[word]["found"] = true
+        else
+          @player_game.words_title[word]["score_proximity"] = new_score
+          @player_game.words_title[word]["input_to_display"] = @input.content
+
+        end
+      end
+    end
+    @player_game.save
   end
 
   private

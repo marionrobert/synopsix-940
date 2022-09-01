@@ -1,4 +1,6 @@
 class PlayerGame < ApplicationRecord
+  require 'jaro_winkler'
+
   attr_accessor :category
   has_many :inputs
   belongs_to :user
@@ -27,7 +29,7 @@ class PlayerGame < ApplicationRecord
 
     # pour chaque mot ajouter au hash avec le mot en clé et un hash (found: false)
     only_words_array.each do |w|
-      words[w.downcase] = {found: false}
+      words[w.downcase] = { found: false, score_proximity: 0.0, input_to_display: '&nbsp' }
     end
 
     # update instance of player game
@@ -41,7 +43,7 @@ class PlayerGame < ApplicationRecord
     title_array = title.split( /\b/ )
     only_words_title = title_array.reject { |w| w =~ /\W+/ }
     only_words_title.each do |w|
-      words_title[w.downcase] = {found: false}
+      words_title[w.downcase] = {found: false, score_proximity: 0.0, input_to_display: '&nbsp' }
     end
     self.update(words_title: words_title)
   end
@@ -59,9 +61,13 @@ class PlayerGame < ApplicationRecord
       next "<span>#{element}</span>" unless element.downcase.first =~ /([a-z]|\d)/
 
       if self.words[element.downcase]["found"]
-        "<span>#{element}</span>"
+        "<span>#{element}</span>".html_safe
+      elsif self.words[element.downcase]["score_proximity"] >= 0.85
+        "<span style='background-color: red'>#{self.words[element.downcase]['input_to_display']}</span>".html_safe
+      elsif self.words[element.downcase]["score_proximity"] >= 0.75
+        "<span style='background-color: grey'>#{self.words[element.downcase]['input_to_display']}</span>".html_safe
       else
-        "<span style='background-color: black'>#{element.chars.map { '&nbsp' }.join}</span>"
+        "<span style='background-color: black'>#{element.chars.map { '&nbsp' }.join}</span>".html_safe
       end
     end
     #display_array to string + html.safe = à intepréter comme du html
@@ -96,10 +102,15 @@ class PlayerGame < ApplicationRecord
 
       if self.words_title[element.downcase]["found"]
         "<span>#{element}</span>".html_safe
+      elsif self.words_title[element.downcase]["score_proximity"] >= 0.85
+        "<span style='background-color: red'>#{self.words_title[element.downcase]['input_to_display']}</span>".html_safe
+      elsif self.words_title[element.downcase]["score_proximity"] >= 0.75
+        "<span style='background-color: grey'>#{self.words_title[element.downcase]['input_to_display']}</span>".html_safe
       else
         "<span style='background-color: black'>#{element.chars.map { '&nbsp' }.join}</span>".html_safe
       end
     end
     displayed_title.join.html_safe
   end
+
 end
