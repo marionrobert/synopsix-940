@@ -76,7 +76,6 @@ class PlayerGame < ApplicationRecord
 
   # >>>> Version 2 : traiter le titre comme un ensemble de mots
   def hidden_title
-    #TODO Call hiddentitle_timer if TIMER game
     hidden_title_input
 
   end

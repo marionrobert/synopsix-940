@@ -160,10 +160,21 @@ Category.destroy_all
 
 
 #CATEGORIES CREATION
-Category.create(name: "All")
-Category.create(name: "Blockbuster")
-Category.create(name: "Action")
-Category.create(name: "Drama")
+new_category = Category.create!(name: "All")
+file = File.open(Rails.root.join("app/assets/images/categories/all_movies.jpg"))
+new_category.photo.attach(io: file, filename: "all_movies.jpg", content_type: "image/jpeg")
+
+new_category = Category.create!(name: "Blockbuster")
+file = File.open(Rails.root.join("app/assets/images/categories/blockbuster_movies.jpg"))
+new_category.photo.attach(io: file, filename: "blockbuster_movies.jpg", content_type: "image/jpeg")
+
+new_category = Category.create!(name: "Action")
+file = File.open(Rails.root.join("app/assets/images/categories/action_movies.jpg"))
+new_category.photo.attach(io: file, filename: "action_movies.jpg", content_type: "image/jpeg")
+
+new_category = Category.create!(name: "Drama")
+file = File.open(Rails.root.join("app/assets/images/categories/drama_movies.jpg"))
+new_category.photo.attach(io: file, filename: "drama_movies.jpg", content_type: "image/jpeg")
 
 
 p "📁 Categories created"
@@ -193,4 +204,3 @@ data_hash.each_value do |movie|
 
   p "🎥 Movie #{movie["title"]} created"
 end
-

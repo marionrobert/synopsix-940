@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   resources :player_games, only: %i[ create show ] do
     resources :inputs, only: %i[ create ]
+    resources :timers, only: %i[ create ]
   end
 
   resources :movies, only: %i[ new create destroy]
