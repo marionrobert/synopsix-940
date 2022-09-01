@@ -1,26 +1,10 @@
  <div class="container" data-controller="game-input">
 
   <div class="mt-5">
-    <%= simple_form_for([ @player_game, @input],
-      data: {
-        game_input_target: "form",
-        action: "submit->game-input#send"
-      }) do |f| %>
-        <%= f.error_notification %>
-        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-        <div class="form-inputs">
-          <%= f.input :content, :label => " Guess a word" %>
-        </div>
-
-        <div class="form-actions">
-          <%= f.button :submit, "Play" %>
-        </div>
-    <% end %>
+    <%= render "form_input", player_game: @player_game, input: @input %>
   </div>
 
   <div data-game-input-target="gameContent">
     <%= render "game_content", player_game: @player_game %>
   </div>
 </div>
-

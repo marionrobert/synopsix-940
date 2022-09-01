@@ -2,10 +2,9 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="game-input"
 export default class extends Controller {
-  static targets = ["form", "gameContent"]
+  static targets = ["form", "gameContent", "input"]
 
   send(event) {
-    var input = document.getElementById("input_content")
     event.preventDefault()
     fetch(this.formTarget.action, {
       method: "POST",
@@ -15,12 +14,9 @@ export default class extends Controller {
       .then(response => response.json())
       .then((data) => {
         // render game content
+        this.formTarget.outerHTML = data.form_input
         this.gameContentTarget.innerHTML = data.game_content
-        // clear form input
-        input.value = ''
-
+        this.inputTarget.focus()
       })
-
-
   }
 }
