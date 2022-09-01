@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="game-input"
 export default class extends Controller {
-  static targets = ["form", "gameContent"]
+  static targets = ["form", "gameContent", "input"]
   static values = { gametype: String, timerpath: String, numwords: Number }
   connect(){
     this.count = 0
@@ -30,8 +30,8 @@ export default class extends Controller {
   // clearInterval(intervalId)
 
 
+
   send(event) {
-    var input = document.getElementById("input_content")
     event.preventDefault()
     fetch(this.formTarget.action, {
       method: "POST",
@@ -40,10 +40,14 @@ export default class extends Controller {
     })
       .then(response => response.json())
       .then((data) => {
+        console.log(data);
         // render game content
+        if(data.form_input){
+         this.formTarget.outerHTML = data.form_input
+        }
         this.gameContentTarget.innerHTML = data.game_content
         // clear form input
-        input.value = ''
+        if(this.hasInputTarget) this.inputTarget.focus()
         if(data.win){
           this.clear()
         }
@@ -51,6 +55,7 @@ export default class extends Controller {
   }
   wordRevealInterval=() => {
     const token = document.querySelector('meta[name="csrf-token"]').content
+    console.log(this.timerpathValue);
     fetch(this.timerpathValue, {
       method: "POST",
       headers: {
@@ -74,6 +79,5 @@ export default class extends Controller {
       clearInterval(this.interval)
     }
     //TODO : Change state of the game
-
   }
 }
