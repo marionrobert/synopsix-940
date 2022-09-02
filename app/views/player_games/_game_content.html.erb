@@ -1,5 +1,6 @@
-  <div class="mt-5">
-    <p>Last five tries:</p>
+<div class="row">
+  <div class="mt-5 col-2 bggameboard mx-5 pt-3">
+    <p class="text-center">Last five tries:</p>
     <ul>
       <% player_game.last_five_inputs.each_with_index do |input, index| %>
         <li><%= player_game.inputs.where(source: :input).count - index %> - <%= input.content %></li>
@@ -11,17 +12,17 @@
     <%# <p>Hint: <%= player_game.game.movie.title</p> %>
   <%# </div> %>
 
-  <div class="mt-5 bggameboard">
-    <% if player_game.title_found  %>
-      <h2>Congratulations, you win!</h2>
-      <h2>The title was: <%= player_game.game.movie.title %></h2>
-    <% else %>
-      <% if  @player_game.game.timer? %>
-        <h2><%= player_game.hidden_title_timer  %></h2>
+  <div class="mt-5 bggameboard col-8">
+      <% if player_game.title_found  %>
+        <h2>Congratulations, you win!</h2>
+        <h2>The title was: <%= player_game.game.movie.title %></h2>
       <% else %>
-        <h2><%= player_game.hidden_title  %></h2>
+        <% if  @player_game.game.timer? %>
+          <h2><%= player_game.hidden_title_timer  %></h2>
+        <% else %>
+          <h2><%= player_game.hidden_title  %></h2>
+        <% end %>
       <% end %>
-    <% end %>
-    <p><%= player_game.hidden_synopsis  %></p>
+      <p><%= player_game.hidden_synopsis  %></p>
   </div>
- </div>
+</div>
