@@ -43,13 +43,13 @@
 }
 
 .carousel {
-  padding-left: 360px;
-  padding-right: 700px;
+  // padding-left: 360px;
+  // padding-right: 700px;
   // margin-left: 215px;
   // margin-right: 215px;
   width: 90%;
   overflow-y: hidden;
-  scroll-snap-type: x mandatory;
+  scroll-snap-type: inline;
 }
 
 .carousel::-webkit-scrollbar {
