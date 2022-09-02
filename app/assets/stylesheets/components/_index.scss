@@ -7,6 +7,28 @@
 @import "footer";
 @import "timer";
 
+
+.arrowleft {
+  margin-right: 20px;
+  height: 10%;
+  width: auto;
+  z-index: 10;
+  rotate: 180deg;
+  left: 0px;
+  top: 300px;
+  width: 100px;
+}
+
+.arrowright {
+  margin-left: 20px;
+  height: 10%;
+  width: auto;
+  z-index: 10;
+  right: 0px;
+  width: 100px;
+  top: 300px;
+}
+
 body {
   color: #FFFFFF;
   min-height: 100vh;
