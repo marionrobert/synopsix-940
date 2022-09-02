@@ -204,3 +204,15 @@ data_hash.each_value do |movie|
 
   p "🎥 Movie #{movie["title"]} created"
 end
+
+comedy_category = Category.create!(name: "Comedy")
+file = File.open(Rails.root.join("app/assets/images/categories/comedy_movies.jpg"))
+comedy_category.photo.attach(io: file, filename: "comedy_movies.jpg", content_type: "image/jpeg")
+
+historical_category = Category.create!(name: "Historical")
+file = File.open(Rails.root.join("app/assets/images/categories/historical_movies.jpg"))
+historical_category.photo.attach(io: file, filename: "historical_movies.jpg", content_type: "image/jpeg")
+
+
+Movie.find_by(title: "Forrest Gump").update(category: historical_category)
+Movie.find_by(title: "The Wolf of Wall Street").update(category: comedy_category)
