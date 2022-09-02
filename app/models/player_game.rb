@@ -1,7 +1,7 @@
 class PlayerGame < ApplicationRecord
   require 'jaro_winkler'
 
-  attr_accessor :category
+  attr_accessor :category, :game_type
   has_many :inputs
   belongs_to :user
   belongs_to :game
