@@ -3,7 +3,7 @@ class InputsController < ApplicationController
     @player_game = PlayerGame.find(params[:player_game_id])
     @input = Input.new(input_params)
     @input.player_game = @player_game
-
+    
     @input.save
 
     if @player_game.game.game_type == "timer"

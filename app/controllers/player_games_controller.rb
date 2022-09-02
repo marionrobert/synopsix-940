@@ -12,8 +12,14 @@ class PlayerGamesController < ApplicationController
     @hidden_title = @player_game.hidden_title
     @hidden_synopsis = @player_game.hidden_synopsis
     @input = Input.new
-    @inputs = @player_game.inputs
     @title = @player_game.game.movie.title
+
+    #managing source of inputs
+    if @player_game.game.input?
+      @inputs = @player_game.inputs
+    else
+      @inputs = @player_game.inputs.where(source: :input)
+    end
   end
 
 
