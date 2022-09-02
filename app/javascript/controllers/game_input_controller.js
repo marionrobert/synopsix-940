@@ -11,7 +11,7 @@ export default class extends Controller {
     this.count = 0
     console.log(this.gametypeValue);
     if(this.gametypeValue == "timer"){
-
+      this.initTimer()
       this.interval = setInterval(this.wordRevealInterval, 3000);
       this.timeOut = setTimeout(this.endGame, this.timeOutValue)
    }
@@ -86,7 +86,7 @@ export default class extends Controller {
     //TODO : Change state of the game
   }
 
-  initTimer() {
+  initTimer= () => {
       // Credit: Mateusz Rybczonec
 
   const FULL_DASH_ARRAY = 283;
