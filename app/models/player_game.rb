@@ -11,7 +11,7 @@ class PlayerGame < ApplicationRecord
   delegate :movie, to: :game # == game.movie
 
   def last_five_inputs
-    inputs.order(created_at: :desc).first(5)
+    inputs.input.order(created_at: :desc).first(5)
   end
 
   def build_words

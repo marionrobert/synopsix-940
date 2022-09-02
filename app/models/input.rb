@@ -1,9 +1,11 @@
 class Input < ApplicationRecord
   belongs_to :player_game
-
   before_save :downcase_content
-
   validate :check_english_word
+  enum source: {
+    input: 0,
+    timer: 1,
+  }
 
   def downcase_content
     self.content = self.content.downcase
