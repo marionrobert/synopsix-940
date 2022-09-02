@@ -1,17 +1,16 @@
 <div class="d-flex justify-content-center maindiv">
   <div class="text-center gamemodesolo">
     <p class="mb-5">Word discover</p>
-      <%=link_to "Solo", new_game_path, class: "btnplay mt-3"%>
+      <%=link_to "Solo", new_game_path(game_type: 0), class: "btnplay mt-3"%>
   </div>
 
   <div class="text-center gamemodemulti">
     <p class="mb-5">Against time</p>
     <div class="d-block">
-      <%=link_to "Solo", new_game_path, class: "btnplay"%>
+      <%=link_to "Solo", new_game_path(game_type: 1), class: "btnplay"%>
       <br><br>
       <%=link_to "Multijoueur", new_game_path, class: "btnplay mt-3"%>
     </div>
   </div>
 </div>
 <%= render "shared/footer" %>
-
