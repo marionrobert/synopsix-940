@@ -1,16 +1,23 @@
 <div class="container py-5">
   <h1 class="d-flex align-items-center justify-content-center py-5">Choose your category</h1>
-
-  <div class='d-flex py-5 carousel leftscroll' data-controller="categories">
-    <% Category.all.each.with_index do |category, index| %>
-      <div data-action="click->categories#darken" data-categories-target="gradient" class="linear-gradient card-wrapper">
-        <div class="card d-flex align-items-center justify-content-center" style="background-image: url(<%= category.photo.attached? ? cl_image_path(category.photo.key) : image_path('categories/bg_category.png') %>);"
-            data-action="click->categories#select" data-number="<%= category.id %>" data-categories-target="card">
-          <%= category.name %>
-        </div>
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="d-flex arrowleft">
+        <%=image_tag "arrow.svg"%>
       </div>
-    <%end%>
-  </div>
+      <div class='d-flex py-2 carousel leftscroll' data-controller="categories">
+        <% Category.all.each.with_index do |category, index| %>
+          <div data-action="click->categories#darken" data-categories-target="gradient" class="linear-gradient card-wrapper">
+            <div class="card d-flex align-items-center justify-content-center" style="background-image: url(<%= category.photo.attached? ? cl_image_path(category.photo.key) : image_path('categories/bg_category.png') %>);"
+                data-action="click->categories#select" data-number="<%= category.id %>" data-categories-target="card">
+              <%= category.name %>
+            </div>
+          </div>
+        <%end%>
+      </div>
+      <div class="d-flex arrowright align-items-center">
+        <%=image_tag "arrow.svg"%>
+      </div>
+    </div>
 
   <%= simple_form_for @player_game, html: {class: "d-flex align-items-center justify-content-center"} do |f| %>
     <%= f.error_notification %>

@@ -4,7 +4,7 @@ class TimersController < ApplicationController
     @player_game = PlayerGame.find(params[:player_game_id])
     #TODO replace to by random word not already revealed
     @word = find_word
-    @input = Input.new(content: @word)
+    @input = Input.new(content: @word, source: :timer)
     @input.player_game = @player_game
 
     @input.save

@@ -3,7 +3,7 @@
     <p class="text-center">Last five tries:</p>
     <ul>
       <% player_game.last_five_inputs.each_with_index do |input, index| %>
-        <li><%= player_game.inputs.count - index %> - <%= input.content %></li>
+        <li><%= player_game.inputs.where(source: :input).count - index %> - <%= input.content %></li>
       <% end %>
     </ul>
   </div>

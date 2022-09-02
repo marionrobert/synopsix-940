@@ -1,10 +1,10 @@
 .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  height: 200px;
-  width: 600px;
-  border-radius: 10px;
+  height: 300px;
+  width: 370px;
+  border-radius: 5px;
   background-size: cover;
-  color: white;
+  color: rgba(255, 255, 255, 1);
   font-size: 35px;
   font-weight: bolder;
   flex-shrink: 0;
@@ -12,10 +12,11 @@
   border: black;
   border-width: 2px;
   border-style: solid;
+  text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
 }
 
 .card-active {
-  border: gold;
+  border: red;
   border-width: 5px;
   border-style: solid;
   opacity: 1;
@@ -37,12 +38,16 @@
 
 .card-wrapper {
   scroll-snap-align: start end;
-  margin-right: 20px;
+  margin-right: 120px;
   border-radius: 10px;
 }
 
 .carousel {
-  width: 100%;
+  padding-left: 360px;
+  padding-right: 700px;
+  // margin-left: 215px;
+  // margin-right: 215px;
+  width: 90%;
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
 }

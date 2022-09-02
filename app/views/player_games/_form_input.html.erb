@@ -1,16 +1,18 @@
+<% label = player_game.game.input? ? "Guess a word" : "Guess the title" %>
 
-<%= simple_form_for([ player_game, input],
+<%= simple_form_for([player_game, input],
   data: {
     game_input_target: "form",
     action: "submit->game-input#send"
   }) do |f| %>
-    <div class="d-flex">
-      <div class="form-inputs p-0">
-        <%= f.input :content, label: " Guess a word", input_html: { data: { game_input_target: 'input'}} %>
-      </div>
 
+    <div class="d-flex">
+      <div class="form-inputs">
+        <%= f.input :content, label: label, input_html: { data: { game_input_target: 'input'}} %>
+      </div>
       <div class="mt-4 form-actions">
         <%= f.button :submit, "Play" %>
       </div>
     </div>
 <% end %>
+<% console %>

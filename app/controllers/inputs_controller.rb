@@ -23,16 +23,34 @@ class InputsController < ApplicationController
           format.html {redirect_to player_game_path(@player_game)}
           format.json do
             render json: {
-              game_content: render_to_string(partial: "player_games/game_content", locals: { player_game: @player_game }, formats: [:html]),
-              form_input: render_to_string(partial: "player_games/form_input", locals: { player_game: @player_game, input: Input.new}, formats: [:html])
+              game_content: render_to_string(
+                partial: "player_games/game_content",
+                locals: { player_game: @player_game },
+                formats: [:html]
+              ),
+              form_input: render_to_string(
+                partial: "player_games/form_input",
+                locals: { player_game: @player_game, input: Input.new},
+                formats: [:html]
+              ),
+              win: @player_game.title_found
             }
           end
         else
           format.html {redirect_to player_game_path(@player_game)}
           format.json do
             render json: {
-              game_content: render_to_string(partial: "player_games/game_content", locals: { player_game: @player_game }, formats: [:html]),
-              form_input: render_to_string(partial: "player_games/form_input", locals: { player_game: @player_game, input: @input}, formats: [:html])
+              game_content: render_to_string(
+                partial: "player_games/game_content",
+                locals: { player_game: @player_game },
+                formats: [:html]
+              ),
+              form_input: render_to_string(
+                partial: "player_games/form_input",
+                locals: { player_game: @player_game, input: @input},
+                formats: [:html]
+              ),
+              win: @player_game.title_found
             }
           end
         end
@@ -78,7 +96,7 @@ class InputsController < ApplicationController
 
       if new_score > @player_game.words_title[word]["score_proximity"] #current_score
         if new_score >= 0.95
-          @player_game.words[word]["found"] = true
+          @player_game.words_title[word]["found"] = true
         else
           @player_game.words_title[word]["score_proximity"] = new_score
           @player_game.words_title[word]["input_to_display"] = @input.content
