@@ -12,7 +12,7 @@
     <%end%>
   </div>
 
-  <%= simple_form_for [@player_game], html: {class: "d-flex align-items-center justify-content-center"} do |f| %>
+  <%= simple_form_for @player_game, html: {class: "d-flex align-items-center justify-content-center"} do |f| %>
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
@@ -26,5 +26,3 @@
     <%= f.submit "Start the game", class: "btn" %>
   <% end %>
 </div>
- <script src="carousel_left.js"></script>
- <script src="carousel_right.js"></script>
