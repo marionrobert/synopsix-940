@@ -1,12 +1,18 @@
 <div class="row">
-  <div class="mt-5 col-2 bggameboard mx-5 pt-3">
-    <p class="text-center">Last five tries:</p>
-    <ul>
-      <% player_game.last_five_inputs.each_with_index do |input, index| %>
-        <li><%= player_game.inputs.where(source: :input).count - index %> - <%= input.content %></li>
-      <% end %>
-    </ul>
-  </div>
+  <% if player_game.title_found %>
+    <div class="col-2 mx-5 poster">
+        <%= image_tag "#{player_game.game.movie.poster}"%>
+    </div>
+  <% else %>
+    <div class="mt-5 col-2 bggameboard mx-5 pt-3">
+        <p class="text-center">Last five tries:</p>
+        <ul>
+          <% player_game.last_five_inputs.each_with_index do |input, index| %>
+            <li><%= player_game.inputs.where(source: :input).count - index %> - <%= input.content %></li>
+          <% end %>
+        </ul>
+      </div>
+  <% end %>
 
   <%# <div> %>
     <%# <p>Hint: <%= player_game.game.movie.title</p> %>
