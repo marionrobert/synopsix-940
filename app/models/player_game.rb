@@ -99,6 +99,7 @@ class PlayerGame < ApplicationRecord
     # display le film caché sauf si le title_found = true
     displayed_title.map! do |element|
       next "<span>#{element}</span>" unless element.downcase.first =~ /([a-z]|\d)/
+      
 
 
       if self.words_title[element.downcase]["found"]
@@ -109,6 +110,7 @@ class PlayerGame < ApplicationRecord
         "<span class='far_to_found'>&nbsp#{self.words_title[element.downcase]['input_to_display']}&nbsp</span>".html_safe
       else
         "<span class='not_found'>&nbsp#{element.chars.map { '&nbsp' }.join}&nbsp</span>".html_safe
+
       end
     end
     displayed_title.join.html_safe

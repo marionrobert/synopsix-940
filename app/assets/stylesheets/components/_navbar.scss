@@ -46,3 +46,17 @@
 .colortextlogo:hover {
   color: $light-gray;
 }
+
+.loginlogo {
+  color: #db222a;
+  &:hover {
+    color: #A31621;
+  }
+}
+
+.signuplogo {
+  color: #db222a;
+  &:hover {
+    color: #A31621;
+}
+}

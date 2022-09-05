@@ -116,7 +116,10 @@ class InputsController < ApplicationController
         locals: { player_game: @player_game },
         formats: [:html]
       ),
-      win: @player_game.title_found
+      win: @player_game.title_found,
+      synopsis:  @player_game.game.movie.synopsis,
+      title:  @player_game.game.movie.title,
+      poster: @player_game.game.movie.poster
     }
   end
 
