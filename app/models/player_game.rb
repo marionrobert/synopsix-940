@@ -61,13 +61,13 @@ class PlayerGame < ApplicationRecord
       next "<span>#{element}</span>" unless element.downcase.first =~ /([a-z]|\d)/
 
       if self.words[element.downcase]["found"]
-        "<span>#{element}</span>".html_safe
+        "<span class='founded'>#{element}</span>".html_safe
       elsif self.words[element.downcase]["score_proximity"] >= 0.85
-        "<span style='background-color: red'>#{self.words[element.downcase]['input_to_display']}</span>".html_safe
+        "<span class='not_far_to_found'>#{self.words[element.downcase]['input_to_display']}</span>".html_safe
       elsif self.words[element.downcase]["score_proximity"] >= 0.75
-        "<span style='background-color: grey'>#{self.words[element.downcase]['input_to_display']}</span>".html_safe
+        "<span class='far_to_found'>#{self.words[element.downcase]['input_to_display']}</span>".html_safe
       else
-        "<span style='background-color: black'>#{element.chars.map { '&nbsp' }.join}</span>".html_safe
+        "<span class='not_found'>#{element.chars.map { '&nbsp' }.join}</span>".html_safe
       end
     end
     #display_array to string + html.safe = à intepréter comme du html
