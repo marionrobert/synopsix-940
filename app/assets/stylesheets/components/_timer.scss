@@ -1,10 +1,3 @@
-body {
-  font-family: sans-serif;
-  display: grid;
-  height: 100vh;
-  place-items: center;
-}
-
 .base-timer {
   position: relative;
   width: 100px;
@@ -22,7 +15,7 @@ body {
 
 .base-timer__path-elapsed {
   stroke-width: 7px;
-  stroke: grey;
+  stroke: #DAD6D6;
 }
 
 .base-timer__path-remaining {
@@ -36,15 +29,15 @@ body {
 }
 
 .base-timer__path-remaining.green {
-  color: rgb(65, 184, 131);
+  color: #407076;
 }
 
 .base-timer__path-remaining.orange {
-  color: orange;
+  color: #A31621;
 }
 
 .base-timer__path-remaining.red {
-  color: red;
+  color: #DB222A;
 }
 
 .base-timer__label {

@@ -1,17 +1,43 @@
-<div class="d-flex navbar">
-  <%= link_to root_path, class: "text-decoration-none colortextlogo" do  %>
-  <div class="clap d-flex">
-    <%=image_tag "clap.svg"%>
-    <p class="mt-3 mx-4">SYNOPSIX</p>
-  </div>
-  <% end %>
+<div class="navbar navbar-expand-sm navbar-light navbar-synopsix">
+  <div class="container-fluid">
+    <%= link_to root_path, class: "text-decoration-none colortextlogo" do  %>
+      <div class="title">
+        <%=image_tag "clap.svg"%>
+        <h2>SYNOPSIX</h2>
+      </div>
+    <% end %>
 
-  <div class="justify-content-between">
-    <button id="loginbtn" class="btnsyno">
-      <%= link_to "Login", new_user_session_path, class: "text-decoration-none loginlogo" %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
-    <button id="signupbtn" class="btnsyno mx-5">
-      <%= link_to "Signup", new_user_registration_path, class: "text-decoration-none signuplogo"  %>
-    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+        <%# if user_signed_in? %>
+          <% if user_signed_in? %>
+            <li class="nav-item active">
+              <%= link_to "Dashboard", dashboard_path, class: "pt-2 nav-link btnsyno" %>
+            </li>
+          <% else %>
+            <%= link_to "Login", new_user_session_path, class: " btnsyno text-decoration-none" %>
+            <%= link_to "Signup", new_user_registration_path, class: "btnsyno text-decoration-none"  %>
+          <% end %>
+          <% if user_signed_in? %>
+            <li class="nav-item dropdown">
+              <%= cl_image_tag current_user.photo.key, width:50, height: 50, class:"dropdown-toggle rounded-circle", data: {bs_toggle: "dropdown"} %>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <%= link_to "Go to my dashboard", dashboard_path, class: "dropdown-item" %>
+                <%= link_to "Logout", destroy_user_session_path, 'data-turbo-method': :delete, class: "dropdown-item"%>
+              </div>
+            </li>
+          <% end %>
+        <%# else %>
+          <!--li class="nav-item"-->
+            <%#= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <!--/li-->
+        <%# end %>
+      </ul>
+    </div>
   </div>
 </div>
+

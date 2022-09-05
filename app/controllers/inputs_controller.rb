@@ -1,4 +1,6 @@
 class InputsController < ApplicationController
+  require 'similar_text'
+
   def create
     @player_game = PlayerGame.find(params[:player_game_id])
     @input = Input.new(input_params)
@@ -9,6 +11,7 @@ class InputsController < ApplicationController
     if @player_game.game.game_type == "timer"
       if @input.content == @player_game.game.movie.title.downcase
         @player_game.title_found = true
+        @player_game.final_score = @player_game.calculate_score
         @player_game.save
       end
       respond_to do |format|
@@ -73,6 +76,7 @@ class InputsController < ApplicationController
   def checkwin?
     if @input.content == @player_game.game.movie.title.downcase || @player_game.words_title.all? { |key, value| value["found"] == true }
       @player_game.title_found = true
+      @player_game.final_score = @player_game.calculate_score
       @player_game.save
     end
   end
@@ -80,9 +84,9 @@ class InputsController < ApplicationController
   def update_score_proximity
     @player_game.words.each_key do |word|
 
-      new_score = JaroWinkler.distance(word, @input.content)
+      new_score = word.similar(@input.content) / 100
       if new_score > @player_game.words[word]["score_proximity"] #current_score
-        if new_score >= 0.95
+        if new_score >= 0.9
           @player_game.words[word]["found"] = true
         else
           @player_game.words[word]["score_proximity"] = new_score
@@ -91,8 +95,10 @@ class InputsController < ApplicationController
       end
 
     end
+
+
     @player_game.words_title.each_key do |word|
-      new_score = JaroWinkler.distance(word, @input.content)
+      new_score = word.similar(@input.content) / 100
 
       if new_score > @player_game.words_title[word]["score_proximity"] #current_score
         if new_score >= 0.95
@@ -114,9 +120,9 @@ class InputsController < ApplicationController
         locals: { player_game: @player_game },
         formats: [:html]
       ),
-      win: @player_game.title_found
-      synospis:  @player_game.game.movie.synopsis
-      title:  @player_game.game.movie.title
+      win: @player_game.title_found,
+      synopsis:  @player_game.game.movie.synopsis,
+      title:  @player_game.game.movie.title,
       poster: @player_game.game.movie.poster
     }
   end

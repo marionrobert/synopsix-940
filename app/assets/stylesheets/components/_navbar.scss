@@ -1,21 +1,31 @@
-.navbar {
-  position: fixed;
+.navbar-synopsix {
+  justify-content: space-between;
   background-color: #0E1116;
-  border-bottom: 2px solid #FFFFFF;
-  top: 0px;
-  color: #FFFFFF;
-  height: 80px;
+  border-bottom: 2px solid $light-gray;
   width: 100%;
+  color: $light-gray;
+  height: 80px;
+
+  .title{
+    display: flex;
+    align-items: center;
+    gap:16px
+  }
 }
 
-.fontnavbar {
-  // padding-top: 32px;
-  font-family: Inter;
-  line-height: 17px;
-  text-align: center;
+.navbar-toggler-icon {
+  color: $light-gray;
 }
 
-.clap {
+.navbar-synopsix .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-synopsix .navbar-brand img {
+  width: 40px;
+}
+
+.navbar-synopsix clap {
   font-family: Inter;
   font-style: bold;
   font-weight: 500;
@@ -25,38 +35,79 @@
   width: auto;
 }
 
-#loginbtn #signupbtn{
-  font-weight: bold;
-  font-size: 18px;
-  top:25px;
-}
-
-#loginbtn {
-  right: 150px;
-}
-
-#signupbtn {
-  right: 50px;
-}
-
-.colortextlogo {
-  color: $grey;
-}
-
-.colortextlogo:hover {
+.navbar-synopsix h2 {
   color: $light-gray;
+  font-size: 24px;
+  margin:0
 }
 
-.loginlogo {
-  color: #db222a;
-  &:hover {
-    color: #A31621;
-  }
+.nav-item {
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
 }
 
-.signuplogo {
-  color: #db222a;
-  &:hover {
-    color: #A31621;
-}
-}
+
+
+// .navbar {
+//   position: fixed;
+//   background-color: #0E1116;
+//   border-bottom: 2px solid #FFFFFF;
+//   top: 0px;
+//   color: #FFFFFF;
+//   height: 80px;
+//   width: 100%;
+// }
+
+// .fontnavbar {
+//   // padding-top: 32px;
+//   font-family: Inter;
+//   line-height: 17px;
+//   text-align: center;
+// }
+
+// .clap {
+//   font-family: Inter;
+//   font-style: bold;
+//   font-weight: 500;
+//   font-size: 24px;
+//   margin-left: 30px;
+//   height: 60;
+//   width: auto;
+// }
+
+// #loginbtn #signupbtn{
+//   font-weight: bold;
+//   font-size: 18px;
+//   top:25px;
+// }
+
+// #loginbtn {
+//   right: 150px;
+// }
+
+// #signupbtn {
+//   right: 50px;
+// }
+
+// .colortextlogo {
+//   color: $grey;
+// }
+
+// .colortextlogo:hover {
+//   color: $light-gray;
+// }
+
+// .loginlogo {
+//   color: #db222a;
+//   &:hover {
+//     color: #A31621;
+//   }
+// }
+
+// .signuplogo {
+//   color: #db222a;
+//   &:hover {
+//     color: #A31621;
+// }
+// }
