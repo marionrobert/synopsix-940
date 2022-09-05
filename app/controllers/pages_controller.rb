@@ -6,6 +6,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @player_game = PlayerGame.new
+    @input_games = current_user.games.input
+    @timer_games = current_user.games.timer
   end
 end
