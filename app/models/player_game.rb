@@ -1,6 +1,5 @@
 class PlayerGame < ApplicationRecord
-  # require 'jaro_winkler'
-  require "similar_text"
+  require 'similar_text'
 
   attr_accessor :category, :game_type
   has_many :inputs
@@ -62,7 +61,7 @@ class PlayerGame < ApplicationRecord
       next "<span>#{element}</span>" unless element.downcase.first =~ /([a-z]|\d)/
 
       if self.words[element.downcase]["found"]
-        "<span class='founded'>#{element}</span>".html_safe
+        "<span class='wfound'>#{element}</span>".html_safe
       elsif self.words[element.downcase]["score_proximity"] >= 0.8
         "<span class='not_far_to_found'>&nbsp#{self.words[element.downcase]['input_to_display']}&nbsp</span>".html_safe
       elsif self.words[element.downcase]["score_proximity"] >= 0.7
@@ -99,11 +98,11 @@ class PlayerGame < ApplicationRecord
     # display le film caché sauf si le title_found = true
     displayed_title.map! do |element|
       next "<span>#{element}</span>" unless element.downcase.first =~ /([a-z]|\d)/
-      
+
 
 
       if self.words_title[element.downcase]["found"]
-        "<span class='founded'>#{element}</span>".html_safe
+        "<span class='wfound'>#{element}</span>".html_safe
       elsif self.words_title[element.downcase]["score_proximity"] >= 0.8
         "<span class='not_far_to_found'>&nbsp#{self.words_title[element.downcase]['input_to_display']}&nbsp</span>".html_safe
       elsif self.words_title[element.downcase]["score_proximity"] >= 0.7

@@ -1,7 +1,7 @@
-.not_found, .far_to_found, .not_far_to_found, .founded {
-  font-size: 24px;
+.not_found, .far_to_found, .not_far_to_found, .wfound {
+  font-size: 18px;
   font-weight: 200;
-  padding: 2px 4px;
+  margin: 6px 6px;
   font-family: 'Roboto Mono', monospace;
   border-radius: 4px;
 }
@@ -27,9 +27,12 @@
   }
 }
 
-.founded {
+.wfound {
   color: white;
   font-weight: 400;
-  font-size: 24px;
+}
 
+.bggameboard h2 {
+  font-size: 32px;
+  margin-bottom: 24px;
 }
