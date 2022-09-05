@@ -3,6 +3,10 @@
     <div class="col-2 mx-5 poster">
         <%= image_tag "#{player_game.game.movie.poster}"%>
     </div>
+    <% if player_game.game.movie.trailer%>
+      <iframe class="zindexbg" src="<%=player_game.game.movie.trailer%>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </iframe>
+    <% end %>
   <% else %>
     <div class="mt-5 col-2 bggameboard mx-5 pt-3">
         <p class="text-center">Last five tries:</p>
