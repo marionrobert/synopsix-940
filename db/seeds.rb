@@ -183,10 +183,10 @@ p "📁 Categories created"
   data_hash = JSON.parse(file)
 
 #USERS CREATION
-User.create(username: "Thomas", email: "tho@gmail.com", password: "123456", description: "crazy rocker")
-User.create!(username: "Marion", email: "mar@gmail.com", password: "123456", description: "diamond rocker")
-User.create!(username: "Jessica", email: "jes@gmail.com", password: "123456", description: "USA ROCKS!")
-User.create!(username: "Aurelien", email: "aur@gmail.com", password: "123456", description: "the one who does not know how to play anything")
+User.create(username: "Thomas", email: "tho@gmail.com", password: "123456", description: "crazy rocker", admin: true)
+User.create!(username: "Marion", email: "mar@gmail.com", password: "123456", description: "diamond rocker", admin: true)
+User.create!(username: "Jessica", email: "jes@gmail.com", password: "123456", description: "USA ROCKS!", admin: true)
+User.create!(username: "Aurelien", email: "aur@gmail.com", password: "123456", description: "the one who does not know how to play anything", admin: true)
 
   p "👤Users created"
 
