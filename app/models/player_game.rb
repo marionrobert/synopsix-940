@@ -1,6 +1,5 @@
 class PlayerGame < ApplicationRecord
-  # require 'jaro_winkler'
-  require "similar_text"
+  require 'similar_text'
 
   attr_accessor :category, :game_type
   has_many :inputs
@@ -99,7 +98,7 @@ class PlayerGame < ApplicationRecord
     # display le film caché sauf si le title_found = true
     displayed_title.map! do |element|
       next "<span>#{element}</span>" unless element.downcase.first =~ /([a-z]|\d)/
-      
+
 
 
       if self.words_title[element.downcase]["found"]
