@@ -7,12 +7,12 @@
   <% end %>
 
   <div class="justify-content-between ms-auto">
-    <button id="loginbtn" class="btnsyno">
-      <%= link_to "Login", new_user_session_path, class: "text-decoration-none loginlogo" %>
-    </button>
-    <button id="signupbtn" class="btnsyno mx-5">
-      <%= link_to "Signup", new_user_registration_path, class: "text-decoration-none signuplogo"  %>
-    </button>
+    <%# <button id="loginbtn" class="btnsyno"> %>
+      <%= link_to "Login", new_user_session_path, class: " btnsyno text-decoration-none loginlogo" %>
+    <%# </button> %>
+    <%# <button id="signupbtn" class="btnsyno mx-5"> %>
+      <%= link_to "Signup", new_user_registration_path, class: "btnsyno mx-5 text-decoration-none signuplogo"  %>
+    <%# </button> %>
   </div>
   <% if user_signed_in? %>
     <div class="nav-item dropdown">
@@ -24,16 +24,3 @@
     </div>
   <% end %>
 </div>
-
-
-          <%# <li class="nav-item">
-          <!--Login management-->
-          <% if user_signed_in? %>
-            <%# <li class="nav-item active">
-              <%= link_to "Dashboard", dashboard_path, class: "pt-2 nav-link dashboard-btn" %>
-            <%# </li> %>
-
-          <%# <% else %>
-            <%# <%= link_to "Login", new_user_session_path, class: "pt-2 nav-link" %
-          <%# <% end %>
-          <%# </li> %>
