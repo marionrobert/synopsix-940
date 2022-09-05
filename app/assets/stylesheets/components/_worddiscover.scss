@@ -1,6 +1,9 @@
 .not_found, .far_to_found, .not_far_to_found, .founded {
   font-size: 24px;
-  font-weight: 400;
+  font-weight: 200;
+  padding: 2px 4px;
+  font-family: 'Roboto Mono', monospace;
+  border-radius: 4px;
 }
 
 .not_found {
@@ -9,16 +12,24 @@
 }
 
 .far_to_found {
-  color:rgba(255, 0, 0,0.7);
-  background-color:rgba(0, 0, 0, 0.7);
+  color:rgba(255, 0, 0, 0.8);
+  background-color:black;
+  &:hover{
+    color:rgba(255, 0, 0, 1);
+  }
 }
 
 .not_far_to_found {
-  color : rgba(255, 136, 0,1);
-  background-color:rgba(0, 0, 0, 0.4);
+  color : rgba(255, 136, 0, 0.8);
+  background-color:black;
+  &:hover{
+    color:rgba(255, 136, 0, 1);
+  }
 }
 
 .founded {
-  color: rgba(0, 255, 0, 1);
-  background-color:rgba(0, 0, 0, 0.1);
+  color: white;
+  font-weight: 400;
+  font-size: 24px;
+
 }

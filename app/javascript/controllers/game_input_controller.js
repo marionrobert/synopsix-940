@@ -2,11 +2,11 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="game-input"
 export default class extends Controller {
-  static targets = ["form", "gameContent", "input", "timer"]
+  static targets = ["form", "gameContent", "input", "timer", "board"]
   static values = { gametype: String, timerpath: String, numwords: Number }
 
   connect(){
-    this.timeOutValue = 120000
+    this.timeOutValue = 12000
 
     this.count = 0
     console.log(this.gametypeValue);
@@ -55,6 +55,9 @@ export default class extends Controller {
           this.clear()
           console.log("hello");
           this.formTarget.classList.add('d-none')
+          this.timerTarget.classList.add('d-none')
+          this.boardTarget.classList.add('d-none')
+
         }
       })
   }
@@ -82,8 +85,35 @@ export default class extends Controller {
   endGame=() => {
     if(this.interval){
       clearInterval(this.interval)
+      this.formTarget.classList.add('d-none')
+      this.timerTarget.classList.add('d-none')
+      fetch(this.formTarget.action, {
+        method: "POST",
+        headers: { "Accept": "application/json" },
+        body: new FormData(this.formTarget)
+      })
+        .then(response => response.json())
+        .then((data) => {
+          console.log(data);
+          // render game end
+          this.gameContentTarget.innerHTML =`
+          <div>
+          You lose
+          The movie was ${data.title}
+            <div>
+            ${data.synopsis}
+            </div>
+            ${data.poster}
+          </div>
+
+          `
+
+
+        })
+
     }
     //TODO : Change state of the game
+
   }
 
   initTimer= () => {
