@@ -101,7 +101,7 @@ export default class extends Controller {
           You lose
           The movie was ${data.title}
             <div>
-            Synospis ${data.synopsis}
+            ${data.synopsis}
             </div>
           </div>
 
