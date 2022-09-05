@@ -8,10 +8,10 @@
 
   <div class="justify-content-between">
     <button id="loginbtn" class="btnsyno">
-      <span>Login</span>
+      <%= link_to "Login", new_user_session_path, class: "text-decoration-none loginlogo" %>
     </button>
     <button id="signupbtn" class="btnsyno mx-5">
-      <span>Signup</span>
+      <%= link_to "Signup", new_user_registration_path, class: "text-decoration-none signuplogo"  %>
     </button>
   </div>
 </div>
