@@ -95,14 +95,15 @@ export default class extends Controller {
         .then(response => response.json())
         .then((data) => {
           console.log(data);
-          // render game content
+          // render game end
           this.gameContentTarget.innerHTML =`
           <div>
           You lose
           The movie was ${data.title}
             <div>
-            Synospis ${data.synopsis}
+            ${data.synopsis}
             </div>
+            ${data.poster}
           </div>
 
           `
