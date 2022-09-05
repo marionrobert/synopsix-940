@@ -6,7 +6,7 @@
   </div>
   <% end %>
 
-  <div class="justify-content-between">
+  <div class="justify-content-between ms-auto">
     <button id="loginbtn" class="btnsyno">
       <%= link_to "Login", new_user_session_path, class: "text-decoration-none loginlogo" %>
     </button>
@@ -14,4 +14,26 @@
       <%= link_to "Signup", new_user_registration_path, class: "text-decoration-none signuplogo"  %>
     </button>
   </div>
+  <% if user_signed_in? %>
+    <div class="nav-item dropdown">
+      <%= cl_image_tag current_user.photo.key, width:50, height: 50, class:"dropdown-toggle rounded-circle", data: {bs_toggle: "dropdown"} %>
+        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+          <%= link_to "Go to my dashboard", dashboard_path, class: "dropdown-item" %>
+          <%= link_to "Logout", destroy_user_session_path, 'data-turbo-method': :delete, class: "dropdown-item"%>
+        </div>
+    </div>
+  <% end %>
 </div>
+
+
+          <%# <li class="nav-item">
+          <!--Login management-->
+          <% if user_signed_in? %>
+            <%# <li class="nav-item active">
+              <%= link_to "Dashboard", dashboard_path, class: "pt-2 nav-link dashboard-btn" %>
+            <%# </li> %>
+
+          <%# <% else %>
+            <%# <%= link_to "Login", new_user_session_path, class: "pt-2 nav-link" %
+          <%# <% end %>
+          <%# </li> %>
