@@ -98,15 +98,16 @@ class PlayerGame < ApplicationRecord
     # display le film caché sauf si le title_found = true
     displayed_title.map! do |element|
       next "<span>#{element}</span>" unless element.downcase.first =~ /([a-z]|\d)/
+      
 
       if self.words_title[element.downcase]["found"]
         "<span>#{element}</span>".html_safe
       elsif self.words_title[element.downcase]["score_proximity"] >= 0.85
-        "<span style='background-color: red'>#{self.words_title[element.downcase]['input_to_display']}</span>".html_safe
+        "<span style='background-color: red'>&nbsp#{self.words_title[element.downcase]['input_to_display']}&nbsp</span>".html_safe
       elsif self.words_title[element.downcase]["score_proximity"] >= 0.75
-        "<span style='background-color: grey'>#{self.words_title[element.downcase]['input_to_display']}</span>".html_safe
+        "<span style='background-color: grey'>&nbsp#{self.words_title[element.downcase]['input_to_display']}&nbsp</span>".html_safe
       else
-        "<span style='background-color: black'>#{element.chars.map { '&nbsp' }.join}</span>".html_safe
+        "<span style='background-color: black'>&nbsp#{element.chars.map { '&nbsp' }.join}&nbsp</span>".html_safe
       end
     end
     displayed_title.join.html_safe
