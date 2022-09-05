@@ -8,6 +8,10 @@
 @import "timer";
 @import "poster";
 
+html {
+ margin:0;
+ padding:0;
+}
 
 .arrowleft {
   margin-right: 20px;
@@ -18,6 +22,16 @@
   left: 0px;
   top: 300px;
   width: 100px;
+}
+
+.zindexbg {
+  position:fixed;
+  overflow: hidden;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  z-index: -1000;
 }
 
 .arrowright {
