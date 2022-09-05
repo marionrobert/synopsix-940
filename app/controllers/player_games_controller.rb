@@ -1,7 +1,7 @@
 class PlayerGamesController < ApplicationController
   def create
     if @category = Category.find(params[:player_game][:category]) rescue false
-      if (@game = Game.create(movie: Movie.where(category: @category).sample, game_type: params[:player_game][:game_type].to_i)) && (@player_game = PlayerGame.create(user: current_user, game: @game, title_found: false ))
+      if (@game = Game.create(movie: Movie.where(category: @category).sample, game_type: params[:player_game][:game_type].to_i)) && (@player_game = PlayerGame.create(user: current_user, game: @game, title_found: false, final_score: 0))
         redirect_to player_game_path(@player_game)
       else
         render 'games/new', status: :unprocessable_entity, alert: 'You have to select a category'
@@ -10,7 +10,7 @@ class PlayerGamesController < ApplicationController
       @player_game = PlayerGame.new
       @player_game.errors.add(:game, 'should belong to a category')
       render 'games/new', status: :unprocessable_entity
-    end 
+    end
   end
 
   def show
