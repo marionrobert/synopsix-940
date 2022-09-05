@@ -1,4 +1,6 @@
 class InputsController < ApplicationController
+  require 'similar_text'
+
   def create
     @player_game = PlayerGame.find(params[:player_game_id])
     @input = Input.new(input_params)
@@ -9,6 +11,7 @@ class InputsController < ApplicationController
     if @player_game.game.game_type == "timer"
       if @input.content == @player_game.game.movie.title.downcase
         @player_game.title_found = true
+        @player_game.final_score = @player_game.calculate_score
         @player_game.save
       end
       respond_to do |format|
@@ -73,6 +76,7 @@ class InputsController < ApplicationController
   def checkwin?
     if @input.content == @player_game.game.movie.title.downcase || @player_game.words_title.all? { |key, value| value["found"] == true }
       @player_game.title_found = true
+      @player_game.final_score = @player_game.calculate_score
       @player_game.save
     end
   end

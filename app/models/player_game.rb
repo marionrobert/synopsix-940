@@ -1,7 +1,5 @@
 class PlayerGame < ApplicationRecord
-  require 'similar_text'
-
-  attr_accessor :category, :game_type
+    attr_accessor :category, :game_type
   has_many :inputs
   belongs_to :user
   belongs_to :game
@@ -115,4 +113,23 @@ class PlayerGame < ApplicationRecord
     displayed_title.join.html_safe
   end
 
+  def calculate_score
+    score = 1000
+    inputs = self.inputs
+    inputs.each_with_index do |input, index|
+      if index <= 9
+        score -= 10
+      elsif index > 9 && index <= 29
+        score -= 20
+      elsif index > 29 && index <= 59
+        score -= 40
+      elsif index > 59 && index <= 99
+        score -= 60
+      else
+        score -= 100
+      end
+    end
+    score = 0 if score.negative?
+    self.final_score = score
+  end
 end
