@@ -80,9 +80,9 @@ class InputsController < ApplicationController
   def update_score_proximity
     @player_game.words.each_key do |word|
 
-      new_score = JaroWinkler.distance(word, @input.content)
+      new_score = word.similar(@input.content) / 100
       if new_score > @player_game.words[word]["score_proximity"] #current_score
-        if new_score >= 0.95
+        if new_score >= 0.9
           @player_game.words[word]["found"] = true
         else
           @player_game.words[word]["score_proximity"] = new_score
@@ -91,8 +91,10 @@ class InputsController < ApplicationController
       end
 
     end
+
+
     @player_game.words_title.each_key do |word|
-      new_score = JaroWinkler.distance(word, @input.content)
+      new_score = word.similar(@input.content) / 100
 
       if new_score > @player_game.words_title[word]["score_proximity"] #current_score
         if new_score >= 0.95
