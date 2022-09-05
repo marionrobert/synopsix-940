@@ -56,7 +56,7 @@ export default class extends Controller {
           console.log("hello");
           this.formTarget.classList.add('d-none')
           this.timerTarget.classList.add('d-none')
-          this.boardTarget.classList.add('d-none')
+          
 
         }
       })
