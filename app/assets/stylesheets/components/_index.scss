@@ -3,16 +3,13 @@
 @import "avatar";
 @import "form_legend_clear";
 @import "navbar";
-@import "_select_category";
+@import "select_category";
 @import "footer";
 @import "timer";
 @import "poster";
 @import "worddiscover";
 
-html {
- margin:0;
- padding:0;
-}
+
 
 .arrowleft {
   margin-right: 20px;
