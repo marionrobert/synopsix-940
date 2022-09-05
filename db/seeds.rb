@@ -183,10 +183,21 @@ p "📁 Categories created"
   data_hash = JSON.parse(file)
 
 #USERS CREATION
-User.create(username: "Thomas", email: "tho@gmail.com", password: "123456", description: "crazy rocker")
-User.create!(username: "Marion", email: "mar@gmail.com", password: "123456", description: "diamond rocker")
-User.create!(username: "Jessica", email: "jes@gmail.com", password: "123456", description: "USA ROCKS!")
-User.create!(username: "Aurelien", email: "aur@gmail.com", password: "123456", description: "the one who does not know how to play anything")
+thomas = User.create(username: "Thomas", email: "tho@gmail.com", password: "123456", description: "crazy rocker")
+file = File.open(Rails.root.join("app/assets/images/avatars/thomas.jpg"))
+thomas.photo.attach(io: file, filename: "thomas.jpg", content_type: "image/jpeg")
+
+marion = User.create!(username: "Marion", email: "mar@gmail.com", password: "123456", description: "diamond rocker")
+file = File.open(Rails.root.join("app/assets/images/avatars/marion.jpg"))
+marion.photo.attach(io: file, filename: "marion.jpg", content_type: "image/jpeg")
+
+jessica = User.create!(username: "Jessica", email: "jes@gmail.com", password: "123456", description: "USA ROCKS!")
+file = File.open(Rails.root.join("app/assets/images/avatars/jes.jpg"))
+jessica.photo.attach(io: file, filename: "jes.jpg", content_type: "image/jpeg")
+
+aurelien = User.create!(username: "Aurelien", email: "aur@gmail.com", password: "123456", description: "the one who does not know how to play anything")
+file = File.open(Rails.root.join("app/assets/images/avatars/aurelien.jpg"))
+aurelien.photo.attach(io: file, filename: "aurelien.jpg", content_type: "image/jpeg")
 
   p "👤Users created"
 
