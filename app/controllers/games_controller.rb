@@ -11,8 +11,6 @@ class GamesController < ApplicationController
   def show
   end
 
-  # TIMER GAME
-  #Method to reveal a random word
 
 
 

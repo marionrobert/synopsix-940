@@ -1,5 +1,5 @@
 class PlayerGame < ApplicationRecord
-  require 'jaro_winkler'
+  require 'similar_text'
 
   attr_accessor :category, :game_type
   has_many :inputs
@@ -61,13 +61,13 @@ class PlayerGame < ApplicationRecord
       next "<span>#{element}</span>" unless element.downcase.first =~ /([a-z]|\d)/
 
       if self.words[element.downcase]["found"]
-        "<span class='founded'>#{element}</span>".html_safe
-      elsif self.words[element.downcase]["score_proximity"] >= 0.85
-        "<span class='not_far_to_found'>#{self.words[element.downcase]['input_to_display']}</span>".html_safe
-      elsif self.words[element.downcase]["score_proximity"] >= 0.75
-        "<span class='far_to_found'>#{self.words[element.downcase]['input_to_display']}</span>".html_safe
+        "<span class='wfound'>#{element}</span>".html_safe
+      elsif self.words[element.downcase]["score_proximity"] >= 0.8
+        "<span class='not_far_to_found'>&nbsp#{self.words[element.downcase]['input_to_display']}&nbsp</span>".html_safe
+      elsif self.words[element.downcase]["score_proximity"] >= 0.7
+        "<span class='far_to_found'>&nbsp#{self.words[element.downcase]['input_to_display']}&nbsp</span>".html_safe
       else
-        "<span class='not_found'>#{element.chars.map { '&nbsp' }.join}</span>".html_safe
+        "<span class='not_found'>&nbsp#{element.chars.map { '&nbsp' }.join}&nbsp</span>".html_safe
       end
     end
     #display_array to string + html.safe = à intepréter comme du html
@@ -99,14 +99,17 @@ class PlayerGame < ApplicationRecord
     displayed_title.map! do |element|
       next "<span>#{element}</span>" unless element.downcase.first =~ /([a-z]|\d)/
 
+
+
       if self.words_title[element.downcase]["found"]
-        "<span>#{element}</span>".html_safe
-      elsif self.words_title[element.downcase]["score_proximity"] >= 0.85
-        "<span style='background-color: red'>#{self.words_title[element.downcase]['input_to_display']}</span>".html_safe
-      elsif self.words_title[element.downcase]["score_proximity"] >= 0.75
-        "<span style='background-color: grey'>#{self.words_title[element.downcase]['input_to_display']}</span>".html_safe
+        "<span class='wfound'>#{element}</span>".html_safe
+      elsif self.words_title[element.downcase]["score_proximity"] >= 0.8
+        "<span class='not_far_to_found'>&nbsp#{self.words_title[element.downcase]['input_to_display']}&nbsp</span>".html_safe
+      elsif self.words_title[element.downcase]["score_proximity"] >= 0.7
+        "<span class='far_to_found'>&nbsp#{self.words_title[element.downcase]['input_to_display']}&nbsp</span>".html_safe
       else
-        "<span style='background-color: black'>#{element.chars.map { '&nbsp' }.join}</span>".html_safe
+        "<span class='not_found'>&nbsp#{element.chars.map { '&nbsp' }.join}&nbsp</span>".html_safe
+
       end
     end
     displayed_title.join.html_safe
