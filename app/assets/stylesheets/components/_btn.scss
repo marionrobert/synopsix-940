@@ -1,20 +1,31 @@
 
-.btn-small-red{
-  border-radius: 8px;
-  padding: 2px 15px;
-  background-color: $our-red;
+.btn-small-red {
+  background-color: #E20134;
+  width: 175px;
   color: white;
-  text-decoration: none!important;
+  font-weight: bolder;
+  padding: 5px;
+  border-radius: 8px;
+  margin-right: 16px;
+  text-align: center;
 }
 
-
-.btn-small-grey{
-  border-radius: 8px;
-  padding: 2px 15px;
-  background-color: $our-dark-grey;
+.btn-small-grey {
+  background-color: #424244;
+  width: 175px;
   color: white;
-  text-decoration: none!important;
+  font-weight: bolder;
+  padding: 5px;
+  border-radius: 8px;
+  margin-right: 32px;
+  text-align: center;
 }
+
+.btn-small-grey:hover, .btn-small-red:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
 
 .btn-main-red{
   border-radius: 8px;
@@ -22,6 +33,7 @@
   background-color: $our-red;
   color: white;
   text-decoration: none!important;
+  border: none!important;
 }
 
 .btn-input {
@@ -47,45 +59,6 @@
 }
 
 
-.btnsyno {
-  border: 1.5px solid rgba(0,0,0,0);
-  border-radius: 4px;
-  padding: 5px 20px;
-  background-color: rgba(0,0,0,0);
-  color: #DB222A;
-  text-decoration: none!important;
-}
-
-.btnsyno:hover {
-  border: 1.5px solid #A31621;
-  color: #A31621;
-}
-
-
-
-
-.btninput {
-  text-decoration: none;
-  opacity: 0.9;
-  border-radius: 4px;
-  height: 38px;
-  padding: 4px 20px;
-  font-size: 18px;
-  background-color: #DB222A;
-  border: #DB222A;
-  color: white;
-  font-weight: 700;
-  margin-top: 0px;
-
-}
-
-.btninput:hover {
-  background-color: #A31621;
-  opacity: 0.8;
-  font-weight: 700;
-  border: none;
-}
-
 .btninput:active {
   background-color: #A31621;
   opacity: 0.8;
@@ -98,25 +71,4 @@
   opacity: 0.8;
   font-weight: 700;
   border: none;
-}
-
-.btnplay {
-  text-decoration: none;
-  border: 2px solid #DB222A;
-  opacity: 0.9;
-  border-radius: 4px;
-  padding: 5px 20px;
-  font-size: 18px;
-  background-color: rgba(0,0,0,0);
-  color: #DB222A;
-  font-weight: 700;
-  transition: 0,3s;
-  margin-top: 16px;
-}
-
-.btnplay:hover {
-  border: 2px solid #A31621;
-  color: #A31621;
-  opacity: 0.7;
-  font-weight: 700;
 }
