@@ -1,19 +1,18 @@
-<div class="container">
-
-  <nav class= "mt-5">
-    <div class="nav nav-tabs" id="nav-tab" role="tablist">
-      <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Input</button>
-      <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Timer</button>
-    </div>
-  </nav>
-  <div class="tab-content mt-5" id="nav-tabContent">
-    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
-      <%= render "input_dashboard", input_games: @input_games, players_inputgame: @players_inputgame, wins_inputgame: @wins_inputgame %>
-    </div>
-    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
-      <%= render "timer_dashboard", timer_games: @timer_games, players_timergame: @players_timergame, wins_timergame: @wins_timergame %>
+<div class="gamebg">
+  <div class="mt-5 container">
+    <nav class= "text-center">
+      <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
+        <button class="tab-link active margin-right" id="nav-input-tab" data-bs-toggle="tab" data-bs-target="#nav-input" type="button" role="tab" aria-controls="nav-input" aria-selected="true">Input</button>
+        <button class="tab-link margin-left" id="nav-timer-tab" data-bs-toggle="tab" data-bs-target="#nav-timer" type="button" role="tab" aria-controls="nav-timer" aria-selected="false">Timer</button>
+      </div>
+    </nav>
+    <div class="tab-content mt-5" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="nav-input" role="tabpanel" aria-labelledby="nav-input-tab" tabindex="0">
+        <%= render "input_dashboard", input_games: @input_games, players_inputgame: @players_inputgame, wins_inputgame: @wins_inputgame %>
+      </div>
+      <div class="tab-pane fade" id="nav-timer" role="tabpanel" aria-labelledby="nav-timer-tab" tabindex="0">
+        <%= render "timer_dashboard", timer_games: @timer_games, players_timergame: @players_timergame, wins_timergame: @wins_timergame %>
+      </div>
     </div>
   </div>
-
 </div>
-<% console %>

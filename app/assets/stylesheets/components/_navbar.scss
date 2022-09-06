@@ -1,12 +1,10 @@
 .navbar-synopsix {
   justify-content: space-between;
-  background-color: #0E1116;
-  border-bottom: 2px solid $light-gray;
-  width: 100%;
-  color: $light-gray;
   height: 80px;
+  z-index: 2;
 
   .title{
+    margin-left: 32px;
     display: flex;
     align-items: center;
     gap:16px
@@ -25,12 +23,11 @@
   width: 40px;
 }
 
-.navbar-synopsix clap {
+.navbar-synopsix .navbar_img {
   font-family: Inter;
   font-style: bold;
   font-weight: 500;
   font-size: 24px;
-  margin-left: 30px;
   height: 60;
   width: auto;
 }
@@ -46,7 +43,6 @@
   display: flex;
   align-items: center;
 }
-
 
 
 // .navbar {

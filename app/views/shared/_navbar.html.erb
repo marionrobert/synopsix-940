@@ -2,8 +2,7 @@
   <div class="container-fluid">
     <%= link_to root_path, class: "text-decoration-none colortextlogo" do  %>
       <div class="title">
-        <%=image_tag "clap.svg"%>
-        <h2>SYNOPSIX</h2>
+        <%=image_tag "navbar_img.svg"%>
       </div>
     <% end %>
 
@@ -16,11 +15,11 @@
         <%# if user_signed_in? %>
           <% if user_signed_in? %>
             <li class="nav-item active">
-              <%= link_to "Dashboard", dashboard_path, class: "pt-2 nav-link btnsyno" %>
+              <%= link_to "Dashboard", dashboard_path, class: "btn-small-red nav-link" %>
             </li>
           <% else %>
-            <%= link_to "Login", new_user_session_path, class: " btnsyno text-decoration-none" %>
-            <%= link_to "Signup", new_user_registration_path, class: "btnsyno text-decoration-none"  %>
+            <%= link_to "Login", new_user_session_path, class: "btn-small-red text-decoration-none" %>
+            <%= link_to "Sign Up", new_user_registration_path, class: "btn-small-grey text-decoration-none"  %>
           <% end %>
           <% if user_signed_in? %>
             <li class="nav-item dropdown">
@@ -40,4 +39,3 @@
     </div>
   </div>
 </div>
-
