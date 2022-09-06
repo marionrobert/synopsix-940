@@ -75,22 +75,14 @@ new_category = Category.create!(name: "Drama")
 file = File.open(Rails.root.join("app/assets/images/categories/drama_movies_new.jpg"))
 new_category.photo.attach(io: file, filename: "drama_movies_new.jpg", content_type: "image/jpeg")
 
-comedy_category = Category.create!(name: "Comedy")
+new_category = Category.create!(name: "Comedy")
 file = File.open(Rails.root.join("app/assets/images/categories/comedy_movies.jpg"))
-comedy_category.photo.attach(io: file, filename: "comedy_movies.jpg", content_type: "image/jpeg")
+new_category.photo.attach(io: file, filename: "comedy_movies.jpg", content_type: "image/jpeg")
 
-historical_category = Category.create!(name: "Historical")
+new_category = Category.create!(name: "Historical")
 file = File.open(Rails.root.join("app/assets/images/categories/historical_movies.jpg"))
-historical_category.photo.attach(io: file, filename: "historical_movies.jpg", content_type: "image/jpeg")
+new_category.photo.attach(io: file, filename: "historical_movies.jpg", content_type: "image/jpeg")
 
-
-comedy_category = Category.create!(name: "Comedy")
-file = File.open(Rails.root.join("app/assets/images/categories/comedy_movies.jpg"))
-comedy_category.photo.attach(io: file, filename: "comedy_movies.jpg", content_type: "image/jpeg")
-
-historical_category = Category.create!(name: "Historical")
-file = File.open(Rails.root.join("app/assets/images/categories/historical_movies.jpg"))
-historical_category.photo.attach(io: file, filename: "historical_movies.jpg", content_type: "image/jpeg")
 
 p "📁 Categories created"
 
@@ -107,9 +99,9 @@ marion = User.create!(username: "Marion", email: "mar@gmail.com", password: "123
 file = File.open(Rails.root.join("app/assets/images/avatars/marion.jpg"))
 marion.photo.attach(io: file, filename: "marion.jpg", content_type: "image/jpeg")
 
-jessica = User.create!(username: "Jessica", email: "jes@gmail.com", password: "123456", description: "USA ROCKS!", admin: true)
+jesica = User.create!(username: "Jesica", email: "jes@gmail.com", password: "123456", description: "USA ROCKS!", admin: true)
 file = File.open(Rails.root.join("app/assets/images/avatars/jes.jpg"))
-jessica.photo.attach(io: file, filename: "jes.jpg", content_type: "image/jpeg")
+jesica.photo.attach(io: file, filename: "jes.jpg", content_type: "image/jpeg")
 
 aurelien = User.create!(username: "Aurelien", email: "aur@gmail.com", password: "123456", description: "the one who does not know how to play anything", admin: true)
 file = File.open(Rails.root.join("app/assets/images/avatars/aurelien.jpg"))
@@ -141,7 +133,7 @@ aurelien.photo.attach(io: file, filename: "aurelien.jpg", content_type: "image/j
 
 #demo movies
 
-Movie.create( title: "Independance day",
+Movie.create( title: "Independence Day",
               synopsis: "In this epic adventure film, strange phenomena surface around the globe. The skies ignite. Terror races through the world's major cities. As these extraordinary events unfold, it becomes increasingly clear that an alien force of incredible magnitude has arrived. Its mission: total annihilation over the Fourth of July weekend. The last hope to stop the destruction is an unlikely group of people united by fate and unimaginable circumstances.",
               poster: "https://static.pointculture.be/media/5d/c8/2f/cover_vi4791_scale_345x750.jpg",
               category: Category.find_by(name: "Blockbuster"),
@@ -171,7 +163,7 @@ Movie.create( title: "Avengers Endgame",
               hint_3: "2019",
             )
 
-Movie.create( title: "The TRUMAN show",
+Movie.create( title: "The Truman Show",
               synopsis: "He doesn't know it, but everything in Truman Burbank's life is part of a massive TV set. Executive producer Christof orchestrates 'The Truman Show,' a live broadcast of Truman's every move captured by hidden cameras. Cristof tries to control Truman's mind, even removing his true love, Sylvia, from the show and replacing her with Meryl. As Truman gradually discovers the truth, however, he must decide whether to act on it.",
               poster: "https://m.media-amazon.com/images/I/61XZBVJQ9pL._AC_.jpg",
               category: Category.find_by(name: "Drama"),
