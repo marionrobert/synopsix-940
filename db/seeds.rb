@@ -235,7 +235,7 @@ aurelien.photo.attach(io: file, filename: "aurelien.jpg", content_type: "image/j
 
 #demo movies
 
-Movie.create( title: "Independance day",
+Movie.create( title: "Independence day",
               synopsis: "In this epic adventure film, strange phenomena surface around the globe. The skies ignite. Terror races through the world's major cities. As these extraordinary events unfold, it becomes increasingly clear that an alien force of incredible magnitude has arrived. Its mission: total annihilation over the Fourth of July weekend. The last hope to stop the destruction is an unlikely group of people united by fate and unimaginable circumstances.",
               poster: "https://static.pointculture.be/media/5d/c8/2f/cover_vi4791_scale_345x750.jpg",
               category: Category.find_by(name: "Blockbuster"),
