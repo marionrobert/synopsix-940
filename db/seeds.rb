@@ -177,22 +177,14 @@ new_category = Category.create!(name: "Drama")
 file = File.open(Rails.root.join("app/assets/images/categories/drama_movies_new.jpg"))
 new_category.photo.attach(io: file, filename: "drama_movies_new.jpg", content_type: "image/jpeg")
 
-comedy_category = Category.create!(name: "Comedy")
+new_category = Category.create!(name: "Comedy")
 file = File.open(Rails.root.join("app/assets/images/categories/comedy_movies.jpg"))
 comedy_category.photo.attach(io: file, filename: "comedy_movies.jpg", content_type: "image/jpeg")
 
-historical_category = Category.create!(name: "Historical")
+new_category = Category.create!(name: "Historical")
 file = File.open(Rails.root.join("app/assets/images/categories/historical_movies.jpg"))
 historical_category.photo.attach(io: file, filename: "historical_movies.jpg", content_type: "image/jpeg")
 
-
-comedy_category = Category.create!(name: "Comedy")
-file = File.open(Rails.root.join("app/assets/images/categories/comedy_movies.jpg"))
-comedy_category.photo.attach(io: file, filename: "comedy_movies.jpg", content_type: "image/jpeg")
-
-historical_category = Category.create!(name: "Historical")
-file = File.open(Rails.root.join("app/assets/images/categories/historical_movies.jpg"))
-historical_category.photo.attach(io: file, filename: "historical_movies.jpg", content_type: "image/jpeg")
 
 p "📁 Categories created"
 
