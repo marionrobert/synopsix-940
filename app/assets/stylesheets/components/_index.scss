@@ -11,6 +11,7 @@
 @import "dashboard";
 @import "btn";
 @import "home";
+@import "gameboard";
 
 
 
@@ -51,9 +52,4 @@ body {
   background-image: radial-gradient(rgba(92, 90, 90, 0.5), rgba(0, 0, 0, 1)), url("https://assets.justacote.com/photos_entreprises/gaumont-pathe-levallois-perret-62f0d2620e10b.jpg");
   background-size: cover;
   // background: radial-gradient(circle at 10% 20%, rgba(0, 0, 0, 0.5) 0%, rgba(64, 64, 64, 0.5) 90.2%);
-}
-
-
-.bggameboard {
-  background-color: rgba(170, 170, 170, 0.5)
 }

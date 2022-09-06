@@ -14,6 +14,43 @@
 }
 
 
+
+.btninput {
+  text-decoration: none;
+  opacity: 0.9;
+  border-radius: 4px;
+  height: 38px;
+  padding: 4px 20px;
+  font-size: 18px;
+  background-color: #DB222A;
+  border: #DB222A;
+  color: white;
+  font-weight: 700;
+  margin-top: 0px;
+
+}
+
+.btninput:hover {
+  background-color: #A31621;
+  opacity: 0.8;
+  font-weight: 700;
+  border: none;
+}
+
+.btninput:active {
+  background-color: #A31621;
+  opacity: 0.8;
+  font-weight: 700;
+  border: none;
+}
+
+.btninput:focus {
+  background-color: #A31621;
+  opacity: 0.8;
+  font-weight: 700;
+  border: none;
+}
+
 .btnplay {
   text-decoration: none;
   border: 2px solid #DB222A;
