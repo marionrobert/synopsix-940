@@ -1,18 +1,19 @@
 <div class="row justify-content-around mt-5">
-  <div class="col-4 bg-green rounded p-3 tab-my-stats">
-    <div class= "text-center">
-      <h5 >My Stats</h5>
-      <%= cl_image_tag current_user.photo.key, width:50, height: 50, class:"rounded-circle my-2" %>
-      <h5><%=current_user.username%></h5>
+  <div class="col-4 bg-green tab-my-stats">
+    <div class= "tab-content-title">
+      <h5></i>My Stats</h5>
     </div>
-    <hr>
-    <%#= <% current_user.player_games %>
-    <h6>Score: <%=current_user.timergame_score %> points </h6>
-    <hr>
-    <% if wins_timergame.count > 1  %>
-      <h6><%=wins_timergame.count %>  Games Won</h6>
+
+    <% if current_user.timergame_score > 1 %>
+      <h6>Score : <%=current_user.timergame_score %> points </h6>
     <% else %>
-      <h6> <%=wins_timergame.count %>  Game Won</h6>
+      <h6>Score : <%=current_user.timergame_score %> point </h6>
+    <% end %>
+
+    <% if wins_timergame.count > 1  %>
+      <h6><i class="fa-solid fa-trophy mx-1"></i> <%=wins_timergame.count %>  Games Won</h6>
+    <% else %>
+      <h6><i class="fa-solid fa-trophy mx-1"></i> <%=wins_timergame.count %>  Game Won</h6>
     <% end %>
     <ul>
     <% wins_timergame.each do |game|  %>
@@ -22,11 +23,16 @@
     <% end %>
     </ul>
   </div>
-    <div class="col-6 bg-light-red rounded p-3 tab-leaderboard">
-    <h5 class="text-center">Leaderboard</h5>
-    <hr>
-    <% players_timergame.each_with_index do |player, index| %>
-      <h6 class="leaderboard-position"><%= index + 1 %>. <%= player.username %> - <%= player.timergame_score %> points  <%= cl_image_tag player.photo.key, width:25, height: 25, class:"rounded-circle my-1" %></h6>
-    <% end %>
-  </div>
+    <div class="col-4 bg-light-red tab-leaderboard">
+      <div class="tab-content-title">
+        <h5></i> Leaderboard</h5>
+      </div>
+      <% players_timergame.each_with_index do |player, index| %>
+        <% if player.timergame_score > 1%>
+          <h6><%= cl_image_tag player.photo.key, width:30, height: 30, class:"rounded-circle mx-2" %><%= index + 1 %>. <%= player.username %> - <%= player.timergame_score %> points </h6>
+        <% else %>
+          <h6><%= cl_image_tag player.photo.key, width:30, height: 30, class:"rounded-circle mx-2" %><%= index + 1 %>. <%= player.username %> - <%= player.timergame_score %> point  </h6>
+        <% end %>
+      <% end %>
+    </div>
 </div>

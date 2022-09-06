@@ -1,14 +1,51 @@
 .tab-my-stats {
   background-color: $our-dark-grey;
+  border-radius: 8px;
+  padding: 3%;
 }
 
 .tab-leaderboard {
   background-color: $our-red;
+  border-radius: 8px;
+  padding: 3%;
 }
 
-.leaderboard-position {
-  background-color: rgb(219, 34, 42);
-  border-radius: 4px;
-  padding: 2px;
-  padding-left: 8px;
+.nav {
+  background-color: transparent;
+  border-style: none;
+  text-align: center;
+}
+
+.tab-link {
+  color: white;
+  font-size: 40px;
+  font-weight:600;
+  background-color: transparent;
+  border-style: none;
+}
+
+.tab-link.active {
+  color: $our-red;
+  padding-bottom: 3px;
+  border-bottom: solid ;
+}
+
+.margin-right {
+  margin-right: 20px;
+}
+
+.margin-left {
+  margin-left: 20px;
+}
+
+.tab-content-title {
+  border-bottom: 1.5px solid;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+.score {
+  // border-bottom: 1px solid;
+  margin-bottom: 10px;
+  padding-left: 5px;;
 }
