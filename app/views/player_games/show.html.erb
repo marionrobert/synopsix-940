@@ -10,10 +10,10 @@
     <div class="col-2 mx-5">
     </div>
 
-    <div class="col-8 p-0 mt-3 flex-column">
-      <h2>Find the movie</h2>
-      <p><%= "Find the title of the movie, a new word will be displayed every 3 seconds" if @player_game.game.timer? %></p>
-      <p><%= "Type words to reveal the synopsis and discover the movie" if @player_game.game.input? %></p>
+    <div class="col-8 mt-3">
+      <h2 class="game-center game-title">What's the movie?</h2>
+      <p class="game-center"><%= "Find the title of the movie, a new word will be displayed every 3 seconds" if @player_game.game.timer? %></p>
+      <p class="game-center"><%= "Type words to reveal the synopsis and discover the movie" if @player_game.game.input? %></p>
       <%= render "form_input", player_game: @player_game, input: @input %>
     </div>
     <div class="col-2">
@@ -24,10 +24,16 @@
   </div>
 
  <div class="row">
-    <div class="col col-12">
-      <div data-game-input-target="gameContent">
-        <%= render "game_content", player_game: @player_game %>
-      </div>
+    <div data-game-input-target="gameContent">
+      <%= render "game_content", player_game: @player_game %>
+
     </div>
  </div>
+ <div class="row ">
+  <div class="col-2 mx-5 poster">
+  </div>
+  <div class="col-8 mt-3 d-flex align-items-center">
+    <%=link_to "Hint", "", class: "btn-small-grey"%>
+    <span class="text-hint ms-3">Stuck? Display a hint on the movie. You will lose some points.</span>
+  </div>
 </div>
