@@ -74,7 +74,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_06_072340) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "trailer"
-    t.string "hints", default: [], array: true
+    t.string "hint_1"
+    t.string "hint_2"
+    t.string "hint_3"
     t.index ["category_id"], name: "index_movies_on_category_id"
   end
 
