@@ -179,11 +179,11 @@ new_category.photo.attach(io: file, filename: "drama_movies_new.jpg", content_ty
 
 new_category = Category.create!(name: "Comedy")
 file = File.open(Rails.root.join("app/assets/images/categories/comedy_movies.jpg"))
-comedy_category.photo.attach(io: file, filename: "comedy_movies.jpg", content_type: "image/jpeg")
+new_category.photo.attach(io: file, filename: "comedy_movies.jpg", content_type: "image/jpeg")
 
 new_category = Category.create!(name: "Historical")
 file = File.open(Rails.root.join("app/assets/images/categories/historical_movies.jpg"))
-historical_category.photo.attach(io: file, filename: "historical_movies.jpg", content_type: "image/jpeg")
+new_category.photo.attach(io: file, filename: "historical_movies.jpg", content_type: "image/jpeg")
 
 
 p "📁 Categories created"
@@ -201,9 +201,9 @@ marion = User.create!(username: "Marion", email: "mar@gmail.com", password: "123
 file = File.open(Rails.root.join("app/assets/images/avatars/marion.jpg"))
 marion.photo.attach(io: file, filename: "marion.jpg", content_type: "image/jpeg")
 
-jessica = User.create!(username: "Jessica", email: "jes@gmail.com", password: "123456", description: "USA ROCKS!", admin: true)
+jesica = User.create!(username: "Jesica", email: "jes@gmail.com", password: "123456", description: "USA ROCKS!", admin: true)
 file = File.open(Rails.root.join("app/assets/images/avatars/jes.jpg"))
-jessica.photo.attach(io: file, filename: "jes.jpg", content_type: "image/jpeg")
+jesica.photo.attach(io: file, filename: "jes.jpg", content_type: "image/jpeg")
 
 aurelien = User.create!(username: "Aurelien", email: "aur@gmail.com", password: "123456", description: "the one who does not know how to play anything", admin: true)
 file = File.open(Rails.root.join("app/assets/images/avatars/aurelien.jpg"))
