@@ -8,7 +8,8 @@
       </iframe>
     <% end %>
   <% else %>
-    <div class="col-2 bginputs mx-5 pt-3">
+    <div class="col-2">
+      <div class= "bginputs">
         <p class="text-center">Last five tries:</p>
         <ul>
           <% player_game.last_five_inputs.each_with_index do |input, index| %>
@@ -16,6 +17,7 @@
           <% end %>
         </ul>
       </div>
+    </div>
   <% end %>
 
   <%# <div> %>

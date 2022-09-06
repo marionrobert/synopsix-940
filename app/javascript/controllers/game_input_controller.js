@@ -6,7 +6,7 @@ export default class extends Controller {
   static values = { gametype: String, timerpath: String, numwords: Number }
 
   connect(){
-    this.timeOutValue = 12000
+    this.timeOutValue = 120000
 
     this.count = 0
     console.log(this.gametypeValue);
@@ -56,7 +56,7 @@ export default class extends Controller {
           console.log("hello");
           this.formTarget.classList.add('d-none')
           this.timerTarget.classList.add('d-none')
-          
+
 
         }
       })
