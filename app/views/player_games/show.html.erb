@@ -1,4 +1,4 @@
- <div class="container"
+ <div class="container mt-4"
   data-controller="game-input"
   data-game-input-gametype-value="<%= @player_game.game.game_type %>"
   data-game-input-timerpath-value="<%= player_game_timers_path(@player_game) %>"
@@ -6,12 +6,16 @@
  >
 
  <div class="row">
-    <div class="col col-9">
-      <h2 class="text-center">What's the movie ?</h2>
+    <div class="col-2 mx-5">
     </div>
+
+    <div class="col-8 p-0">
+      <h2>Find the movie</h2>
+      <%= "Find the title of the movie, a new word will be displayed every 3 seconds" if @player_game.game.timer? %>
+      <%= "Type words to reveal the synopsis and discover the movie" if @player_game.game.input? %>
+      <p></p>
  </div>
 
-<%# INTEGRE LE FORM INPUT %>
  <div class="row">
   <div class="col-2 mx-5">
     <div class="col col-3">
@@ -21,12 +25,12 @@
     </div>
   </div>
   <div class="col-8 p-0">
-    <div class="mt-5">
+    <div>
       <%= render "form_input", player_game: @player_game, input: @input %>
     </div>
   </div>
  </div>
-<%# CI DESSOUS INTEGRE LA PARTIAL AVEC LES 5 DERNIERS ESSAI ET LE JEU %>
+
  <div class="row">
     <div class="col col-12">
       <div data-game-input-target="gameContent">
