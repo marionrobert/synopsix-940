@@ -1,3 +1,69 @@
+
+.btn-small-red{
+  border-radius: 8px;
+  padding: 2px 15px;
+  background-color: $our-red;
+  color: white;
+  text-decoration: none!important;
+}
+
+
+.btn-small-grey{
+  border-radius: 8px;
+  padding: 2px 15px;
+  background-color: $our-dark-grey;
+  color: white;
+  text-decoration: none!important;
+}
+
+.btn-main-red{
+  border-radius: 8px;
+  padding: 4px 20px;
+  background-color: $our-red;
+  color: white;
+  text-decoration: none!important;
+}
+
+.btn-input {
+  text-decoration: none;
+  opacity: 0.9;
+  border-radius: 4px;
+  height: 38px;
+  padding: 4px 20px;
+  font-size: 18px;
+  background-color: #DB222A;
+  border: #DB222A;
+  color: white;
+  font-weight: 700;
+  margin-top: 0px;
+
+}
+
+.btn-input:hover {
+  background-color: #A31621;
+  opacity: 0.8;
+  font-weight: 700;
+  border: none;
+}
+
+
+.btnsyno {
+  border: 1.5px solid rgba(0,0,0,0);
+  border-radius: 4px;
+  padding: 5px 20px;
+  background-color: rgba(0,0,0,0);
+  color: #DB222A;
+  text-decoration: none!important;
+}
+
+.btnsyno:hover {
+  border: 1.5px solid #A31621;
+  color: #A31621;
+}
+
+
+
+
 .btninput {
   text-decoration: none;
   opacity: 0.9;

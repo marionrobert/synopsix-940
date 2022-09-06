@@ -1,10 +1,10 @@
 .bggameboard {
-  background-color: rgba(199, 199, 199, 0.5);
+  background-color: $our-light-grey;
   border-radius: 8px;
 }
 
 .bginputs {
-  background-color: #407076;
+  background-color: $our-dark-grey;
   border-radius: 8px;
   padding: 8px, 8px, 8px, 8px;
   ul {
@@ -12,4 +12,9 @@
     margin: 0;
     padding: 0;
   }
+}
+
+
+.gamebg{
+  background: linear-gradient(180deg, $our-black, $our-black 60%, white, white 60%);
 }
