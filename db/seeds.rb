@@ -218,14 +218,14 @@ aurelien.photo.attach(io: file, filename: "aurelien.jpg", content_type: "image/j
 #MOVIES CREATION
 #Reading from JSON file
 #TODO Replace category
-# data_hash.each_value do |movie|
-#   Movie.create( title: movie["title"],
-#                 synopsis: movie["synopsis"],
-#                 poster: movie["poster"],
-#                 category: Category.all.sample)
+data_hash.each_value do |movie|
+  Movie.create( title: movie["title"],
+                synopsis: movie["synopsis"],
+                poster: movie["poster"],
+                category: Category.all.sample)
 
-#   p "🎥 Movie #{movie["title"]} created"
-# end
+  p "🎥 Movie #{movie["title"]} created"
+end
 
 
 
@@ -238,7 +238,7 @@ aurelien.photo.attach(io: file, filename: "aurelien.jpg", content_type: "image/j
 Movie.create( title: "Independence day",
               synopsis: "In this epic adventure film, strange phenomena surface around the globe. The skies ignite. Terror races through the world's major cities. As these extraordinary events unfold, it becomes increasingly clear that an alien force of incredible magnitude has arrived. Its mission: total annihilation over the Fourth of July weekend. The last hope to stop the destruction is an unlikely group of people united by fate and unimaginable circumstances.",
               poster: "https://static.pointculture.be/media/5d/c8/2f/cover_vi4791_scale_345x750.jpg",
-              category: Category.find_by(name: "Blockbuster"),
+              category: "Blockbuster",
               trailer: "https://www.youtube.com/embed/B1E7h3SeMDk?controls=0&amp;start=108;?rel=0&autoplay=1",
               hint_1: "invasion",
               hint_2: "massive destruction",
@@ -246,9 +246,9 @@ Movie.create( title: "Independence day",
             )
 
 Movie.create( title: "Grease",
-              synopsis: "Experience the friendships, romances and adventures of a group of high school kids in the 1950s, with Danny, Sandy, the Pink Ladies, and the Greasers. Welcome to the singing and dancing world of 'Grease' the most successful movie musical of all time. A wholesome exchange student Sandy and a leather-clad Danny have a summer romance, but will it cross clique lines?",
+              synopsis: "Experience the friendships, romances and adventures of a group of high school kids in the 1950s, with Danny, Sandy, the Pink Ladies, and the Greasers. Welcome to the singing and dancing world of "Grease," the most successful movie musical of all time. A wholesome exchange student Sandy and a leather-clad Danny have a summer romance, but will it cross clique lines?",
               poster: "https://m.media-amazon.com/images/I/61FSpk5jADL._AC_SY606_.jpg",
-              category: Category.find_by(name: "Comedy"),
+              category: "Comedy",
               trailer: "https://www.youtube.com/embed/THd96gHV7Tg?controls=0&amp;start=3;?rel=0&autoplay=1",
               hint_1: "musical comedy",
               hint_2: "Sandy",
@@ -258,7 +258,7 @@ Movie.create( title: "Grease",
 Movie.create( title: "Avengers Endgame",
               synopsis: "Adrift in space with no food or water, Tony Stark sends a message to Pepper Potts as his oxygen supply starts to dwindle. Meanwhile, the remaining Avengers -- Thor, Black Widow, Captain America and Bruce Banner -- must figure out a way to bring back their vanquished allies for an epic showdown with Thanos -- the evil demigod who decimated the planet and the universe.",
               poster: "https://lumiere-a.akamaihd.net/v1/images/p_avengersendgame_19751_e14a0104.jpeg?region=0%2C0%2C540%2C810",
-              category: Category.find_by(name: "Action"),
+              category: "Action",
               trailer: "https://www.youtube.com/embed/TcMBFSGVi1c?controls=0&amp;start=108;?rel=0&autoplay=1",
               hint_1: "teammate",
               hint_2: "superheros",
@@ -266,9 +266,9 @@ Movie.create( title: "Avengers Endgame",
             )
 
 Movie.create( title: "The TRUMAN show",
-              synopsis: "He doesn't know it, but everything in Truman Burbank's life is part of a massive TV set. Executive producer Christof orchestrates 'The Truman Show,' a live broadcast of Truman's every move captured by hidden cameras. Cristof tries to control Truman's mind, even removing his true love, Sylvia, from the show and replacing her with Meryl. As Truman gradually discovers the truth, however, he must decide whether to act on it.",
+              synopsis: "He doesn't know it, but everything in Truman Burbank's life is part of a massive TV set. Executive producer Christof orchestrates "The Truman Show," a live broadcast of Truman's every move captured by hidden cameras. Cristof tries to control Truman's mind, even removing his true love, Sylvia, from the show and replacing her with Meryl. As Truman gradually discovers the truth, however, he must decide whether to act on it.",
               poster: "https://m.media-amazon.com/images/I/61XZBVJQ9pL._AC_.jpg",
-              category: Category.find_by(name: "Drama"),
+              category: "Drama",
               trailer: "https://www.youtube.com/embed/dlnmQbPGuls?controls=0&amp;start=93;?rel=0&autoplay=1",
               hint_1: "no escape",
               hint_2: "TV show",
@@ -276,9 +276,9 @@ Movie.create( title: "The TRUMAN show",
             )
 
 Movie.create( title: "Titanic",
-              synopsis: "An epic, action-packed romance about Jack and Rose, set against the ill-fated maiden voyage of the R.M.S. Titanic; the pride and joy of the White Star Line and, at the time, the largest moving object ever built. She was the most luxurious liner of her era -- the 'ship of dreams' -- which ultimately carried over 1,500 people to their death in the ice cold waters of the North Atlantic after sinking in the early hours of April 15, 1912.",
+              synopsis: "An epic, action-packed romance about Jack and Rose, set against the ill-fated maiden voyage of the R.M.S. Titanic; the pride and joy of the White Star Line and, at the time, the largest moving object ever built. She was the most luxurious liner of her era -- the "ship of dreams" -- which ultimately carried over 1,500 people to their death in the ice cold waters of the North Atlantic after sinking in the early hours of April 15, 1912.",
               poster: "https://m.media-amazon.com/images/I/91J0KtuFMAL._AC_SY606_.jpg",
-              category: Category.find_by(name: "All"),
+              category: "All",
               trailer: "https://www.youtube.com/embed/ZQ6klONCq4s?controls=0&amp;start=29;?rel=0&autoplay=1",
               hint_1: "High sea",
               hint_2: "Liverpool",
@@ -288,7 +288,7 @@ Movie.create( title: "Titanic",
 Movie.create( title: "Saving Private Ryan",
               synopsis: "Captain John Miller takes his men behind enemy lines to find Private James Ryan, whose three brothers have been killed in combat. Surrounded by the brutal realties of war, while searching for Ryan, each man embarks upon a personal journey and discovers their own strength to triumph over an uncertain future with honor, decency and courage.",
               poster: "https://m.media-amazon.com/images/I/41zN6HGkL1L._AC_.jpg",
-              category: Category.find_by(name: "Historical"),
+              category: "Historical",
               trailer: "https://www.youtube.com/embed/9CiW_DgxCnQ?controls=0&amp;start=65;?rel=0&autoplay=1",
               hint_1: "World War II",
               hint_2: "rescue",
