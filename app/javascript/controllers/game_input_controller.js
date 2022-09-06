@@ -6,10 +6,8 @@ export default class extends Controller {
   static values = { gametype: String, timerpath: String, numwords: Number, first: String, second: String, third: String }
 
   connect(){
-    this.timeOutValue = 12000
-    console.log(this.firstValue)
-    console.log(this.secondValue)
-    console.log(this.thirdValue)
+
+    this.timeOutValue = 120000
     this.count = 0
     console.log(this.gametypeValue);
     if(this.gametypeValue == "timer"){
