@@ -15,6 +15,13 @@
   text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
 }
 
+.scroll {
+  margin: 4px, 4px;
+  padding: 4px;
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+
 .card-active {
   border: red;
   border-width: 5px;
@@ -39,23 +46,23 @@
 
 .card-wrapper {
   scroll-snap-align: start end;
-  margin-right: 120px;
+  margin-right: 80px;
   border-radius: 10px;
 }
 
-.carousel {
-  // padding-left: 360px;
-  // padding-right: 700px;
-  // margin-left: 215px;
-  // margin-right: 215px;
-  width: 90%;
-  overflow-y: hidden;
-  overflow-x: scroll;
-  scroll-snap-type: inline;
-}
+// .carousel {
+//   // padding-left: 360px;
+//   // padding-right: 700px;
+//   // margin-left: 215px;
+//   // margin-right: 215px;
+//   width: 90%;
+//   overflow-y: hidden;
+//   overflow-x: scroll;
+//   scroll-snap-type: inline;
+// }
 
 .carousel::-webkit-scrollbar {
-  display: none;
+  display:scroll;
 }
 
 .background-red {
