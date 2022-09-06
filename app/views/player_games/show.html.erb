@@ -8,6 +8,7 @@
  <div class="row">
     <div class="col-2 mx-5">
     </div>
+
     <div class="col-8 p-0">
       <h2>Find the movie</h2>
       <%= "Find the title of the movie, a new word will be displayed every 3 seconds" if @player_game.game.timer? %>
@@ -31,17 +32,10 @@
  </div>
 
  <div class="row">
-
     <div class="col col-12">
       <div data-game-input-target="gameContent">
         <%= render "game_content", player_game: @player_game %>
       </div>
     </div>
-
  </div>
-
-
-
-<% console %>
-
 </div>
