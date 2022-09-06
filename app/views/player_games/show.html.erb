@@ -3,6 +3,9 @@
   data-game-input-gametype-value="<%= @player_game.game.game_type %>"
   data-game-input-timerpath-value="<%= player_game_timers_path(@player_game) %>"
   data-game-input-numwords-value="<%= @player_game.words.keys.count %>"
+  data-game-input-first-value="<%=@player_game.game.movie.hint_1 %>"
+  data-game-input-second-value="<%=@player_game.game.movie.hint_2 %>"
+  data-game-input-third-value="<%=@player_game.game.movie.hint_3 %>"
 
 >
 
@@ -33,7 +36,10 @@
   <div class="col-2 mx-5 poster">
   </div>
   <div class="col-8 mt-3 d-flex align-items-center">
-    <%=link_to "Hint", "", class: "btn-small-grey"%>
+    <div class="btn-small-grey" data-action="click->game-input#getHint">Get Hint</div>
     <span class="text-hint ms-3">Stuck? Display a hint on the movie. You will lose some points.</span>
+  </div>
+  <div style='color: black;'>
+  <span data-game-input-target="first"></span><span data-game-input-target="second"></span><span data-game-input-target="third"></span><span data-game-input-target="noMoreHints"></span>
   </div>
 </div>
