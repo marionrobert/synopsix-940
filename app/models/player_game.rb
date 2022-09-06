@@ -1,6 +1,6 @@
 class PlayerGame < ApplicationRecord
     attr_accessor :category, :game_type
-  has_many :inputs
+  has_many :inputs, dependent: :destroy
   belongs_to :user
   belongs_to :game
   after_create :build_words, :build_words_title, :hidden_synopsis, :hidden_title
