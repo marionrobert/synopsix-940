@@ -9,7 +9,6 @@
     <div class="col col-9">
       <h2 class="text-center">What's the movie ?</h2>
     </div>
-
  </div>
 
 <%# INTEGRE LE FORM INPUT %>
@@ -26,21 +25,13 @@
       <%= render "form_input", player_game: @player_game, input: @input %>
     </div>
   </div>
-
  </div>
 <%# CI DESSOUS INTEGRE LA PARTIAL AVEC LES 5 DERNIERS ESSAI ET LE JEU %>
  <div class="row">
-
     <div class="col col-12">
       <div data-game-input-target="gameContent">
         <%= render "game_content", player_game: @player_game %>
       </div>
     </div>
-
  </div>
-
-
-
-<% console %>
-
 </div>
