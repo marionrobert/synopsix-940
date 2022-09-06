@@ -12,6 +12,8 @@ class InputsController < ApplicationController
       if @input.content == @player_game.game.movie.title.downcase
         @player_game.title_found = true
         @player_game.final_score = @player_game.calculate_score
+        @player_game.user.timergame_score += @player_game.final_score
+        @player_game.user.save
         @player_game.save
       end
       respond_to do |format|
@@ -77,6 +79,8 @@ class InputsController < ApplicationController
     if @input.content == @player_game.game.movie.title.downcase || @player_game.words_title.all? { |key, value| value["found"] == true }
       @player_game.title_found = true
       @player_game.final_score = @player_game.calculate_score
+      @player_game.user.inputgame_score += @player_game.final_score
+      @player_game.user.save
       @player_game.save
     end
   end

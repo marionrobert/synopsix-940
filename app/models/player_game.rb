@@ -114,19 +114,19 @@ class PlayerGame < ApplicationRecord
   end
 
   def calculate_score
-    score = 1000
+    score = 5000
     inputs = self.inputs
     inputs.each_with_index do |input, index|
       if index <= 9
-        score -= 10
+        score -= 5
       elsif index > 9 && index <= 29
-        score -= 20
+        score -= 10
       elsif index > 29 && index <= 59
-        score -= 40
+        score -= 15
       elsif index > 59 && index <= 99
-        score -= 60
+        score -= 20
       else
-        score -= 100
+        score -= 25
       end
     end
     score = 0 if score.negative?

@@ -1,23 +1,32 @@
 <div class="row justify-content-around mt-5">
-  <div class="col-4 text-center bg-green rounded p-3 tab-performances">
-    <h5>My performances</h5>
-    <%= cl_image_tag current_user.photo.key, width:50, height: 50, class:"rounded-circle" %>
-    <h5><%=current_user.username%></h5>
+  <div class="col-4 bg-green rounded p-3 tab-my-stats">
+    <div class= "text-center">
+      <h5 >My Stats</h5>
+      <%= cl_image_tag current_user.photo.key, width:50, height: 50, class:"rounded-circle my-2" %>
+      <h5><%=current_user.username%></h5>
+    </div>
     <hr>
     <%#= <% current_user.player_games %>
-    <h6>Score: (current_user.inputgame_score) points </h6>
+    <h6>Score: <%=current_user.timergame_score %> points </h6>
     <hr>
+    <% if wins_timergame.count > 1  %>
+      <h6><%=wins_timergame.count %>  Games Won</h6>
+    <% else %>
+      <h6> <%=wins_timergame.count %>  Game Won</h6>
+    <% end %>
     <ul>
-    <% timer_games.each do |game|  %>
+    <% wins_timergame.each do |game|  %>
       <li>
         <%= game.movie.title  %>
       </li>
     <% end %>
     </ul>
   </div>
-    <div class="col-6  text-center bg-light-red rounded p-3 tab-leaderboard">
-    <h5>Leaderboard</h5>
+    <div class="col-6 bg-light-red rounded p-3 tab-leaderboard">
+    <h5 class="text-center">Leaderboard</h5>
     <hr>
-    <p>Ici, il y aura le classement des meilleurs joueurs pour le timer game</p>
+    <% players_timergame.each_with_index do |player, index| %>
+      <h6 class="leaderboard-position"><%= index + 1 %>. <%= player.username %> - <%= player.timergame_score %> points  <%= cl_image_tag player.photo.key, width:25, height: 25, class:"rounded-circle my-1" %></h6>
+    <% end %>
   </div>
 </div>

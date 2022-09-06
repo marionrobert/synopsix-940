@@ -177,22 +177,14 @@ new_category = Category.create!(name: "Drama")
 file = File.open(Rails.root.join("app/assets/images/categories/drama_movies_new.jpg"))
 new_category.photo.attach(io: file, filename: "drama_movies_new.jpg", content_type: "image/jpeg")
 
-comedy_category = Category.create!(name: "Comedy")
+new_category = Category.create!(name: "Comedy")
 file = File.open(Rails.root.join("app/assets/images/categories/comedy_movies.jpg"))
-comedy_category.photo.attach(io: file, filename: "comedy_movies.jpg", content_type: "image/jpeg")
+new_category.photo.attach(io: file, filename: "comedy_movies.jpg", content_type: "image/jpeg")
 
-historical_category = Category.create!(name: "Historical")
+new_category = Category.create!(name: "Historical")
 file = File.open(Rails.root.join("app/assets/images/categories/historical_movies.jpg"))
-historical_category.photo.attach(io: file, filename: "historical_movies.jpg", content_type: "image/jpeg")
+new_category.photo.attach(io: file, filename: "historical_movies.jpg", content_type: "image/jpeg")
 
-
-comedy_category = Category.create!(name: "Comedy")
-file = File.open(Rails.root.join("app/assets/images/categories/comedy_movies.jpg"))
-comedy_category.photo.attach(io: file, filename: "comedy_movies.jpg", content_type: "image/jpeg")
-
-historical_category = Category.create!(name: "Historical")
-file = File.open(Rails.root.join("app/assets/images/categories/historical_movies.jpg"))
-historical_category.photo.attach(io: file, filename: "historical_movies.jpg", content_type: "image/jpeg")
 
 p "📁 Categories created"
 
@@ -243,7 +235,7 @@ end
 
 #demo movies
 
-Movie.create( title: "Independance day",
+Movie.create( title: "Independence day",
               synopsis: "In this epic adventure film, strange phenomena surface around the globe. The skies ignite. Terror races through the world's major cities. As these extraordinary events unfold, it becomes increasingly clear that an alien force of incredible magnitude has arrived. Its mission: total annihilation over the Fourth of July weekend. The last hope to stop the destruction is an unlikely group of people united by fate and unimaginable circumstances.",
               poster: "https://static.pointculture.be/media/5d/c8/2f/cover_vi4791_scale_345x750.jpg",
               category: "Blockbuster",
