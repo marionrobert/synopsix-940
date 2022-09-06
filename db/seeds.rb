@@ -161,25 +161,32 @@ Category.destroy_all
 
 #CATEGORIES CREATION
 new_category = Category.create!(name: "All")
-file = File.open(Rails.root.join("app/assets/images/categories/all_movies.jpg"))
-new_category.photo.attach(io: file, filename: "all_movies.jpg", content_type: "image/jpeg")
+file = File.open(Rails.root.join("app/assets/images/categories/all_movies_new.jpg"))
+new_category.photo.attach(io: file, filename: "all_movies_new.jpg", content_type: "image/jpeg")
 
 new_category = Category.create!(name: "Blockbuster")
-file = File.open(Rails.root.join("app/assets/images/categories/blockbuster_movies.jpg"))
-new_category.photo.attach(io: file, filename: "blockbuster_movies.jpg", content_type: "image/jpeg")
+file = File.open(Rails.root.join("app/assets/images/categories/blockbuster_movies_new.jpg"))
+new_category.photo.attach(io: file, filename: "blockbuster_movies_new.jpg", content_type: "image/jpeg")
 
 new_category = Category.create!(name: "Action")
-file = File.open(Rails.root.join("app/assets/images/categories/action_movies.jpg"))
-new_category.photo.attach(io: file, filename: "action_movies.jpg", content_type: "image/jpeg")
+file = File.open(Rails.root.join("app/assets/images/categories/action_movies_new.jpg"))
+new_category.photo.attach(io: file, filename: "action_movies_new.jpg", content_type: "image/jpeg")
 
 new_category = Category.create!(name: "Drama")
-file = File.open(Rails.root.join("app/assets/images/categories/drama_movies.jpg"))
-new_category.photo.attach(io: file, filename: "drama_movies.jpg", content_type: "image/jpeg")
+file = File.open(Rails.root.join("app/assets/images/categories/drama_movies_new.jpg"))
+new_category.photo.attach(io: file, filename: "drama_movies_new.jpg", content_type: "image/jpeg")
 
+comedy_category = Category.create!(name: "Comedy")
+file = File.open(Rails.root.join("app/assets/images/categories/comedy_movies.jpg"))
+comedy_category.photo.attach(io: file, filename: "comedy_movies.jpg", content_type: "image/jpeg")
+
+historical_category = Category.create!(name: "Historical")
+file = File.open(Rails.root.join("app/assets/images/categories/historical_movies.jpg"))
+historical_category.photo.attach(io: file, filename: "historical_movies.jpg", content_type: "image/jpeg")
 
 p "📁 Categories created"
 
-  file = File.read(Rails.root.join('public/data_movies.json'))
+file = File.read(Rails.root.join('public/data_movies.json'))
   data_hash = JSON.parse(file)
 
 #USERS CREATION
@@ -218,13 +225,6 @@ data_hash.each_value do |movie|
   p "🎥 Movie #{movie["title"]} created"
 end
 
-comedy_category = Category.create!(name: "Comedy")
-file = File.open(Rails.root.join("app/assets/images/categories/comedy_movies.jpg"))
-comedy_category.photo.attach(io: file, filename: "comedy_movies.jpg", content_type: "image/jpeg")
-
-historical_category = Category.create!(name: "Historical")
-file = File.open(Rails.root.join("app/assets/images/categories/historical_movies.jpg"))
-historical_category.photo.attach(io: file, filename: "historical_movies.jpg", content_type: "image/jpeg")
 
 
 Movie.find_by(title: "Forrest Gump").update(category: historical_category)
