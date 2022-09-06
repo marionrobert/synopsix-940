@@ -1,4 +1,4 @@
-<div class="row mt-2">
+<div class="row mt-2 mx-0" id="trailer-wrapper">
   <% if player_game.title_found %>
     <div class="col-2 mx-5 poster">
         <%= image_tag "#{player_game.game.movie.poster}"%>
@@ -25,7 +25,7 @@
   <%# </div> %>
 
 
-  <div class="p-3 bggameboard col-8" data-game-input-target="board">
+  <div class="p-3 bggameboard col-8 <%='opacity-25' if player_game.game.movie.trailer%>" data-game-input-target="board">
       <% if player_game.title_found  %>
         <h2>Congratulations, you win! You scored <%= player_game.final_score %> points ! <i class="fa-solid fa-trophy"></i></h2>
         <h2>The title was: <%= player_game.game.movie.title %></h2>
