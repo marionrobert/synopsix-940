@@ -7,7 +7,7 @@
 >
 
  <div class="row">
-    <div class="col-2 mx-5">
+    <div class="col-2">
     </div>
 
     <div class="col-8 mt-3">
@@ -17,9 +17,11 @@
       <%= render "form_input", player_game: @player_game, input: @input %>
     </div>
     <div class="col-2">
-      <% if @player_game.game.timer? %>
-        <div data-game-input-target="timer"></div>
-      <% end %>
+      <div class="d-flex align-items-center justify-content-center">
+        <% if @player_game.game.timer? %>
+          <div data-game-input-target="timer"></div>
+        <% end %>
+      </div>
     </div>
   </div>
 
