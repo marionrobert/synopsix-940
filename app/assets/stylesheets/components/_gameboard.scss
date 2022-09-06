@@ -19,6 +19,13 @@
 .gamebg{
   background: linear-gradient(180deg, $our-black, $our-black 60%, white, white 60%);
   min-height: 90vh;
+  position:absolute;
+  top:0px;
+  right:0px;
+  bottom:0px;
+  left:0px;
+  z-index: -1;
+  padding-top: 96px;
 }
 
 
