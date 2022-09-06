@@ -2,12 +2,12 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="game-input"
 export default class extends Controller {
-  static targets = ["form", "gameContent", "input", "timer", "board"]
-  static values = { gametype: String, timerpath: String, numwords: Number }
+  static targets = ["form", "gameContent", "input", "timer", "board", "first", "second", "third", "noMoreHints"]
+  static values = { gametype: String, timerpath: String, numwords: Number, first: String, second: String, third: String }
 
   connect(){
-    this.timeOutValue = 120000
 
+    this.timeOutValue = 120000
     this.count = 0
     console.log(this.gametypeValue);
     if(this.gametypeValue == "timer"){
@@ -238,5 +238,18 @@ export default class extends Controller {
         .setAttribute("stroke-dasharray", circleDasharray);
     }
 
+  }
+
+  getHint() {
+    if (this.firstTarget.innerHTML == "") {
+      this.firstTarget.innerHTML = this.firstValue
+    }
+    else if (this.secondTarget.innerHTML == ""){
+      this.secondTarget.innerHTML = this.secondValue
+    }
+    else if (this.thirdTarget.innerHTML == ""){
+      this.thirdTarget.innerHTML = this.thirdValue
+    }
+    else {this.noMoreHintsTarget.innerHTML = "No More Hints"}
   }
 }

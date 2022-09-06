@@ -20,11 +20,6 @@
     </div>
   <% end %>
 
-  <%# <div> %>
-    <%# <p>Hint: <%= player_game.game.movie.title</p> %>
-  <%# </div> %>
-
-
   <div class="p-3 bggameboard col-8 <%='opacity-25' if player_game.game.movie.trailer%>" data-game-input-target="board">
       <% if player_game.title_found  %>
         <h2>Congratulations, you win! You scored <%= player_game.final_score %> points ! <i class="fa-solid fa-trophy"></i></h2>
