@@ -1,7 +1,14 @@
-.tab-performances {
+.tab-my-stats {
   background-color: $our-green;
 }
 
 .tab-leaderboard {
   background-color: $our-red;
+}
+
+.leaderboard-position {
+  background-color: rgb(219, 34, 42);
+  border-radius: 4px;
+  padding: 2px;
+  padding-left: 8px;
 }
