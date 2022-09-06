@@ -72,3 +72,17 @@
   font-weight: 700;
   border: none;
 }
+
+.btnplay {
+  font-family: Lato;
+  border-radius: 8px;
+  padding: 14px 40px;
+  background-color: $our-red;
+  color: #FFFFFF;
+  text-decoration: none!important;
+}
+
+.btnplay:hover {
+  background-color: #941822;
+  color:rgba(255,255,255,0.8);
+}
