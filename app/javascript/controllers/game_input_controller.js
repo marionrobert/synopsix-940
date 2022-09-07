@@ -62,7 +62,8 @@ export default class extends Controller {
       })
   }
   wordRevealInterval=() => {
-    const token = document.querySelector('meta[name="csrf-token"]').content
+    console.log(document.querySelector('meta[name="csrf-token"]').content);
+    const token = document.querySelector('meta[name="csrf-token"]').content;
     console.log(this.timerpathValue);
     fetch(this.timerpathValue, {
       method: "POST",
