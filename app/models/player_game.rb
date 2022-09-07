@@ -58,7 +58,7 @@ class PlayerGame < ApplicationRecord
       # on display l'élément sauf si l'élément commence par une lettre ou un chiffre
       next "<span class='not-a-word'>#{element}</span>" unless element.downcase.first =~ /([a-z]|\d)/
 
-      if Input.first.content.downcase == element && self.words[element.downcase]["found"]
+      if Input.first.content.downcase == element.downcase && self.words[element.downcase]["found"]
         "<span class='lastfound'>#{element}</span>".html_safe
       elsif self.words[element.downcase]["found"]
         "<span class='wfound'>#{element}</span>".html_safe
