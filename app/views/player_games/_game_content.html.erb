@@ -1,5 +1,5 @@
-<div class="row mt-2 mx-0">
-  <% if player_game.title_found %>
+<div class="row mt-2 mx-0" >
+  <% if (player_game.title_found || player_game.lose) %>
     <div class="col-2 poster">
        <%= image_tag "#{player_game.game.movie.poster}"%>
     </div>
@@ -18,23 +18,22 @@
   <% end %>
 
   <div class="p-3 bggameboard col-8 <%='opacity-25' if (player_game.title_found || player_game.lose) %>" data-game-input-target="board">
-      <% if player_game.title_found  %>
-        <h2>Congratulations, you win! You scored <%= player_game.final_score %> points ! <i class="fa-solid fa-trophy"></i></h2>
-        <h2>The title was: <%= player_game.game.movie.title %></h2>
-      <% elsif player_game.lose %>
-        <h2>You lose! 😞</h2><br>
-        <h2>The title was: <%= player_game.game.movie.title %></h2>
+      <% if (player_game.title_found || player_game.lose) %>
+        <h2><%= player_game.game.movie.title %></h2>
+        <p><%= player_game.game.movie.synopsis %></p>
       <% else %>
-        <% if  @player_game.game.timer? %>
+        <% if  player_game.game.timer? %>
           <h2><%= player_game.hidden_title_timer  %></h2>
         <% else %>
           <h2><%= player_game.hidden_title  %></h2>
         <% end %>
+
+        <p><%= player_game.hidden_synopsis  %></p>
+
       <% end %>
-      <p><%= player_game.hidden_synopsis  %></p>
   </div>
   <div class="col-2">
-  <% if  @player_game.game.input? %>
+  <% if  player_game.game.input? %>
     <div class="hint">
 
       <div class="btn-small-grey" data-action="click->game-input#getHint">Get Hint</div>

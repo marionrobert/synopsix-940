@@ -127,6 +127,8 @@ class InputsController < ApplicationController
         formats: [:html]
       ),
       win: @player_game.title_found,
+      lose: @player_game.lose,
+      score: @player_game.final_score,
       synopsis:  @player_game.game.movie.synopsis,
       title:  @player_game.game.movie.title,
       poster: @player_game.game.movie.poster
