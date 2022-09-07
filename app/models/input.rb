@@ -22,7 +22,8 @@ class Input < ApplicationRecord
                                                              player_game.words.key?(content.downcase) ||
                                                              player_game.words_title.key?(content.downcase) ||
                                                              content.downcase == player_game.game.movie.title.downcase ||
-                                                             content.downcase.match?(/^\d+(rd|st|th|s|nd)?$/)
+                                                             content.downcase.match?(/^\d+(rd|st|th|s|nd)?$/) ||
+                                                             player_game.game.timer?
     end
   end
 end
