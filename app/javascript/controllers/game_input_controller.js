@@ -6,10 +6,12 @@ export default class extends Controller {
   static values = { gametype: String, timerpath: String, numwords: Number, first: String, second: String, third: String }
 
   connect(){
+    const styles = ['color: white', 'background: red'].join(';');
+    const message = "🚫 -- don't cheat, we can see you 👁️_👁️ -- 🚫";
+    console.log('%c%s', styles, message);
 
     this.timeOutValue = 120000
     this.count = 0
-    console.log(this.gametypeValue);
     if(this.gametypeValue == "timer"){
       this.initTimer()
       this.interval = setInterval(this.wordRevealInterval, 3000);
@@ -43,7 +45,6 @@ export default class extends Controller {
     })
       .then(response => response.json())
       .then((data) => {
-        console.log(data);
         // render game content
         if(data.form_input){
          this.formTarget.outerHTML = data.form_input
@@ -53,7 +54,6 @@ export default class extends Controller {
         if(this.hasInputTarget) this.inputTarget.focus()
         if(data.win){
           this.clear()
-          console.log("hello");
           this.formTarget.classList.add('d-none')
           this.timerTarget.classList.add('d-none')
 
@@ -62,9 +62,7 @@ export default class extends Controller {
       })
   }
   wordRevealInterval=() => {
-    console.log(document.querySelector('meta[name="csrf-token"]').content);
     const token = document.querySelector('meta[name="csrf-token"]').content;
-    console.log(this.timerpathValue);
     fetch(this.timerpathValue, {
       method: "POST",
       headers: {
