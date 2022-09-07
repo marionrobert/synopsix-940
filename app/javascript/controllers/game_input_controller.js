@@ -7,7 +7,7 @@ export default class extends Controller {
 
   connect(){
 
-    this.timeOutValue = 120000
+    this.timeOutValue = 10000
     this.count = 0
     console.log(this.gametypeValue);
     if(this.gametypeValue == "timer"){
@@ -87,28 +87,19 @@ export default class extends Controller {
       clearInterval(this.interval)
       this.formTarget.classList.add('d-none')
       this.timerTarget.classList.add('d-none')
-      fetch(this.formTarget.action, {
+      fetch(this.formTarget.action + "?end=true",  {
         method: "POST",
         headers: { "Accept": "application/json" },
         body: new FormData(this.formTarget)
       })
         .then(response => response.json())
         .then((data) => {
-          console.log(data);
-          // render game end
-          this.gameContentTarget.innerHTML =`
-          <div>
-          You lose
-          The movie was ${data.title}
-            <div>
-            ${data.synopsis}
-            </div>
-            ${data.poster}
-          </div>
-
-          `
-
-
+          if(data.form_input){
+            this.formTarget.outerHTML = data.form_input
+           }
+           this.gameContentTarget.innerHTML = data.game_content
+           // clear form input
+           if(this.hasInputTarget) this.inputTarget.focus()
         })
 
     }

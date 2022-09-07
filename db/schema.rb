@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_06_072340) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_07_105426) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -88,6 +88,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_06_072340) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.jsonb "words_title"
+    t.boolean "lose", default: false, null: false
     t.index ["game_id"], name: "index_player_games_on_game_id"
     t.index ["user_id"], name: "index_player_games_on_user_id"
   end
