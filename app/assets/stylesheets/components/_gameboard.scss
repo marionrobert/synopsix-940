@@ -9,16 +9,12 @@
   padding: 8px;
   height:200px;
   margin: 0px 8px 0px;
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
+
 }
 
 
 .gamebg{
-  background: linear-gradient(180deg, $our-black, $our-black 60%, white, white 60%);
+  background: linear-gradient(180deg, $our-black, $our-black 50%, white, white 50%);
   min-height: 90vh;
   position:absolute;
   top:0px;
@@ -27,6 +23,11 @@
   left:0px;
   z-index: 1;
   padding-top: 96px;
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 
