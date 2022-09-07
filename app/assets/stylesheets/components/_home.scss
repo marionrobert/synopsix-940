@@ -5,7 +5,14 @@ body.bg-home {
   background-image:linear-gradient(115deg, rgba(0,0,0,1) 31%, rgba(255,255,255,0) 73%), url(Wallpaper_Tom_Cruise.jpg);
 }
 
-body.bg-new {
+.bg-new {
+  position:absolute;
+  top:0;
+  bottom:0;
+  right: 0;
+  left:0;
+  padding-top:100px;
+  height:100vh;
   background: rgb(22,22,22);
   background: linear-gradient(40deg, rgba(22,22,22,1) 29%, rgba(45,45,45,1) 52%, rgba(88,88,88,1) 70%, rgba(138,138,138,1) 90%, rgba(159,159,159,1) 99%);
 }
