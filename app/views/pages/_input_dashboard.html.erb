@@ -17,25 +17,32 @@
     <% else %>
       <h6><i class="fa-solid fa-trophy mx-1"></i> <%=wins_inputgame.count %>  Game Won</h6>
     <% end %>
-    <ul>
-    <% wins_inputgame.each do |game|  %>
-      <li>
-        <%= game.movie.title  %>
-      </li>
-    <% end %>
-    </ul>
+
+
+    <div class="mystats-scroll" data-controller="leaderboardscroll" data-action="wheel->leaderboardscroll#scroll" data-leaderboardscroll-target="down" data-leaderboardscroll-target="up">
+      <ul class="ms-4">
+        <% wins_inputgame.each do |game|  %>
+          <li>
+            <%= game.movie.title  %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
 
   </div>
     <div class="col-4 bg-light-red tab-leaderboard">
       <div class="tab-content-title">
         <h5></i> Leaderboard</h5>
       </div>
-      <% players_inputgame.each_with_index do |player, index| %>
-        <% if player.inputgame_score > 1 %>
-          <h6><%= cl_image_tag player.photo.key, width:30, height: 30, class:"rounded-circle mx-2" %><%= index + 1 %>. <%= player.username %> - <%= player.inputgame_score %> points </h6>
-        <% else %>
-          <h6><%= cl_image_tag player.photo.key, width:30, height: 30, class:"rounded-circle mx-2" %><%= index + 1 %>. <%= player.username %> - <%= player.inputgame_score %> point </h6>
+      <div class="leaderboard-scroll" data-controller="leaderboardscroll" data-action="wheel->leaderboardscroll#scroll" data-leaderboardscroll-target="down" data-leaderboardscroll-target="up">
+        <% players_inputgame.each_with_index do |player, index| %>
+          <% if player.inputgame_score > 1 %>
+            <h6><%= cl_image_tag player.photo.key, width:30, height: 30, class:"rounded-circle mx-2" %><%= index + 1 %>. <%= player.username %> - <%= player.inputgame_score %> points </h6>
+          <% else %>
+            <h6><%= cl_image_tag player.photo.key, width:30, height: 30, class:"rounded-circle mx-2" %><%= index + 1 %>. <%= player.username %> - <%= player.inputgame_score %> point </h6>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
 </div>
