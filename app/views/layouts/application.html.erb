@@ -14,7 +14,7 @@
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    
+
     <%= favicon_link_tag 'favicon.png' %>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,7 +23,7 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body class="<%='bg-home' if action_name=='home'%><%='bg-new' if action_name=='new'%>">
+  <body class="<%='bg-home' if action_name=='home'%>">
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
 
