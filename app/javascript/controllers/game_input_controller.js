@@ -7,7 +7,7 @@ export default class extends Controller {
 
   connect(){
 
-    this.timeOutValue = 10000
+    this.timeOutValue = 120000
     this.count = 0
     console.log(this.gametypeValue);
     if(this.gametypeValue == "timer"){
@@ -241,7 +241,5 @@ export default class extends Controller {
     }
     else if (this.thirdTarget.innerHTML == ""){
       this.thirdTarget.innerHTML = this.thirdValue
-    }
-    else {this.noMoreHintsTarget.innerHTML = "No More Hints"}
-  }
+  }}
 }
