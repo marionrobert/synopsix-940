@@ -26,12 +26,33 @@
   }
 }
 
-.wfound {
-  color: white;
+
+.lastfound {
+  margin: 6px 6px;
+  border-radius: 4px;
+  animation: lastfound 3000ms forwards;
+  color: $our-dark-grey;
   font-weight: 400;
 }
+
+@keyframes lastfound {
+  0% { background-color: black;}
+  50% {background-color: rgb(1, 170, 69);}
+  100% { background-color: rgba(0,0,0,0);}
+}
+
 
 .bggameboard h2 {
   font-size: 32px;
   margin-bottom: 24px;
+}
+
+
+.not-a-word{
+  color: $our-dark-grey;
+}
+
+.wfound {
+  color: $our-dark-grey;
+  font-weight: 400;
 }

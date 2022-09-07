@@ -56,9 +56,11 @@ class PlayerGame < ApplicationRecord
     #   pour chaque mot du synopsis,
     displayed_synopsis.map! do |element|
       # on display l'élément sauf si l'élément commence par une lettre ou un chiffre
-      next "<span>#{element}</span>" unless element.downcase.first =~ /([a-z]|\d)/
+      next "<span class='not-a-word'>#{element}</span>" unless element.downcase.first =~ /([a-z]|\d)/
 
-      if self.words[element.downcase]["found"]
+      if Input.first.content.downcase == element.downcase && self.words[element.downcase]["found"]
+        "<span class='lastfound'>#{element}</span>".html_safe
+      elsif self.words[element.downcase]["found"]
         "<span class='wfound'>#{element}</span>".html_safe
       elsif self.words[element.downcase]["score_proximity"] >= 0.8
         "<span class='not_far_to_found'>&nbsp#{self.words[element.downcase]['input_to_display']}&nbsp</span>".html_safe
