@@ -116,7 +116,7 @@ class PlayerGame < ApplicationRecord
   end
 
   def calculate_score
-    score = 5000
+    score = 2000
     inputs = self.inputs
     inputs.each_with_index do |input, index|
       if index <= 9
@@ -131,7 +131,7 @@ class PlayerGame < ApplicationRecord
         score -= 25
       end
     end
-    score = 0 if score.negative?
-    self.final_score = score
+    score = 200 if score.negative?
+    return score
   end
 end
