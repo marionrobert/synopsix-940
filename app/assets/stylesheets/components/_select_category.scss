@@ -15,6 +15,10 @@
   text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
 }
 
+.card:hover {
+  opacity: 55%
+}
+
 .scroll {
   margin: 4px, 4px;
   padding: 4px;
@@ -27,6 +31,10 @@
   border-width: 5px;
   border-style: solid;
   opacity: 1;
+}
+
+.card:hover {
+  opacity: 1
 }
 
 .linear-gradient {
