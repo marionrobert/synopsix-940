@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="game-input"
 export default class extends Controller {
-  static targets = ["form", "gameContent", "input", "timer", "board", "first", "second", "third", "noMoreHints"]
+  static targets = ["form", "gameContent", "input", "timer", "board", "first", "second", "third", "noMoreHints", "title", "subtitle"]
   static values = { gametype: String, timerpath: String, numwords: Number, first: String, second: String, third: String }
 
   connect(){
@@ -10,7 +10,7 @@ export default class extends Controller {
     const message = "🚫 -- don't cheat, we can see you 👁️_👁️ -- 🚫";
     console.log('%c%s', styles, message);
 
-    this.timeOutValue = 120000
+    this.timeOutValue = 20000
     this.count = 0
     if(this.gametypeValue == "timer"){
       this.initTimer()
@@ -56,8 +56,8 @@ export default class extends Controller {
           this.clear()
           this.formTarget.classList.add('d-none')
           this.timerTarget.classList.add('d-none')
-
-
+          this.titleTarget.innerHTML = "Congratulations, you win!"
+          this.subtitleTarget.innerHTML = "Your score is: " + data.score
         }
       })
   }
@@ -99,6 +99,8 @@ export default class extends Controller {
            this.gameContentTarget.innerHTML = data.game_content
            // clear form input
            if(this.hasInputTarget) this.inputTarget.focus()
+           this.titleTarget.innerHTML = "What a shame, you lose!"
+           this.subtitleTarget.innerHTML = ""
         })
 
     }
