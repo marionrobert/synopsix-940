@@ -1,14 +1,19 @@
 class Input < ApplicationRecord
   belongs_to :player_game
   before_save :downcase_content
-  validate :check_english_word
+  validate :strip_content, :check_english_word
   enum source: {
     input: 0,
     timer: 1,
   }
+  default_scope { order(created_at: :desc) }
 
   def downcase_content
     self.content = self.content.downcase
+  end
+
+  def strip_content
+    self.content = self.content.strip
   end
 
   def check_english_word
