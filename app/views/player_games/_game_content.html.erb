@@ -4,7 +4,7 @@
         <%= image_tag "#{player_game.game.movie.poster}"%>
     </div>
     <% if player_game.game.movie.trailer%>
-      <iframe class="zindexbg" src="<%=player_game.game.movie.trailer%>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe class="zindexbg" src="<%=player_game.game.movie.trailer%>;&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </iframe>
     <% end %>
   <% else %>
