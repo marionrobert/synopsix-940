@@ -9,8 +9,10 @@ class InputsController < ApplicationController
     @input.save
 
     if @player_game.game.game_type == "timer"
-      if @input.content == @player_game.game.movie.title.downcase
-        @player_game.title_found = true
+      if params[:end].present? && params[:end] == "true" || (@input.content == @player_game.game.movie.title.downcase)
+      # if @input.content == @player_game.game.movie.title.downcase
+        @player_game.title_found = true if @input.content == @player_game.game.movie.title.downcase
+        @player_game.lose = true if params[:end] == "true"
         @player_game.final_score = @player_game.calculate_score
         @player_game.user.timergame_score += @player_game.final_score
         @player_game.user.save

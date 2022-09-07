@@ -1,6 +1,6 @@
 <div class="gamebg"
   data-controller="game-input"
-  data-game-input-gametype-value="<%= @player_game.game.game_type %>"
+  data-game-input-gametype-value="<%= @player_game.title_found || @player_game.lose ? nil : @player_game.game.game_type %>"
   data-game-input-timerpath-value="<%= player_game_timers_path(@player_game) %>"
   data-game-input-numwords-value="<%= @player_game.words.keys.count %>"
   data-game-input-first-value="<%=@player_game.game.movie.hint_1 %>"
