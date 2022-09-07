@@ -1,5 +1,5 @@
-.gamebg{
-  background: linear-gradient(180deg, $our-black, $our-black 70%, white, white 70%);
+.gamebg {
+  background: linear-gradient(180deg, $our-black, $our-black 380px, white, white 380px);
   min-height: 90vh;
   height:100%;
   position:absolute;
@@ -9,12 +9,16 @@
   left:0px;
   z-index: 1;
   padding-top: 80px;
+
+  .row {
+    width: 100vw;
+  }
+
   ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
   }
-
 }
 
 .bggameboard {
