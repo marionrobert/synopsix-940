@@ -1,4 +1,7 @@
 <div class="form">
+  <div class="d-none d-flex justify-content-center" id="new-game">
+    <%= link_to "New Game", root_path, class: "btn-input p-2"%>
+  </div>
   <% label = player_game.game.input? ? "Guess a word" : "Guess the title" %>
 
   <%= simple_form_for([player_game, input],
