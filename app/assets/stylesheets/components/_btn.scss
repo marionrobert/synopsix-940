@@ -1,5 +1,6 @@
 
 .btn-small-red {
+  cursor: pointer;
   background-color: #E20134;
   width: 175px;
   color: white;
@@ -10,6 +11,7 @@
 }
 
 .btn-small-grey {
+  cursor: pointer;
   background-color: #424244;
   width: 175px;
   color: white;
@@ -26,6 +28,7 @@
 
 
 .btn-main-red{
+  cursor: pointer;
   border-radius: 8px;
   padding: 4px 20px;
   background-color: $our-red;
@@ -46,6 +49,7 @@
   color: white;
   font-weight: 700;
   margin-top: 0px;
+  cursor: pointer;
 }
 
 .btn-input:hover {
