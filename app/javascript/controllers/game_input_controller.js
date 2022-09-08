@@ -46,6 +46,7 @@ export default class extends Controller {
     })
       .then(response => response.json())
       .then((data) => {
+        console.log(data)
         // render game content
         if(data.form_input){
          this.formTarget.outerHTML = data.form_input
@@ -55,10 +56,12 @@ export default class extends Controller {
         if(this.hasInputTarget) this.inputTarget.focus()
         if(data.win){
           this.clear()
+          console.log("ici")
           this.formTarget.classList.add('d-none')
           this.titleTarget.innerHTML = "Congratulations, you win!"
           this.subtitleTarget.innerHTML = `You scored ${data.score} points!`
           // this.subtitleTarget.innerHTML = ""
+          console.log(data)
           if (document.querySelector("#timing")) {this.timerTarget.classList.add('d-none')}
         }
       })
