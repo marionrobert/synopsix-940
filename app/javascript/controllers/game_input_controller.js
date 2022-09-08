@@ -59,6 +59,7 @@ export default class extends Controller {
           this.formTarget.classList.add('d-none')
           this.titleTarget.innerHTML = "Congratulations, you win!"
           this.subtitleTarget.innerHTML = `You scored ${data.score} points!`
+          document.querySelector("#new-game").classList.remove('d-none')
           // this.subtitleTarget.innerHTML = ""
           if (document.querySelector("#timing")) {this.timerTarget.classList.add('d-none')}
         }
@@ -104,6 +105,7 @@ export default class extends Controller {
            if(this.hasInputTarget) this.inputTarget.focus()
            this.titleTarget.innerHTML = "What a shame, you lose!"
            this.subtitleTarget.innerHTML = ""
+           document.querySelector("#new-game").classList.remove('d-none')
         })
 
     }
