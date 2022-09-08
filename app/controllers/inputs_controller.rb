@@ -127,6 +127,11 @@ class InputsController < ApplicationController
         locals: { player_game: @player_game },
         formats: [:html]
       ),
+      form_input: render_to_string(
+        partial: "player_games/form_input",
+        locals: { player_game: @player_game, input: Input.new},
+        formats: [:html]
+      ),
       win: @player_game.title_found,
       lose: @player_game.lose,
       score: @player_game.final_score,
