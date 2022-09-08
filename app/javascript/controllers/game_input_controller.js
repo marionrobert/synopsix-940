@@ -10,11 +10,11 @@ export default class extends Controller {
     const message = "🚫 -- don't cheat, we can see you 👁️_👁️ -- 🚫";
     console.log('%c%s', styles, message);
 
-    this.timeOutValue = 20000
+    this.timeOutValue = 120000
     this.count = 0
     if(this.gametypeValue == "timer"){
       this.initTimer()
-      this.interval = setInterval(this.wordRevealInterval, 3000);
+      this.interval = setInterval(this.wordRevealInterval, 2500);
       this.timeOut = setTimeout(this.endGame, this.timeOutValue)
    }
   }

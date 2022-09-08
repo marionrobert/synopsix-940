@@ -87,7 +87,7 @@ class PlayerGame < ApplicationRecord
     displayed_title.map! do |element|
       next "<span>#{element}</span>" unless element.downcase.first =~ /([a-z]|\d)/
 
-      "<span style='background-color: black'>#{element.chars.map { '&nbsp' }.join}</span>".html_safe
+      "<span class='not_found'>#{element.chars.map { '&nbsp' }.join}</span>".html_safe
     end
     displayed_title.join.html_safe
   end
