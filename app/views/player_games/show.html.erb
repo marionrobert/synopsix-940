@@ -21,8 +21,11 @@
         <h2 class="game-center game-title"> What a shame, you lose !</h2>
       <% else %>
         <h2 class="game-center game-title" data-game-input-target="title">What's the movie?</h2>
-        <p class="game-center" data-game-input-target="subtitle"><%= "Find the title of the movie, a new word will be displayed every 3 seconds" if @player_game.game.timer? %></p>
-        <p class="game-center" data-game-input-target="subtitle"><%= "Type words to reveal the synopsis and discover the movie" if @player_game.game.input? %></p>
+        <%if @player_game.game.timer? %>
+          <p class="game-center" data-game-input-target="subtitle"> "Find the title of the movie, a new word will be displayed every 3 seconds"</p>
+        <%else %>
+          <p class="game-center" data-game-input-target="subtitle"><%= "Type words to reveal the synopsis and discover the movie" if @player_game.game.input? %></p>
+        <%end %>
         <%= render "form_input", player_game: @player_game, input: @input %>
       <% end %>
     </div>
