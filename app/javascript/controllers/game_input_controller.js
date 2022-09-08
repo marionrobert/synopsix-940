@@ -6,7 +6,6 @@ export default class extends Controller {
   static values = { gametype: String, timerpath: String, numwords: Number, first: String, second: String, third: String }
 
   connect(){
-    // if (this.timerTarget) {console.log("ici")}
     const styles = ['color: white', 'background: red'].join(';');
     const message = "🚫 -- don't cheat, we can see you 👁️_👁️ -- 🚫";
     console.log('%c%s', styles, message);
@@ -15,7 +14,7 @@ export default class extends Controller {
     this.count = 0
     if(this.gametypeValue == "timer"){
       this.initTimer()
-      this.interval = setInterval(this.wordRevealInterval, 2500);
+      this.interval = setInterval(this.wordRevealInterval, 2000);
       this.timeOut = setTimeout(this.endGame, this.timeOutValue)
    }
   }
@@ -25,6 +24,7 @@ export default class extends Controller {
   }
 
   clear(){
+    this.cleared = true
     if(this.interval){
       clearInterval(this.interval)
     }
@@ -39,10 +39,12 @@ export default class extends Controller {
 
   send(event) {
     event.preventDefault()
+    const body= new FormData(this.formTarget)
+    this.inputTarget.value = ""
     fetch(this.formTarget.action, {
       method: "POST",
       headers: { "Accept": "application/json" },
-      body: new FormData(this.formTarget)
+      body: body
     })
       .then(response => response.json())
       .then((data) => {
@@ -76,10 +78,13 @@ export default class extends Controller {
     .then(response => response.json())
     .then((data) => {
       // render game content
-      this.gameContentTarget.innerHTML = data.game_content
-      this.count++
-      if(this.numwordsValue == this.count){
-        clearInterval(this.interval)
+      if (!this.cleared) {
+        this.gameContentTarget.innerHTML = data.game_content
+        this.count++
+        if(this.numwordsValue == this.count){
+          clearInterval(this.interval)
+        }
+
       }
     })
   }
@@ -99,9 +104,11 @@ export default class extends Controller {
           if(data.form_input){
             this.formTarget.outerHTML = data.form_input
            }
-           this.gameContentTarget.innerHTML = data.game_content
            // clear form input
+
            if(this.hasInputTarget) this.inputTarget.focus()
+           this.clear()
+           this.formTarget.classList.add('d-none')
            this.titleTarget.innerHTML = "What a shame, you lose!"
            this.subtitleTarget.innerHTML = `The movie was ${data.title}`
            this.gameContentTarget.innerHTML = data.game_content

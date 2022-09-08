@@ -35,8 +35,14 @@
 .bginputs {
   background-color: $our-dark-grey;
   border-radius: 8px;
-  padding: 8px;
+  padding: 16px;
   height:200px;
+  p{
+    font-weight: 500;
+  }
+  .input-title{
+    font-weight: 800;
+  }
 }
 
 

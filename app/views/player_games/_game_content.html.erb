@@ -6,7 +6,7 @@
   <% else %>
     <div class="col-2">
       <div class= "bginputs">
-        <p class="text-center">Last five tries:</p>
+        <p class="text-center input-title">Last five tries:</p>
         <ul>
           <% player_game.last_five_inputs.each_with_index do |input, index| %>
             <li><%= player_game.inputs.where(source: :input).count - index %> - <%= input.content %></li>
