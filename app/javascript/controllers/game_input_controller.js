@@ -46,6 +46,7 @@ export default class extends Controller {
     })
       .then(response => response.json())
       .then((data) => {
+        console.log(data)
         // render game content
         if(data.form_input){
          this.formTarget.outerHTML = data.form_input
