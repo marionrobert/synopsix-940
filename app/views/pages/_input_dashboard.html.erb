@@ -38,14 +38,14 @@
       <div class="leaderboard-scroll" data-controller="leaderboardscroll" data-action="wheel->leaderboardscroll#scroll" data-leaderboardscroll-target="down" data-leaderboardscroll-target="up">
         <% players_inputgame.each_with_index do |player, index| %>
           <% if player.inputgame_score > 1 %>
-            <h6><%= cl_image_tag(find_user_avatar,
+            <h6><%= cl_image_tag((player.photo.key ? player.photo.key : 'avatar'),
                         width:30,
                         height: 30,
                         class:"rounded-circle mx-2",
                  )%>
                  <%= index + 1 %>. <%= player.username %> - <%= player.inputgame_score %> points </h6>
           <% else %>
-            <h6><%= cl_image_tag find_user_avatar,
+            <h6><%= cl_image_tag (player.photo.key ? player.photo.key : 'avatar'),
                         width:30,
                         height: 30,
                         class:"rounded-circle mx-2"
