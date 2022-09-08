@@ -28,11 +28,13 @@
 
 
 .lastfound {
-  margin: 6px 6px;
+  // margin: 6px 6px;
+  font-family: 'Roboto Mono', monospace;
   border-radius: 4px;
   animation: lastfound 2000ms forwards;
   color: $our-dark-grey;
   font-weight: 400;
+  font-size: 18px;
 }
 
 @keyframes lastfound {
