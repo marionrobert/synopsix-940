@@ -10,9 +10,10 @@
   flex-shrink: 0;
   opacity: 50%;
   border: black;
-  border-width: 2px;
+  border-width: 5px;
   border-style: solid;
   text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+  cursor: pointer;
 }
 
 .card:hover {
