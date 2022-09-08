@@ -46,7 +46,6 @@ export default class extends Controller {
     })
       .then(response => response.json())
       .then((data) => {
-        console.log(data)
         // render game content
         if(data.form_input){
          this.formTarget.outerHTML = data.form_input
@@ -104,7 +103,8 @@ export default class extends Controller {
            // clear form input
            if(this.hasInputTarget) this.inputTarget.focus()
            this.titleTarget.innerHTML = "What a shame, you lose!"
-           this.subtitleTarget.innerHTML = ""
+           this.subtitleTarget.innerHTML = `The movie was ${data.title}`
+           this.gameContentTarget.innerHTML = data.game_content
            document.querySelector("#new-game").classList.remove('d-none')
         })
 
