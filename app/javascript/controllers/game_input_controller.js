@@ -6,6 +6,7 @@ export default class extends Controller {
   static values = { gametype: String, timerpath: String, numwords: Number, first: String, second: String, third: String }
 
   connect(){
+    // if (this.timerTarget) {console.log("ici")}
     const styles = ['color: white', 'background: red'].join(';');
     const message = "🚫 -- don't cheat, we can see you 👁️_👁️ -- 🚫";
     console.log('%c%s', styles, message);
@@ -55,9 +56,9 @@ export default class extends Controller {
         if(data.win){
           this.clear()
           this.formTarget.classList.add('d-none')
-          this.timerTarget.classList.add('d-none')
           this.titleTarget.innerHTML = "Congratulations, you win!"
           this.subtitleTarget.innerHTML = `You scored ${data.score} points!`
+          if (document.querySelector("#timing")) {this.timerTarget.classList.add('d-none')}
         }
       })
   }
@@ -85,7 +86,7 @@ export default class extends Controller {
     if(this.interval){
       clearInterval(this.interval)
       this.formTarget.classList.add('d-none')
-      this.timerTarget.classList.add('d-none')
+      if (document.querySelector("#timing")) {this.timerTarget.classList.add('d-none')}
       fetch(this.formTarget.action + "?end=true",  {
         method: "POST",
         headers: { "Accept": "application/json" },
