@@ -67,3 +67,14 @@ text-align: center;
   color:$our-black;
   font-style: italic;
 }
+
+.text-afterend {
+  color: black;
+  font-weight: 400;
+  font-size: 18px;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.lightgrey-background {
+  background-color: $our-light-grey-50;
+}

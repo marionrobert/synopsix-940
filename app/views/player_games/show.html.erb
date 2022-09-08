@@ -14,16 +14,27 @@
     </div>
 
     <div class="col-8 mt-3">
-      <%# pour gérer le refresh if @player_game.title_found || @player_game.lose  --> on display congratulations you win + score (if win) what a shame, you lose (if lose) --> else on display what's movie etc %>
-      <h2 class="game-center game-title" data-game-input-target="title">What's the movie?</h2>
-      <p class="game-center" data-game-input-target="subtitle"><%= "Find the title of the movie, a new word will be displayed every 3 seconds" if @player_game.game.timer? %></p>
-      <p class="game-center" data-game-input-target="subtitle"><%= "Type words to reveal the synopsis and discover the movie" if @player_game.game.input? %></p>
-      <%= render "form_input", player_game: @player_game, input: @input %>
-    </div>
-    <div class="col-2 d-flex align-items-center justify-content-center">
-      <% if @player_game.game.timer? %>
-        <div data-game-input-target="timer"></div>
+      <% if @player_game.title_found %>
+        <h2 class="game-center game-title">Congratulations, you win !</h2>
+        <p class="game-center">You scored <%= @player_game.final_score %> points!</p>
+      <% elsif @player_game.lose %>
+        <h2 class="game-center game-title"> What a shame, you lose !</h2>
+      <% else %>
+        <h2 class="game-center game-title" data-game-input-target="title">What's the movie?</h2>
+        <%if @player_game.game.timer? %>
+          <p class="game-center" data-game-input-target="subtitle"> "Find the title of the movie, a new word will be displayed every 3 seconds"</p>
+        <%else %>
+          <p class="game-center" data-game-input-target="subtitle"><%= "Type words to reveal the synopsis and discover the movie" if @player_game.game.input? %></p>
+        <%end %>
+        <%= render "form_input", player_game: @player_game, input: @input %>
       <% end %>
+    </div>
+    <div class="col-2">
+      <div class="d-flex align-items-center justify-content-center">
+        <% if @player_game.game.timer? %>
+          <div id="timing" data-game-input-target="timer"></div>
+        <% end %>
+      </div>
     </div>
   </div>
 
