@@ -19,13 +19,17 @@
     margin: 0;
     padding: 0;
   }
+
 }
 
 .bggameboard {
   background-color: $our-light-grey;
   border-radius: 8px;
   height: 100%;
-  padding: 8px;
+  padding: 0.5rem;
+  p {
+    margin:0px
+  }
 }
 
 .bginputs {
