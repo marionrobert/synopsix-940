@@ -23,7 +23,12 @@
           <% end %>
           <% if user_signed_in? %>
             <li class="nav-item dropdown">
-              <%= cl_image_tag current_user.photo.key, width:50, height: 50, class:"dropdown-toggle rounded-circle", data: {bs_toggle: "dropdown"} %>
+              <%= cl_image_tag(find_user_avatar,
+                  width:50,
+                  height: 50,
+                  class:"dropdown-toggle rounded-circle",
+                  data: {bs_toggle: "dropdown"})
+              %>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <%= link_to "Go to my dashboard", dashboard_path, class: "dropdown-item" %>
                 <%= link_to "Logout", destroy_user_session_path, 'data-turbo-method': :delete, class: "dropdown-item"%>
