@@ -14,7 +14,7 @@ export default class extends Controller {
     this.count = 0
     if(this.gametypeValue == "timer"){
       this.initTimer()
-      this.interval = setInterval(this.wordRevealInterval, 2500);
+      this.interval = setInterval(this.wordRevealInterval, 2000);
       this.timeOut = setTimeout(this.endGame, this.timeOutValue)
    }
   }
@@ -108,6 +108,7 @@ export default class extends Controller {
 
            if(this.hasInputTarget) this.inputTarget.focus()
            this.clear()
+           this.formTarget.classList.add('d-none')
            this.titleTarget.innerHTML = "What a shame, you lose!"
            this.subtitleTarget.innerHTML = `The movie was ${data.title}`
            this.gameContentTarget.innerHTML = data.game_content

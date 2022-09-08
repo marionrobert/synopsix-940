@@ -19,6 +19,7 @@
         <p class="game-center">You scored <%= @player_game.final_score %> points!</p>
       <% elsif @player_game.lose %>
         <h2 class="game-center game-title"> What a shame, you lose !</h2>
+        <p class="game-center">Try again !</p>
       <% else %>
         <h2 class="game-center game-title" data-game-input-target="title">What's the movie?</h2>
         <%if @player_game.game.timer? %>
