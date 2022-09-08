@@ -57,7 +57,7 @@ export default class extends Controller {
           this.clear()
           this.formTarget.classList.add('d-none')
           this.titleTarget.innerHTML = "Congratulations, you win!"
-          this.subtitleTarget.innerHTML = "Your score is: " + data.score
+          this.subtitleTarget.innerHTML = `You scored ${data.score} points!`
           if (document.querySelector("#timing")) {this.timerTarget.classList.add('d-none')}
         }
       })
