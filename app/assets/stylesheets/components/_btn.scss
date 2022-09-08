@@ -1,7 +1,7 @@
 
 .btn-small-red {
   cursor: pointer;
-  background-color: #E20134;
+  background-color: $our-red;
   width: 175px;
   color: white;
   font-weight: bolder;
@@ -12,7 +12,7 @@
 
 .btn-small-grey {
   cursor: pointer;
-  background-color: #424244;
+  background-color: $our-dark-grey;
   width: 175px;
   color: white;
   font-weight: bolder;
@@ -53,7 +53,7 @@
 }
 
 .btn-input:hover {
-  background-color: #A31621;
+  background-color: $our-dark-red;
   opacity: 0.8;
   font-weight: 700;
   border: none;
@@ -61,14 +61,14 @@
 
 
 .btninput:active {
-  background-color: #A31621;
+  background-color:  $our-dark-red;
   opacity: 0.8;
   font-weight: 700;
   border: none;
 }
 
 .btninput:focus {
-  background-color: #A31621;
+  background-color:  $our-dark-red;
   opacity: 0.8;
   font-weight: 700;
   border: none;
@@ -85,6 +85,6 @@
 }
 
 .btnplay:hover {
-  background-color: #941822;
+  background-color:  $our-dark-red;
   color:rgba(255,255,255,0.8);
 }

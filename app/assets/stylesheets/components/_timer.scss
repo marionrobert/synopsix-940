@@ -15,7 +15,7 @@
 
 .base-timer__path-elapsed {
   stroke-width: 7px;
-  stroke: #DAD6D6;
+  stroke: $our-light-grey;
 }
 
 .base-timer__path-remaining {
@@ -29,15 +29,15 @@
 }
 
 .base-timer__path-remaining.green {
-  color: #407076;
+  color: $our-green;
 }
 
 .base-timer__path-remaining.orange {
-  color: #A31621;
+  color: $our-orange;
 }
 
 .base-timer__path-remaining.red {
-  color: #DB222A;
+  color: $our-red;
 }
 
 .base-timer__label {
