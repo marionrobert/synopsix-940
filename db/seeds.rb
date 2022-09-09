@@ -192,3 +192,122 @@ Movie.create( title: "Saving Private Ryan",
               hint_2: "rescue",
               hint_3: "MILLER",
             )
+
+Movie.create( title: "The Departed",
+              synopsis: "South Boston cop Billy Costigan goes undercover to infiltrate the organization of gangland chief Frank Costello. As Billy gains the mobster's trust, a career criminal named Colin Sullivan infiltrates the police department and reports on its activities to his syndicate bosses. When both organizations learn they have a mole in their midst, Billy and Colin must figure out each other's identities to save their own lives.",
+              poster: " https://m.media-amazon.com/images/I/51ysmjUAA2L._AC_.jpg",
+              category: Category.find_by(name: "Drama"),
+              trailer: "https://www.youtube.com/embed/SGWvwjZ0eDc?controls=0&amp;start=6;?rel=0&autoplay=1",
+              hint_1: "Colin Sullivan",
+              hint_2: "Boston",
+              hint_3: "DiCaprio",
+            )
+
+Movie.create( title: "Amelie",
+              synopsis: "Amelie is a fanciful comedy about a young woman who discretely orchestrates the lives of the people around her, creating a world exclusively of her own making. Shot in over 80 Parisian locations, acclaimed director Jean-Pierre Jeunet invokes his incomparable visionary style to capture the exquisite charm and mystery of modern-day Paris through the eyes of a beautiful ingenue.",
+              poster: " https://m.media-amazon.com/images/I/51qu38-66JL._AC_.jpg",
+              category: Category.find_by(name: "Comedy"),
+              trailer: "https://www.youtube.com/embed/HUECWi5pX7o?controls=0&amp;start=5;?rel=0&autoplay=1",
+              hint_1: "Paris",
+              hint_2: "Montmartre",
+              hint_3: "Jamel Debbouze",
+            )
+
+Movie.create( title: "Skyfall",
+              synopsis: "When James Bond's latest assignment goes terribly wrong, it leads to a calamitous turn of events: Undercover agents around the world are exposed, and MI6 is attacked, forcing M to relocate the agency. With MI6 now compromised inside and out, M turns to the one man she can trust: Bond. Aided only by a field agent, Bond takes to the shadows and follows a trail to Silva, a man from M's past who wants to settle an old score.",
+              poster: "https://fr.web.img6.acsta.net/medias/nmedia/18/88/95/51/20264212.jpg",
+              category: Category.find_by(name: "Action"),
+              trailer: "https://www.youtube.com/embed/6kw1UVovByw?controls=0&amp;start=92;?rel=0&autoplay=1",
+              hint_1: "Daniel",
+              hint_2: "James",
+              hint_3: "Adele",
+            )
+
+Movie.create( title: "Good Will Hunting",
+              synopsis: "Will Hunting has a genius-level IQ but chooses to work as a janitor at MIT. When he solves a difficult graduate-level math problem, his talents are discovered by Professor Gerald Lambeau, who decides to help the misguided youth reach his potential. When Will is arrested for attacking a police officer, Professor Lambeau makes a deal to get leniency for him if he will get treatment from therapist Sean Maguire.",
+              poster: "https://m.media-amazon.com/images/I/71TxoeCi7hL._AC_SY550_.jpg",
+              category: Category.find_by(name: "Drama"),
+              trailer: "https://www.youtube.com/embed/ReIJ1lbL-Q8?controls=0&amp;start=95;?rel=0&autoplay=1",
+              hint_1: "MIT",
+              hint_2: "Genius",
+              hint_3: "Robin Williams",
+            )
+
+Movie.create( title: "Star Wars",
+              synopsis: "The Imperial Forces -- under orders from cruel Darth Vader -- hold Princess Leia hostage, in their efforts to quell the rebellion against the Galactic Empire. Luke Skywalker and Han Solo, captain of the Millennium Falcon, work together with the companionable droid duo R2-D2 and C-3PO to rescue the beautiful princess, help the Rebel Alliance, and restore freedom and justice to the Galaxy.",
+              poster: "https://static.posters.cz/image/1300/affiches-et-posters/star-wars-classic-i97850.jpg",
+              category: Category.find_by(name: "Blockbuster"),
+              trailer: "https://www.youtube.com/embed/1g3_CFmnU7k?controls=0&amp;start=1;?rel=0&autoplay=1",
+              hint_1: "Space",
+              hint_2: "Laser",
+              hint_3: "Chewbacca",
+            )
+
+Movie.create( title: "The Silence of the Lambs",
+              synopsis: "Clarice Starling is a top student at the FBI's training academy. Jack Crawford wants Clarice to interview Dr. Hannibal Lecter, a brilliant psychiatrist who is also a violent psychopath, serving life behind bars for various acts of murder and cannibalism. Crawford believes that Lecter may have insight into a case and that Starling, as an attractive young woman, may be just the bait to draw him out.",
+              poster: "https://m.media-amazon.com/images/I/717YaOenhOS._AC_SX425_.jpg",
+              category: Category.find_by(name: "Drama"),
+              trailer: "https://www.youtube.com/embed/W6Mm8Sbe__o?controls=0&amp;start=41;?rel=0&autoplay=1",
+              hint_1: "FBI",
+              hint_2: "Lecter",
+              hint_3: "Basket",
+            )
+Movie.create( title: "Iron Man",
+              synopsis: "A billionaire industrialist and genius inventor, Tony Stark, is conducting weapons tests overseas, but terrorists kidnap him to force him to build a devastating weapon. Instead, he builds an armored suit and upends his captors. Returning to America, Stark refines the suit and uses it to combat crime and terrorism.",
+              poster: "https://movieposters2.com/images/764582-b.jpg",
+              category: Category.find_by(name: "Blockbuster"),
+              trailer: "https://www.youtube.com/embed/8ugaeA-nMTc?controls=0&amp;start=93;?rel=0&autoplay=1",
+              hint_1: "Hostage",
+              hint_2: "Steel",
+              hint_3: "Superhero",
+            )
+
+Movie.create( title: "The Sixth Sense",
+              synopsis: "Young Cole Sear is haunted by a dark secret: he is visited by ghosts. Cole is frightened by visitations from dead people with unresolved problems who appear from the shadows. He is too afraid to tell anyone about his anguish, except child psychologist Dr. Malcolm Crowe. As Dr. Crowe tries to uncover the truth about Cole's supernatural abilities, the consequences for client and therapist are a jolt that awakens them both to something unexplainable.",
+              poster: "https://i.pinimg.com/originals/18/cf/eb/18cfeb210b2ff8c444455c30975ffed3.jpg",
+              category: Category.find_by(name: "Drama"),
+              trailer: "https://www.youtube.com/embed/lXO0he1WjYw?controls=0&amp;start=19;?rel=0&autoplay=1",
+              hint_1: "Child",
+              hint_2: "Scared",
+              hint_3: "Dead People",
+            )
+
+Movie.create( title: "Wonder Woman",
+              synopsis: "Before she was Wonder Woman, she was Diana, princess of the Amazons, trained to be an unconquerable warrior. Raised on a sheltered island paradise, Diana meets an American pilot who tells her about the massive conflict that's raging in the outside world. Convinced that she can stop the threat, Diana leaves her home for the first time. Fighting alongside men in a war to end all wars, she finally discovers her full powers and true destiny.",
+              poster: "https://m.media-amazon.com/images/I/51WKYFaCKGL._AC_.jpg",
+              category: Category.find_by(name: "Blockbuster"),
+              trailer: "https://www.youtube.com/embed/1Q8fG0TtVAY?controls=0&amp;start=82;?rel=0&autoplay=1",
+              hint_1: "Superhero",
+              hint_2: "Crown",
+              hint_3: "Female",
+            )
+
+Movie.create( title: "The Shawshank Redemption",
+              synopsis: "Andy Dufresne is sentenced to two consecutive life terms in prison for the murders of his wife and her lover and is sentenced to a tough prison. However, only Andy knows he didn't commit the crimes. While there, he forms a friendship with Red, experiences brutality of prison life, adapts, helps the warden, and plans his escape, all in 19 years.",
+              poster: "https://i.pinimg.com/originals/d2/cd/02/d2cd029a53ffae33031583c3911123a6.jpg",
+              category: Category.find_by(name: "Drama"),
+              trailer: "https://www.youtube.com/embed/6hB3S9bIaco?controls=0&amp;start=73;?rel=0&autoplay=1",
+              hint_1: "Jail",
+              hint_2: "Friendship",
+              hint_3: "Escape",
+            )
+
+Movie.create( title: "The Hunger Games",
+              synopsis: "In what was once North America, the Capitol of Panem maintains its hold on its 12 districts by forcing them each to select a boy and a girl, called Tributes, to compete in a nationally televised event called the Hunger Games. Every citizen must watch as the youths fight to the death until only one remains. District 12 Tribute Katniss Everdeen has little to rely on, other than her hunting skills and sharp instincts, in an arena where she must weigh survival against love.",
+              poster: "https://media.services.cinergy.ch/media/cinemanteaser149x206x2/0c25bfe7d8dda748b8a18589",
+              category: Category.find_by(name: "Action"),
+              trailer: "https://www.youtube.com/embed/mfmrPu43DF8?controls=0&amp;start=58;?rel=0&autoplay=1",
+              hint_1: "Bow and Arrow",
+              hint_2: "Battle",
+              hint_3: "Jennifer",
+            )
+
+Movie.create( title: "Black Panther",
+              synopsis: "After the death of his father, T'Challa returns home to the African nation of Wakanda to take his rightful place as king. When a powerful enemy suddenly reappears, T'Challa's mettle as king -- and as Black Panther -- gets tested when he's drawn into a conflict that puts the fate of Wakanda and the entire world at risk. Faced with treachery and danger, the young king must rally his allies and release the full power of Black Panther to defeat his foes and secure the safety of his people.",
+              poster: "https://m.media-amazon.com/images/I/610EYYAr+YL._AC_.jpg",
+              category: Category.find_by(name: "Blockbuster"),
+              trailer: "https://www.youtube.com/embed/xjDjIWPwcPU?controls=0&amp;start=67;?rel=0&autoplay=1",
+              hint_1: "King",
+              hint_2: "Marvel",
+              hint_3: "Feline",
+            )
