@@ -192,3 +192,144 @@ Movie.create( title: "Saving Private Ryan",
               hint_2: "rescue",
               hint_3: "MILLER",
             )
+
+Movie.create( title: "Million dollar baby",
+              synopsis: "Wanting to learn from the best, aspiring boxer Maggie Fitzgerald wants Frankie Dunn to train her. At the outset, he flatly refuses saying he has no interest in training a girl. Maggie's rough around the edges, but shows a lot of grit in the ring and he eventually relents. Maggie not only proves to be the boxer he always dreamed of having under his wing, but a friend who fills the great void he's had in his life. Maggie's career skyrockets, but an accident in the ring leads her to ask Frankie for one last favor",
+              poster: "https://m.media-amazon.com/images/I/41WOxZw6MWL._AC_.jpg",
+              category: Category.find_by(name: "Drama"),
+              trailer:"https://www.youtube.com/embed/5_RsHRmIRBY?controls=0&amp;start=14;?rel=0&autoplay=1",
+              hint_1: "woman",
+              hint_2: "challenge",
+              hint_3: "boxe",
+            )
+
+Movie.create( title: "Up",
+              synopsis: "Carl Fredricksen, a 78-year-old balloon salesman, has lost his wife Ellie and refuses to sell his house. Instead, tying thousands of balloons to his house, he flies away to the South American wilderness. But curmudgeonly Carl's worst nightmare comes true when he discovers a little boy named Russell and a talking dog are stowaways aboard the balloon-powered house.",
+              poster: "https://m.media-amazon.com/images/I/71VU4xCX9GL._AC_SY741_.jpg",
+              category: Category.find_by(name: "Comedy"),
+              trailer: "https://www.youtube.com/embed/ORFWdXl_zJ4?controls=0&amp;start=7;?rel=0&autoplay=1",
+              hint_1: "old man",
+              hint_2: "inflatable balloon",
+              hint_3: "Pixar",
+            )
+
+Movie.create( title: "Toy story",
+              synopsis: "Woody, a good-hearted cowboy doll who belongs to a young boy named Andy, sees his position as Andy's favorite toy jeopardized when his parents buy him a Buzz Lightyear action figure. Even worse, the arrogant Buzz thinks he's a real spaceman on a mission to return to his home planet. When Andy's family moves to a new house, Woody and Buzz must escape the clutches of maladjusted neighbor Sid Phillips and reunite with their boy.",
+              poster: "https://m.media-amazon.com/images/I/51K8r9COEQL._AC_SY450_.jpg",
+              category: Category.find_by(name: "Comedy"),
+              trailer: "https://www.youtube.com/embed/rNk1Wi8SvNc?controls=0&amp;start=27;?rel=0&autoplay=1",
+              hint_1: "animation movie",
+              hint_2: "1995",
+              hint_3: "Mr POTATO",
+            )
+
+Movie.create( title: "Avatar",
+              synopsis: "On the lush alien world of Pandora live the Na'vi, beings who appear primitive but are highly evolved. Because the planet's environment is poisonous, human/Na'vi hybrids, called Avatars, must link to human minds to allow for free movement on Pandora. Jake Sully, a paralyzed former Marine, becomes mobile again through one such Avatar and falls in love with a Na'vi woman. As a bond with her grows, he is drawn into a battle for the survival of her world.",
+              poster: "https://m.media-amazon.com/images/I/81D1F9g+x0L._AC_SY606_.jpg",
+              category: Category.find_by(name: "Action"),
+              trailer: "https://www.youtube.com/embed/5PSNL1qE6VY?controls=0&amp;start=9;?rel=0&autoplay=1",
+              hint_1: "navy",
+              hint_2: "Blue",
+              hint_3: "Jake SULLY",
+            )
+
+Movie.create( title: "Edge of tomorrow",
+              synopsis: "When Earth falls under attack from invincible aliens, no military unit in the world is able to beat them. Maj. William Cage, an officer who has never seen combat, is assigned to a suicide mission. Killed within moments, Cage finds himself thrown into a time loop, in which he relives the same brutal fight -- and his death -- over and over again. However, Cage's fighting skills improve with each encore, bringing him and a comrade ever closer to defeating the aliens.",
+              poster: "https://i.pinimg.com/originals/fa/3b/a2/fa3ba23bdbf1ca1e96456f189d2e495f.jpg",
+              category: Category.find_by(name: "Action"),
+              trailer: "https://www.youtube.com/embed/vw61gCe2oqI?controls=0&amp;start=5;?rel=0&autoplay=1",
+              hint_1: "live",
+              hint_2: "die",
+              hint_3: "restart",
+            )
+
+Movie.create( title: "Pretty woman",
+              synopsis: " In this modern update on Cinderella, a prostitute and a wealthy businessman fall hard for one another, forming an unlikely pair. While on a business trip in L.A., Edward, who makes a living buying and breaking up companies, picks up a hooker, Vivian, on a lark. After Edward hires Vivian to stay with him for the weekend, the two get closer, only to discover there are significant hurdles to overcome as they try to bridge the gap between their very different worlds.",
+              poster: "https://m.media-amazon.com/images/I/71EPBeg18IL._AC_SY606_.jpg",
+              category: Category.find_by(name: "Comedy"),
+              trailer: "https://www.youtube.com/embed/2EBAVoN8L_U?controls=0&amp;start=9;?rel=0&autoplay=1",
+              hint_1: "love story",
+              hint_2: "unexpected",
+              hint_3: "Julia ROBERTS",
+            )
+
+
+Movie.create( title: "Life is beautiful",
+              synopsis: "A gentle Jewish-Italian waiter, Guido Orefice, meets Dora, a pretty schoolteacher, and wins her over with his charm and humor. Eventually they marry and have a son, Giosue. Their happiness is abruptly halted, however, when Guido and Giosue are separated from Dora and taken to a concentration camp. Determined to shelter his son from the horrors of his surroundings and the Holocaust, Guido convinces Giosue that their time in the camp is merely a game.",
+              poster: "https://img.moviepostershop.com/life-is-beautiful-movie-poster-1998-1020194289.jpg",
+              category: Category.find_by(name: "Historical"),
+              trailer: "https://www.youtube.com/embed/pAYEQP8gx3w?controls=0&amp;start=22;?rel=0&autoplay=1",
+              hint_1: "World War",
+              hint_2: "bicycle",
+              hint_3: "Italiano",
+            )
+
+Movie.create( title: "Dirty Dancing",
+              synopsis: "Baby is one listless summer away from the Peace Corps. Hoping to enjoy her youth while it lasts, she's disappointed when her summer plans deposit her at a sleepy resort in the Catskills with her parents. Her luck turns around, however, when the resort's dance instructor, Johnny, enlists Baby as his new partner, and the two fall in love. Baby's father forbids her from seeing Johnny, but she's determined to help him perform the last big dance of the summer.",
+              poster: "https://images.affiches-et-posters.com//albums/3/52487/affiche-film-dirty-dancing.jpg",
+              category: Category.find_by(name: "Comedy"),
+              trailer: "https://www.youtube.com/embed/eIcmQNy9FsM?controls=0&amp;start=47;?rel=0&autoplay=1",
+              hint_1: "love story",
+              hint_2: "Johnny CASTEL",
+              hint_3: "The time of my life",
+            )
+
+Movie.create( title: "Taxi Driver",
+              synopsis: "Suffering from insomnia, disturbed loner Travis Bickle takes a job as a New York City taxi driver, haunting the streets nightly, growing increasingly detached from reality as he dreams of cleaning up the filthy city. When Travis meets pretty campaign worker Betsy, he becomes obsessed with the idea of saving the world, first plotting to assassinate a presidential candidate, then directing his attentions toward rescuing 12-year-old prostitute Iris.",
+              poster: "https://image.posterlounge.fr/images/big/1875963.jpg",
+              category: Category.find_by(name: "Drama"),
+              trailer: "https://www.youtube.com/embed/UUxD4-dEzn0?controls=0&amp;start=92;?rel=0&autoplay=1",
+              hint_1: "SCORSESE",
+              hint_2: "DE NIRO",
+              hint_3: "yellow cab",
+            )
+
+Movie.create( title: "Whiplash",
+              synopsis: "Andrew Neiman is an ambitious young jazz drummer, in pursuit of rising to the top of his elite music conservatory. Terence Fletcher, an instructor known for his terrifying teaching methods, discovers Andrew and transfers the aspiring drummer into the top jazz ensemble, forever changing the young man's life. But Andrew's passion to achieve perfection quickly spirals into obsession, as his ruthless teacher pushes him to the brink of his ability and his sanity.",
+              poster: "https://i.ebayimg.com/images/g/BGcAAOSwZJBX--Ku/s-l500.jpg",
+              category: Category.find_by(name: "Drama"),
+              trailer: "https://www.youtube.com/embed/7d_jQycdQGo?controls=0&amp;start=33;?rel=0&autoplay=1",
+              hint_1: "transcendence",
+              hint_2: "drums",
+              hint_3: "jazz",
+            )
+
+Movie.create( title: "Back to the Future",
+              synopsis: "In this 1980s sci-fi classic, small-town California teen Marty McFly is thrown back into the '50s when an experiment by his eccentric scientist friend Doc Brown goes awry. Traveling through time in a modified DeLorean car, Marty encounters young versions of his parents, and must make sure that they fall in love or he'll cease to exist. Even more dauntingly, Marty has to return to his own time and save the life of Doc Brown.",
+              poster: "https://m.media-amazon.com/images/I/51pCtX2StZL._AC_.jpg",
+              category: Category.find_by(name: "Comedy"),
+              trailer: "https://www.youtube.com/embed/qvsgGtivCgs?controls=0&amp;start=15;?rel=0&autoplay=1",
+              hint_1: "distopian",
+              hint_2: "time travel",
+              hint_3: "DeLorean",
+            )
+
+Movie.create( title: "Jaws",
+              synopsis: "When a young woman is killed by a shark while skinny-dipping near the New England tourist town of Amity Island, police chief Martin Brody wants to close the beaches, but mayor Larry Vaughn overrules him, fearing that the loss of tourist revenue will cripple the town. Ichthyologist Matt Hooper and grizzled ship captain Quint offer to help Brody capture the killer beast, and the trio engage in an epic battle of man vs. nature.",
+              poster: "https://i.ebayimg.com/images/g/p1cAAOSwPc1dvvqv/s-l500.jpg",
+              category: Category.find_by(name: "Blockbuster"),
+              trailer: "https://www.youtube.com/embed/U1fu_sA7XhE?controls=0&amp;start=120;?rel=0&autoplay=1",
+              hint_1: "mutant",
+              hint_2: "murder",
+              hint_3: "shark",
+)
+
+Movie.create( title: "Inception",
+              synopsis: "Dom Cobb is a thief with the rare ability to enter people's dreams and steal their secrets from their subconscious. His skill has made him a hot commodity in the world of corporate espionage but has also cost him everything he loves. Cobb gets a chance at redemption when he is offered a seemingly impossible task: Plant an idea in someone's mind. If he succeeds, it will be the perfect crime, but a dangerous enemy anticipates Cobb's every move.",
+              poster: "https://m.media-amazon.com/images/I/91Rc8cAmnAL._AC_SY679_.jpg",
+              category: Category.find_by(name: "Action"),
+              trailer: "https://www.youtube.com/embed/YoHD9XEInc0?controls=0&amp;start=68;?rel=0&autoplay=1",
+              hint_1: "nested",
+              hint_2: "dreaming",
+              hint_3: "DICAPRIO",
+)
+
+Movie.create( title: "Pirates of Caribbean",
+              synopsis: "Capt. Jack Sparrow arrives at Port Royal in the Caribbean without a ship or crew. His timing is inopportune, however, because later that evening the town is besieged by a pirate ship. The pirates kidnap the governor's daughter, Elizabeth, who's in possession of a valuable coin that is linked to a curse that has transformed the pirates into the undead. A gallant blacksmith in love with Elizabeth allies with Sparrow in pursuit of the pirates.",
+              poster: "https://static.posters.cz/image/750/affiches-et-posters/pirates-of-the-caribbean-4-one-sheet-i11028.jpg",
+              category: Category.find_by(name: "Action"),
+              trailer: "",
+              hint_1: "high sea",
+              hint_2: "malediction",
+              hint_3: "SPARROW",
+)
