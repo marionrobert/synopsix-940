@@ -213,15 +213,15 @@ Movie.create( title: "the lion king",
               hint_3: "lion",
             )
 
-Movie.create( title: "the exorcist",
-              synopsis: "This tale of an exorcism is based loosely on actual events. When young Regan starts acting odd -- levitating, speaking in tongues -- her worried mother seeks medical help, only to hit a dead end. A local priest, however, thinks the girl may be seized by the devil. The priest makes a request to perform an exorcism, and the church sends in an expert to help with the difficult job.",
-              poster: "https://static.posters.cz/image/1300/affiches-et-posters/l-exorciste-i75296.jpg",
-              category: Category.find_by(name: "All"),
-              trailer: "https://www.youtube.com/embed/YDGw1MTEe9k?controls=0&amp;start=12;?rel=0&autoplay=1",
-              hint_1: "curse",
-              hint_2: "rolling head",
-              hint_3: "possessed",
-            )
+# Movie.create( title: "the exorcist",
+#               synopsis: "This tale of an exorcism is based loosely on actual events. When young Regan starts acting odd -- levitating, speaking in tongues -- her worried mother seeks medical help, only to hit a dead end. A local priest, however, thinks the girl may be seized by the devil. The priest makes a request to perform an exorcism, and the church sends in an expert to help with the difficult job.",
+#               poster: "https://static.posters.cz/image/1300/affiches-et-posters/l-exorciste-i75296.jpg",
+#               category: Category.find_by(name: "All"),
+#               trailer: "https://www.youtube.com/embed/YDGw1MTEe9k?controls=0&amp;start=12;?rel=0&autoplay=1",
+#               hint_1: "curse",
+#               hint_2: "rolling head",
+#               hint_3: "possessed",
+#             )
 
 Movie.create( title: "Memento",
               synopsis: "Leonard is tracking down the man who murdered his wife. The difficulty, however, of locating his wife's killer is compounded by the fact that he suffers from a rare, untreatable form of memory loss. Although he can recall details of life before his accident, Leonard cannot remember what happened fifteen minutes ago, where he's going, or why.",
@@ -422,7 +422,6 @@ Movie.create( title: "Slumdog millionnaire",
               hint_2: "India",
               hint_3: "Life story",
             )
-=======
 
 Movie.create( title: "Million dollar baby",
               synopsis: "Wanting to learn from the best, aspiring boxer Maggie Fitzgerald wants Frankie Dunn to train her. At the outset, he flatly refuses saying he has no interest in training a girl. Maggie's rough around the edges, but shows a lot of grit in the ring and he eventually relents. Maggie not only proves to be the boxer he always dreamed of having under his wing, but a friend who fills the great void he's had in his life. Maggie's career skyrockets, but an accident in the ring leads her to ask Frankie for one last favor",
@@ -797,7 +796,7 @@ Movie.create( title: "Men in Black",
 
 
 Movie.create( title: "Slumdog Millionaire",
-              synopsis: "As 18-year-old Jamal Malik answers questions on the Indian version of "Who Wants to Be a Millionaire," flashbacks show how he got there. Part of a stable of young thieves after their mother dies, Jamal and his brother, Salim, survive on the streets of Mumbai. Salim finds the life of crime agreeable, but Jamal scrapes by with small jobs until landing a spot on the game show. He wins the game and reunites with his love, Latika.",
+              synopsis: "As 18-year-old Jamal Malik answers questions on the Indian version of 'Who Wants to Be a Millionaire' flashbacks show how he got there. Part of a stable of young thieves after their mother dies, Jamal and his brother, Salim, survive on the streets of Mumbai. Salim finds the life of crime agreeable, but Jamal scrapes by with small jobs until landing a spot on the game show. He wins the game and reunites with his love, Latika.",
               poster: "https://m.media-amazon.com/images/I/61GZJceT25L._AC_SY606_.jpg",
               category: Category.find_by(name: "Drama"),
               trailer: "https://www.youtube.com/embed/AIzbwV7on6Q?controls=0&amp;start=16;?rel=0&autoplay=1",
@@ -806,3 +805,4 @@ Movie.create( title: "Slumdog Millionaire",
               hint_3: "India",
             )
 
+puts "#{Movie.all.count} movies have been created, congratulations!"
