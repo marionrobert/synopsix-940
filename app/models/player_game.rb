@@ -118,7 +118,9 @@ class PlayerGame < ApplicationRecord
     score = 2000
     inputs = self.inputs
     inputs.each_with_index do |input, index|
-      if index <= 9
+      if index.zero?
+        score -= 0
+      elsif  index <= 9
         score -= 5
       elsif index > 9 && index <= 29
         score -= 10
