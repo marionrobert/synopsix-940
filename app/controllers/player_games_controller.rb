@@ -1,7 +1,12 @@
 class PlayerGamesController < ApplicationController
   def create
     if @category = Category.find(params[:player_game][:category]) rescue false
-      if (@game = Game.create(movie: Movie.where(category: @category).sample, game_type: params[:player_game][:game_type].to_i)) && (@player_game = PlayerGame.create(user: current_user, game: @game, title_found: false, final_score: 0))
+      if @category.name == "All"
+        @movie = Movie.all.sample
+      else
+        @movie = Movie.where(category: @category).sample
+      end
+      if (@game = Game.create(movie: @movie, game_type: params[:player_game][:game_type].to_i)) && (@player_game = PlayerGame.create(user: current_user, game: @game, title_found: false, final_score: 0))
         redirect_to player_game_path(@player_game)
       else
         flash.now[:alert] = "Please select a category"
@@ -30,4 +35,6 @@ class PlayerGamesController < ApplicationController
       @inputs = @player_game.inputs.where(source: :input)
     end
   end
+
+
 end
