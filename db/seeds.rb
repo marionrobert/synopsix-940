@@ -486,7 +486,7 @@ Movie.create( title: "Pretty woman",
 
 Movie.create( title: "Life is beautiful",
               synopsis: "A gentle Jewish-Italian waiter, Guido Orefice, meets Dora, a pretty schoolteacher, and wins her over with his charm and humor. Eventually they marry and have a son, Giosue. Their happiness is abruptly halted, however, when Guido and Giosue are separated from Dora and taken to a concentration camp. Determined to shelter his son from the horrors of his surroundings and the Holocaust, Guido convinces Giosue that their time in the camp is merely a game.",
-              poster: "https://img.moviepostershop.com/life-is-beautiful-movie-poster-1998-1020194289.jpg",
+              poster: "https://img.moviepostershop.com/life-is-beautiful-movie-poster-1998-1010194289.jpg",
               category: Category.find_by(name: "Historical"),
               trailer: "https://www.youtube.com/embed/pAYEQP8gx3w?controls=0&amp;start=22;?rel=0&autoplay=1",
               hint_1: "World War",
