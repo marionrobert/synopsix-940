@@ -176,7 +176,7 @@ Movie.create( title: "The Truman Show",
 Movie.create( title: "Titanic",
               synopsis: "An epic, action-packed romance about Jack and Rose, set against the ill-fated maiden voyage of the R.M.S. Titanic; the pride and joy of the White Star Line and, at the time, the largest moving object ever built. She was the most luxurious liner of her era -- the 'ship of dreams' -- which ultimately carried over 1,500 people to their death in the ice cold waters of the North Atlantic after sinking in the early hours of April 15, 1912.",
               poster: "https://m.media-amazon.com/images/I/91J0KtuFMAL._AC_SY606_.jpg",
-              category: Category.find_by(name: "All"),
+              category: Category.find_by(name: "Drama"),
               trailer: "https://www.youtube.com/embed/ZQ6klONCq4s?controls=0&amp;start=29;?rel=0&autoplay=1",
               hint_1: "High sea",
               hint_2: "Liverpool",
@@ -310,4 +310,126 @@ Movie.create( title: "Black Panther",
               hint_1: "King",
               hint_2: "Marvel",
               hint_3: "Feline",
+            )
+
+Movie.create( title: "Fight Club",
+              synopsis: "A depressed man suffering from insomnia meets a strange soap salesman named Tyler Durden and soon finds himself living in his squalid house after his perfect apartment is destroyed. The two bored men form an underground club with strict rules and fight other men who are fed up with their mundane lives. Their perfect partnership frays when Marla, a fellow support group crasher, attracts Tyler's attention.",
+              poster: "https://m.media-amazon.com/images/I/51OKMqB5ykL._AC_.jpg",
+              category: Category.find_by(name: "Drama"),
+              trailer: "https://www.youtube.com/embed/qtRKdVHc-cE?controls=0&amp;start=86;?rel=0&autoplay=1",
+              hint_1: "Rules",
+              hint_2: "Bipolar",
+              hint_3: "Tyler Durden",
+            )
+
+
+Movie.create( title: "The Matrix",
+              synopsis: "Neo believes that Morpheus, an elusive figure considered to be the most dangerous man alive, can answer his question -- What is the Matrix? Neo is contacted by Trinity, a beautiful stranger who leads him into an underworld where he meets Morpheus. They fight a brutal battle for their lives against a cadre of viciously intelligent secret agents. It is a truth that could cost Neo something more precious than his life.",
+              poster: "https://i.ebayimg.com/images/g/SGMAAOSwXrdZ9DRX/s-l500.jpg",
+              category: Category.find_by(name: "Blockbuster"),
+              trailer: "https://www.youtube.com/embed/vKQi3bBA1y8?controls=0&amp;start=18;?rel=0&autoplay=1",
+              hint_1: "Pills",
+              hint_2: "Payphone",
+              hint_3: "Neo",
+            )
+
+Movie.create( title: "Rocky",
+              synopsis: "Rocky Balboa, a small-time boxer from working-class Philadelphia, is arbitrarily chosen to take on the reigning world heavyweight champion, Apollo Creed (Carl Weathers), when the undefeated fighter's scheduled opponent is injured. While training with feisty former bantamweight contender Mickey Goldmill, Rocky tentatively begins a relationship with Adrian.",
+              poster: " https://static.posters.cz/image/1300/affiches-et-posters/rocky-main-poster-i116373.jpg",
+              category: Category.find_by(name: "Drama"),
+              trailer: "https://www.youtube.com/embed/7RYpJAUMo2M?controls=0&amp;start=9;?rel=0&autoplay=1",
+              hint_1: "Stairs",
+              hint_2: "Philadelphia",
+              hint_3: "Boxing",
+            )
+
+Movie.create( title: "Die Hard",
+              synopsis: "New York City policeman John McClane is visiting his estranged wife and two daughters on Christmas Eve. He joins her at a holiday party in the headquarters of Nakatomi Plaza, the Japanese-owned business she works for. But the festivities are interrupted by a group of terrorists who take over the exclusive high-rise, and everyone in it. Very soon McClane realizes that there's no one to save the hostages -- but him.",
+              poster: "https://image.posterlounge.fr/images/big/1875924.jpg",
+              category: Category.find_by(name: "Action"),
+              trailer: "https://www.youtube.com/embed/jaJuwKCmJbY?controls=0&amp;start=2;?rel=0&autoplay=1",
+              hint_1: "Tower",
+              hint_2: "Christmas",
+              hint_3: "Yippee",
+            )
+
+Movie.create( title: "Interstellar",
+              synopsis: "In Earth's future, a global crop blight and second Dust Bowl are slowly rendering the planet uninhabitable. Professor Brand, a brilliant NASA physicist, is working on plans to save mankind by transporting Earth's population to a new home via a wormhole. But first, Brand must send former NASA pilot Cooper and a team of researchers through the wormhole and across the galaxy to find out which of three planets could be mankind's new home.",
+              poster: "https://m.media-amazon.com/images/I/91obuWzA3XL._AC_SY679_.jpg",
+              category: Category.find_by(name: "Drama"),
+              trailer: "https://www.youtube.com/embed/zSWdZVtXT7E?controls=0&amp;start=73;?rel=0&autoplay=1",
+              hint_1: "Sand Storm",
+              hint_2: "Space",
+              hint_3: "Dystopian",
+            )
+
+Movie.create( title: "Akira",
+              synopsis: "In 1988 the Japanese government drops an atomic bomb on Tokyo after ESP experiments on children go awry. In 2019, 31 years after the nuking of the city, Kaneda, a bike gang leader, tries to save his friend Tetsuo from a secret government project. He battles anti-government activists, greedy politicians, irresponsible scientists and a powerful military leader until Tetsuo's supernatural powers suddenly manifest. A final battle is fought in Tokyo Olympiad exposing the experiment's secrets.",
+              poster: "https://m.media-amazon.com/images/I/41XRZ7AWYWL._AC_.jpg",
+              category: Category.find_by(name: "Drama"),
+              trailer: "https://www.youtube.com/embed/nA8KmHC2Z-g?controls=0&amp;start=8;?rel=0&autoplay=1",
+              hint_1: "Manga",
+              hint_2: "Red Motorbike",
+              hint_3: "Nuclear",
+            )
+
+Movie.create( title: "Ghostbusters",
+              synopsis: "After the members of a team of scientists lose their jobs at a university in New York City, they decide to become ghostbusters to wage a high-tech battle with the supernatural for money. They stumble upon a gateway to another dimension, a doorway that will release ghosts, goblins, and evil upon the city. The Ghostbusters must now save New York from complete destruction.",
+              poster: "https://m.media-amazon.com/images/I/51gNMwJ-VEL._AC_SY606_.jpg",
+              category: Category.find_by(name: "Comedy"),
+              trailer: "https://www.youtube.com/embed/6hDkhw5Wkas?controls=0&amp;start=8;?rel=0&autoplay=1",
+              hint_1: "Vacuum cleaner",
+              hint_2: "Paranormal",
+              hint_3: "Slimer",
+            )
+
+Movie.create( title: "Jurassic Park",
+              synopsis: "In Steven Spielberg's massive blockbuster, paleontologists Alan Grant and Ellie Sattler and mathematician Ian Malcolm are among a select group chosen to tour an island theme park populated by dinosaurs created from prehistoric DNA. While the park's mastermind, billionaire John Hammond, assures everyone that the facility is safe, they find out otherwise when various ferocious predators escape and go on the hunt.",
+              poster: "https://m.media-amazon.com/images/I/913uLOi3rpL._AC_SY606_.jpg",
+              category: Category.find_by(name: "Blockbuster"),
+              trailer: "https://www.youtube.com/embed/lc0UehYemQA?controls=0&amp;start=12;?rel=0&autoplay=1",
+              hint_1: "Island",
+              hint_2: "DNA",
+              hint_3: "Dinosaurs",
+            )
+
+Movie.create( title: "The Dark Knight",
+              synopsis: "With the help of allies Lt. Jim Gordon and DA Harvey Dent, Batman has been able to keep a tight lid on crime in Gotham City. But when a vile young criminal calling himself the Joker suddenly throws the town into chaos, the caped Crusader begins to tread a fine line between heroism and vigilantism.",
+              poster: "https://m.media-amazon.com/images/I/81rGCm0PyHL._AC_SL1500_.jpg",
+              category: Category.find_by(name: "Action"),
+              trailer: "https://www.youtube.com/embed/EXeTwQWrcwY?controls=0&amp;start=13;?rel=0&autoplay=1",
+              hint_1: "Justice",
+              hint_2: "Rachel",
+              hint_3: "Joker",
+            )
+
+Movie.create( title: "Blade Runner",
+              synopsis: " In the year 2019, ex-detective Rick Deckard is called out of retirement to track down and eliminate a team of humanoid androids that have escaped from an outer space mining colony and have taken refuge here on Earth. During his search for the fugitives, he discovers some disturbing secrets about the future plans of the androids' manufacturer, the Tyrell Corporation.",
+              poster: " https://m.media-amazon.com/images/I/61dVSMH76yL._AC_SY606_.jpg",
+              category: Category.find_by(name: "Action"),
+              trailer: "https://www.youtube.com/embed/eogpIG53Cis?controls=0&amp;start=11;?rel=0&autoplay=1",
+              hint_1: "Future",
+              hint_2: "Ridley Scott",
+              hint_3: "Androids",
+            )
+
+Movie.create( title: "Men in Black",
+              synopsis: "They are the best-kept secret in the universe. Working for a highly funded yet unofficial government agency, Kay and Jay are the Men in Black, providers of immigration services and regulators of all things alien on Earth. While investigating a series of unregistered close encounters, the MIB agents uncover the deadly plot of an intergalactic terrorist who is on a mission to assassinate two ambassadors from opposing galaxies currently in residence in New York City.",
+              poster: "https://i.etsystatic.com/30490360/r/il/75be61/3709842237/il_570xN.3709842237_hdpc.jpg",
+              category: Category.find_by(name: "Blockbuster"),
+              trailer: "https://www.youtube.com/embed/1Q4mhYF9aQQ?controls=0&amp;start=20;?rel=0&autoplay=1",
+              hint_1: "Alien",
+              hint_2: "Memory",
+              hint_3: "Suits",
+            )
+
+
+Movie.create( title: "Slumdog Millionaire",
+              synopsis: "As 18-year-old Jamal Malik answers questions on the Indian version of "Who Wants to Be a Millionaire," flashbacks show how he got there. Part of a stable of young thieves after their mother dies, Jamal and his brother, Salim, survive on the streets of Mumbai. Salim finds the life of crime agreeable, but Jamal scrapes by with small jobs until landing a spot on the game show. He wins the game and reunites with his love, Latika.",
+              poster: "https://m.media-amazon.com/images/I/61GZJceT25L._AC_SY606_.jpg",
+              category: Category.find_by(name: "Drama"),
+              trailer: "https://www.youtube.com/embed/AIzbwV7on6Q?controls=0&amp;start=16;?rel=0&autoplay=1",
+              hint_1: "Life Story",
+              hint_2: "Quiz",
+              hint_3: "India",
             )
