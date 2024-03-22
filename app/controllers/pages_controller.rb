@@ -8,8 +8,8 @@ class PagesController < ApplicationController
   def dashboard
     @input_games = current_user.games.input
     @timer_games = current_user.games.timer
-    @players_inputgame = User.order(inputgame_score: :desc)
-    @players_timergame = User.order(timergame_score: :desc)
+    @players_inputgame = User.all.drop(1).sort_by { |user| -user.inputgame_score }
+    @players_timergame = User.all.drop(1).sort_by { |user| -user.timergame_score }
     # récupérer tous les player_games où l'utilisateur a trouvé le film
     @wins = current_user.player_games.where(title_found: true)
     # récupérer tous les player_games où le title était found et le game était en mode input
