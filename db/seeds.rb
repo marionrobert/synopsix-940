@@ -91,6 +91,10 @@ file = File.read(Rails.root.join('public/data_movies.json'))
 
 #USERS CREATION
 
+defaultUser = User.create(username: "defaultUser", email: "test@gmail.com", password: "123456", description: "defaultUser", admin: false)
+file = File.open(Rails.root.join("app/assets/images/avatar.png"))
+defaultUser.photo.attach(io: file, filename: "defaultUser.jpg", content_type: "image/jpeg")
+
 thomas = User.create(username: "Thomas", email: "tho@gmail.com", password: "123456", description: "crazy rocker", admin: true)
 file = File.open(Rails.root.join("app/assets/images/avatars/thomas.jpg"))
 thomas.photo.attach(io: file, filename: "thomas.jpg", content_type: "image/jpeg")
