@@ -43,9 +43,7 @@ Au démarrage de l'application, l'utilisateur arrive sur la page d'accueil qui o
 - créer un compte
 - choisir un mode de jeu entre **"Play Word Search"** ou **"Play Against Time"**
 
-![screenshot page d'accueil](/app/assets/images/screenshots/homepage.png)
-
-<img src="/app/assets/images/screenshots/homepage.png" alt="screenshot page d'accueil" width="100" height="100">
+<img src="/app/assets/images/screenshots/homepage.png" alt="screenshot page d'accueil" width="350" height="200">
 
 
 :information_source: Remarque :information_source: Pour jouer, l'utilisateur doit être connecté. S'il n'a pas de compte, il peut en créer un. Vous pouvez aussi utiliser les comptes créés lors de la génération des seeds. Par exemple : `email : mar@gmail.com` et `mot de passe : 123456`.
@@ -76,7 +74,7 @@ A chaque fois que vous entrez un mot dans la barre de recherche, il sera évalu�
 
 Cela permet aux joueurs de découvrir progressivement le synopsis du film en entrant différents mots dans la barre de recherche et en observant les mots du synopsis qui sont révélés en fonction de leur proximité avec les mots entrés.
 
-![image](https://github.com/marionrobert/synopsix-940/assets/107509668/322178c7-ef08-4c5e-a4fb-2e6d351328fa)
+<img src="/app/assets/images/screenshots/inputGame.png" alt="screenshot input game" width="800">
 
 :bulb: Si vous le souhaitez, vous pouvez ajouter des niveaux de score avec des mises en forme différentes pour aider davantage les joueurs. Il vous suffira de modifier la fonction hidden_synopsis dans le fichier àpp/models/player_gam.rb`
 ```
@@ -116,25 +114,24 @@ Dans ce mode, vous pouvez aussi demander découvrir un indice en cliquant sur le
 
 #### Derniers mots recherchés (à gauche)
 
-![image](https://github.com/marionrobert/synopsix-940/assets/107509668/222ab01d-152f-4bee-8c36-b71324be273c)
+<img src="/app/assets/images/screenshots/hintsAndTries.png" alt="screenshot hint and tries div" width="800">
 
 
 ### Page de jeu : Mode "Play Against Time"
 Dans le mode "Play Against Time", vous avez seulement 2 minutes pour deviner le titre du film. Les mots du synopsis du film se révèlent progressivement et automatiquement, vous offrant des indices pour trouver la réponse. Utilisez la barre de recherche pour faire une proposition du film dès que vous pensez avoir trouvé la solution. Plus tôt vous trouvez le film, meilleur sera votre score final !
 
-![image](https://github.com/marionrobert/synopsix-940/assets/107509668/c1170154-b355-4f05-ae8e-b1ba81244021)
+<img src="/app/assets/images/screenshots/timerGame.png" alt="screenshot timer game" width="800">
 
 
 <br/>
 
 ### Victoire
 #### Lorsque vous aurez trouvé le titre du film, vous obtiendrez les félicitations du jury ! Vous découvrirez votre score et la bande annonce du film en arrière plan. De quoi vous donnez envie de (re)voir le film !
-![image](https://github.com/marionrobert/synopsix-940/assets/107509668/eac540ff-a105-4e1c-9220-adf450d7bdf7)
+<img src="/app/assets/images/screenshots/victory.png" alt="screenshot victory" width="800">
 
 <br/>
 
 ### Page du dashboard
 
 #### Pour les compétiteurs, vous pourez comparer vos scores avec les autres utilisateurs et suivre votre progression dans le classement.
-![image](https://github.com/marionrobert/synopsix-940/assets/107509668/596659d7-c261-4eef-a7a9-3926d332e0d3)
-![image](https://github.com/marionrobert/synopsix-940/assets/107509668/78b5f647-4e9a-4be7-bd6d-9bfacf9ae30f)
+<img src="/app/assets/images/screenshots/dahsboard.png" alt="screenshot dashboard" width="800">
