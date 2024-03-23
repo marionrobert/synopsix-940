@@ -43,7 +43,7 @@ Au démarrage de l'application, l'utilisateur arrive sur la page d'accueil qui o
 - créer un compte
 - choisir un mode de jeu entre **"Play Word Search"** ou **"Play Against Time"**
 
-<img src="/app/assets/images/screenshots/homepage.png" alt="screenshot page d'accueil" width="350" height="200">
+<img src="/app/assets/images/screenshots/homepage.png" alt="screenshot page d'accueil" width="800">
 
 
 :information_source: Remarque :information_source: Pour jouer, l'utilisateur doit être connecté. S'il n'a pas de compte, il peut en créer un. Vous pouvez aussi utiliser les comptes créés lors de la génération des seeds. Par exemple : `email : mar@gmail.com` et `mot de passe : 123456`.
