@@ -4,12 +4,14 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["card", "gradient"]
   connect() {
-    console.log(this.cardTargets)
+    // console.log(this.cardTargets)
   }
   select(event) {
     const card = event.currentTarget
+    console.log("card --> ", card)
 
     const index = card.dataset.number
+    console.log(card.dataset.number)
 
     const btn = document.getElementById(`player_game_category_${index}`);
     btn.click()
@@ -19,6 +21,7 @@ export default class extends Controller {
     });
 
     card.classList.add("card-active");
+
 
 
   }
