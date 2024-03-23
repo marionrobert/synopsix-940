@@ -1,6 +1,6 @@
 # Synopsix : un jeu pour les fans de cinéma🎬🍿🎟
 
-Synopsix est un jeu en ligne autour de l'univers du cinéma. Sur le modèle de [Pédantix](https://cemantix.certitudes.org/pedantix), il s'agit de retrouver le titre du film en découvrant peu à peu le synopsix de ce dernier. Deux modes sont possibles : 
+Synopsix est un jeu en ligne autour de l'univers du cinéma. Sur le modèle de [Pédantix](https://cemantix.certitudes.org/pedantix), il s'agit de retrouver le titre du film en découvrant peu à peu le synopsix de ce dernier. Deux modes sont possibles :
 - le mode classique (Play word search / input mode) : il s'agit d'entrer des mots pour découvrir progressivement le synopsix.
 - le mode contre la montre (Play Against Time / timer mode) : vous avez deux minutes pour retrouver le titre du film dont les mots du synopsix apparaissent progressivement.
 
@@ -12,7 +12,7 @@ L'application est disponible uniquement en anglais.
 
 ### Prérequis système :
 L'application tourne actuellement sur :
-- Ruby (version 3.1.2) 💎 
+- Ruby (version 3.1.2) 💎
 - Node.js (version 16.15.1)
 - PostgreSQL (version 1.1)
 - Rails (version 7.0.3.1)
@@ -38,12 +38,15 @@ L'application tourne actuellement sur :
 ## Utilisation
 
 ### Page d'accueil
-Au démarrage de l'application, l'utilisateur arrive sur la page d'accueil qui offre plusieurs fonctionnalités : 
+Au démarrage de l'application, l'utilisateur arrive sur la page d'accueil qui offre plusieurs fonctionnalités :
 - se connecter
 - créer un compte
 - choisir un mode de jeu entre **"Play Word Search"** ou **"Play Against Time"**
 
-![image](https://github.com/marionrobert/synopsix-940/assets/107509668/3a742c2b-a218-46be-89f4-74a6b5098de2)
+![screenshot page d'accueil](/app/assets/images/screenshots/homepage.png)
+
+<img src="/app/assets/images/screenshots/homepage.png" alt="screenshot page d'accueil" width="100" height="100">
+
 
 :information_source: Remarque :information_source: Pour jouer, l'utilisateur doit être connecté. S'il n'a pas de compte, il peut en créer un. Vous pouvez aussi utiliser les comptes créés lors de la génération des seeds. Par exemple : `email : mar@gmail.com` et `mot de passe : 123456`.
 
@@ -56,7 +59,7 @@ Une fois connecté.e et après avoir choisi un mode de jeu, vous serez invité.e
 - Comedy :laughing:
 - Hystorical 🏛️
 
-Après avoir fait votre choix, c'est à vous de jouer ! 
+Après avoir fait votre choix, c'est à vous de jouer !
 
 <br/>
 
@@ -114,13 +117,13 @@ Dans ce mode, vous pouvez aussi demander découvrir un indice en cliquant sur le
 #### Derniers mots recherchés (à gauche)
 
 ![image](https://github.com/marionrobert/synopsix-940/assets/107509668/222ab01d-152f-4bee-8c36-b71324be273c)
-  
+
 
 ### Page de jeu : Mode "Play Against Time"
 Dans le mode "Play Against Time", vous avez seulement 2 minutes pour deviner le titre du film. Les mots du synopsis du film se révèlent progressivement et automatiquement, vous offrant des indices pour trouver la réponse. Utilisez la barre de recherche pour faire une proposition du film dès que vous pensez avoir trouvé la solution. Plus tôt vous trouvez le film, meilleur sera votre score final !
 
 ![image](https://github.com/marionrobert/synopsix-940/assets/107509668/c1170154-b355-4f05-ae8e-b1ba81244021)
-  
+
 
 <br/>
 
@@ -129,7 +132,7 @@ Dans le mode "Play Against Time", vous avez seulement 2 minutes pour deviner le 
 ![image](https://github.com/marionrobert/synopsix-940/assets/107509668/eac540ff-a105-4e1c-9220-adf450d7bdf7)
 
 <br/>
-  
+
 ### Page du dashboard
 
 #### Pour les compétiteurs, vous pourez comparer vos scores avec les autres utilisateurs et suivre votre progression dans le classement.

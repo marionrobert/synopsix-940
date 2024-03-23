@@ -11,7 +11,6 @@ class PlayerGamesController < ApplicationController
       else
         flash.now[:alert] = "Please select a category"
         render 'games/new', status: :unprocessable_entity
-
       end
     else
       @player_game = PlayerGame.new
@@ -35,6 +34,4 @@ class PlayerGamesController < ApplicationController
       @inputs = @player_game.inputs.where(source: :input)
     end
   end
-
-
 end
