@@ -8,6 +8,11 @@ L'application est disponible uniquement en anglais.
 
 <br/>
 
+## Contexte de développement 💻🤝
+Il s'agit d'un projet éducatif développé en équipe lors du bootcamp "Développement Web" à Le Wagon. 🚋
+
+<br/>
+
 ## Installation et Configuration ⚙️🛠️
 
 ### Prérequis système :
@@ -15,7 +20,7 @@ L'application tourne actuellement sur :
 - Ruby (version 3.1.2) 💎
 - Node.js (version 16.15.1)
 - PostgreSQL (version 1.1)
-- Rails (version 7.0.3.1)
+- Rails (version 7.0.3.1) 🛤️
 - Yarn (version 1.22.19)
 - Webpack (version 5.74.0)
 
