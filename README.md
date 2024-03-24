@@ -69,10 +69,11 @@ Après avoir fait votre choix, c'est à vous de jouer !
 
 ### Page de jeu : Mode "Play Words Search"
 
-Dans ce mode, votre objectif est de deviner le titre du film en retrouvant progressivement son synopsis. Vous pouvez le faire en entrant des mots dans la barre de recherche. Chaque mot que vous entrez révèle une partie du synopsis, vous rapprochant ainsi de la solution. N'hésitez pas à expérimenter avec différents mots pour découvrir le synopsis complet. Cependant, gardez à l'esprit que le nombre d'essais que vous faites affectera votre score. Soyez stratégique dans le choix des mots pour maximiser votre score final ! Dès que vous pensez avoir trouvé le titre du film, utilisez cette même barre de recherche pour faire une proposition.
+Dans ce mode, votre objectif est de deviner le titre du film en retrouvant progressivement son synopsis. Vous pouvez le faire en entrant des mots dans la barre de recherche. Chaque mot que vous entrez révèle une partie du synopsis, vous rapprochant ainsi de la solution. N'hésitez pas à expérimenter avec différents mots pour découvrir le synopsis complet. 
+Cependant, gardez à l'esprit que le nombre d'essais que vous faites affectera votre score. Soyez stratégique dans le choix des mots pour maximiser votre score final ! Dès que vous pensez avoir trouvé le titre du film, utilisez cette même barre de recherche pour faire une proposition.
 
 #### Score de proximité
-A chaque fois que vous entrez un mot dans la barre de recherche, il sera évalué en fonction de sa similarité avec chaque mot du synopsis du film. Nous utilisons la `gem similar_text` pour calculer le score de proximité entre les mots. Le score de proximité est basé sur le **nombre de caractères identiques** et la **longueur des chaînes de caractères** comparées.
+A chaque fois que vous entrez un mot dans la barre de recherche, il sera **évalué en fonction de sa similarité avec chaque mot du synopsis** du film. Nous utilisons la `gem similar_text` pour calculer le score de proximité entre les mots. Le score de proximité est basé sur le **nombre de caractères identiques** et la **longueur des chaînes de caractères** comparées.
 - Si le score de proximité entre un mot entré et un mot du synopsis est supérieur à 0.9, le mot sera considéré comme trouvé et sera affiché découvert dans le synopsis (après une animation avec une couleur de fond verte): exemple avec le mot "woman"
 - Si le score de proximité est compris entre 0.8 et 0.9, le mot sera affiché en orange sur fond blanc pour indiquer une correspondance partielle: exemple avec le mot "hero"
 - Si le score de proximité est compris entre 0.7 et 0.8, le mot sera affiché en rouge sur fond blanc pour indiquer une correspondance faible: exemple avec le mot "again"
@@ -82,7 +83,8 @@ Cela permet aux joueurs de découvrir progressivement le synopsis du film en ent
 
 <img src="/app/assets/images/screenshots/inputGame.png" alt="screenshot input game" width="800">
 
-:bulb: Si vous le souhaitez, vous pouvez ajouter des niveaux de score avec des mises en forme différentes pour aider davantage les joueurs. Il vous suffira de modifier la fonction hidden_synopsis dans le fichier àpp/models/player_gam.rb`
+:bulb: Si vous le souhaitez, vous pouvez ajouter des niveaux de score avec des mises en forme différentes pour aider davantage les joueurs. Il vous suffira de modifier la fonction hidden_synopsis dans le fichier `app/models/player_gam.rb`
+
 ```
 def hidden_synopsis
     #get the synopsis
