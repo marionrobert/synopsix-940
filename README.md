@@ -2,8 +2,8 @@
 
 Synopsix est une appplication web proposant un jeu autour de l'univers du cinéma. Sur le modèle de [Pédantix](https://cemantix.certitudes.org/pedantix), il s'agit de retrouver le titre du film en découvrant peu à peu le synopsix de ce dernier.
 Deux modes sont possibles :
-- le mode classique (Play word search / input mode) : il s'agit d'entrer des mots pour découvrir progressivement le synopsix.
-- le mode contre la montre (Play Against Time / timer mode) : vous avez deux minutes pour retrouver le titre du film dont les mots du synopsix apparaissent progressivement.
+- **le mode classique** (Play word search / input mode) : il s'agit d'entrer des mots pour découvrir progressivement le synopsix.
+- **le mode contre la montre** (Play Against Time / timer mode) : vous avez deux minutes pour retrouver le titre du film dont les mots du synopsix apparaissent progressivement.
 
 L'application est disponible uniquement en anglais.
 
@@ -52,7 +52,7 @@ Au démarrage de l'application, l'utilisateur arrive sur la page d'accueil qui o
 <img src="/app/assets/images/screenshots/homepage.png" alt="screenshot page d'accueil" width="800">
 
 
-:information_source: Remarque :information_source: Pour jouer, l'utilisateur doit être connecté. S'il n'a pas de compte, il peut en créer un. Vous pouvez aussi utiliser les comptes créés lors de la génération des seeds. Par exemple : `email : mar@gmail.com` et `mot de passe : 123456`.
+:information_source: Remarque :information_source: Pour jouer, l'utilisateur doit être connecté. S'il n'a pas de compte, il peut en créer un. Vous pouvez aussi utiliser les comptes "test" créés lors de la génération des seeds. Par exemple : `email : mar@gmail.com` et `mot de passe : 123456`.
 
 ### Page de choix de la catégorie
 Une fois connecté.e et après avoir choisi un mode de jeu, vous serez invité.e à choisir la catégorie de film dans laquelle vous souhaitez jouer:
@@ -72,8 +72,8 @@ Après avoir fait votre choix, c'est à vous de jouer !
 Dans ce mode, votre objectif est de deviner le titre du film en retrouvant progressivement son synopsis. Vous pouvez le faire en entrant des mots dans la barre de recherche. Chaque mot que vous entrez révèle une partie du synopsis, vous rapprochant ainsi de la solution. N'hésitez pas à expérimenter avec différents mots pour découvrir le synopsis complet. Cependant, gardez à l'esprit que le nombre d'essais que vous faites affectera votre score. Soyez stratégique dans le choix des mots pour maximiser votre score final ! Dès que vous pensez avoir trouvé le titre du film, utilisez cette même barre de recherche pour faire une proposition.
 
 #### Score de proximité
-A chaque fois que vous entrez un mot dans la barre de recherche, il sera évalué en fonction de sa similarité avec chaque mot du synopsis du film. Nous utilisons la `gem similar_text` pour calculer le score de proximité entre les mots. Le score de proximité est basé sur le nombre de caractères identiques et la longueur des chaînes de caractères comparées.
-- Si le score de proximité entre un mot entré et un mot du synopsis est supérieur à 0.9, le mot sera considéré comme découvert et sera affiché découvert dans le synopsis (après une animation avec une couleur de fond verte): exemple avec le mot "woman"
+A chaque fois que vous entrez un mot dans la barre de recherche, il sera évalué en fonction de sa similarité avec chaque mot du synopsis du film. Nous utilisons la `gem similar_text` pour calculer le score de proximité entre les mots. Le score de proximité est basé sur le **nombre de caractères identiques** et la **longueur des chaînes de caractères** comparées.
+- Si le score de proximité entre un mot entré et un mot du synopsis est supérieur à 0.9, le mot sera considéré comme trouvé et sera affiché découvert dans le synopsis (après une animation avec une couleur de fond verte): exemple avec le mot "woman"
 - Si le score de proximité est compris entre 0.8 et 0.9, le mot sera affiché en orange sur fond blanc pour indiquer une correspondance partielle: exemple avec le mot "hero"
 - Si le score de proximité est compris entre 0.7 et 0.8, le mot sera affiché en rouge sur fond blanc pour indiquer une correspondance faible: exemple avec le mot "again"
 - Si le score de proximité est inférieur à 0.7, le mot restera complètement grisé pour indiquer une faible correspondance.
