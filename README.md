@@ -1,6 +1,6 @@
 # Synopsix : un jeu pour les fans de cinéma🎬🍿🎟
 
-Synopsix est une appplication web proposant un jeu autour de l'univers du cinéma. Sur le modèle de [Pédantix](https://cemantix.certitudes.org/pedantix), il s'agit de retrouver le titre du film en découvrant peu à peu le synopsix de ce dernier.
+Synopsix est une appplication web proposant un jeu autour de l'univers du cinéma, développé sur le modèle de [Pédantix](https://cemantix.certitudes.org/pedantix). L but du jeu est de retrouver le titre du film en découvrant peu à peu le synopsix de ce dernier.
 Deux modes sont possibles :
 - **le mode classique** (Play word search / input mode) : il s'agit d'entrer des mots pour découvrir progressivement le synopsix.
 - **le mode contre la montre** (Play Against Time / timer mode) : vous avez deux minutes pour retrouver le titre du film dont les mots du synopsix apparaissent progressivement.
